@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projekt1Semester
 {
-    internal class Person
+    public class Person
     {
         public string PersonNavn { get; set; } //Personens navn 
         public string PersonEmail { get; set; } //Personens email

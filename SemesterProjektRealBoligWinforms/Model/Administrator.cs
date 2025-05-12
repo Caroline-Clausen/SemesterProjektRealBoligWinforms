@@ -6,32 +6,33 @@ using System.Threading.Tasks;
 
 namespace Projekt1Semester
 {
-    internal class Administrator : Person
+   public class Administrator : Person // arver fra Person
     {
         public int AdministratorID { get; set; } //Primarnøgle tildelt fra database (autogenereret)
+        public string PersonNavn { get; set; } //Personens navn
+        public string PersonEmail { get; set; } //Personens email
+        public string PersonTelefon { get; set; } //Personens telefonnummer
+
+
         // login funktionen til administrator
         public string AdministratorBrugernavn { get; set; } //Brugernavn
         public string AdministratorPassword { get; set; } //Password
        
-        //Administratorens navn
-        public string AdministratorNavn { get; set; } //Navn
-
-        // en metode hvor Administrator får mulighed for at ændre sin password
-        public void ÆndrePassword(string nyPassword)
+       
+        
+        // en metode hvor Administrator får mulighed for at ændre sit password
+        public void ÆndreAdminPassword(string nyPassword)
         {
             AdministratorPassword = nyPassword;
         }
-        // en metode hvor Administrator får mulighed for at ændre sin brugernavn
-        public void ÆndreBrugernavn(string nyBrugernavn)
+       
+
+        // en metode hvor Administrator får mulighed for at ændre sit brugernavn
+        public void ÆndreAdminBrugernavn(string nyBrugernavn)
         {
             AdministratorBrugernavn = nyBrugernavn;
         }
-        // en metode hvor Administrator får mulighed for at ændre sin navn
-        public void ÆndreNavn(string nyNavn)
-        {
-            AdministratorNavn = nyNavn;
-        }
+        
 
     }
 }
-// tilføj person funktioner til administrator

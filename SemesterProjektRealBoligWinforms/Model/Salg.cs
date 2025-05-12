@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projekt1Semester
 {
-    internal class Salg
+   public class Salg
     {
         public int SalgID { get; set; } //Primarnøgle tildelt fra database (autogenereret)
         public int BoligID { get; set; } //EjendomID
