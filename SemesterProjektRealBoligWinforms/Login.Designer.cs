@@ -43,90 +43,103 @@
             // adminBrugernavnLable
             // 
             adminBrugernavnLable.AutoSize = true;
-            adminBrugernavnLable.Location = new Point(49, 50);
+            adminBrugernavnLable.Location = new Point(26, 23);
+            adminBrugernavnLable.Margin = new Padding(2, 0, 2, 0);
             adminBrugernavnLable.Name = "adminBrugernavnLable";
-            adminBrugernavnLable.Size = new Size(288, 32);
+            adminBrugernavnLable.Size = new Size(144, 15);
             adminBrugernavnLable.TabIndex = 0;
             adminBrugernavnLable.Text = "Administrator Brugernavn";
             // 
             // adminPasswordLable
             // 
             adminPasswordLable.AutoSize = true;
-            adminPasswordLable.Location = new Point(49, 101);
+            adminPasswordLable.Location = new Point(26, 47);
+            adminPasswordLable.Margin = new Padding(2, 0, 2, 0);
             adminPasswordLable.Name = "adminPasswordLable";
-            adminPasswordLable.Size = new Size(262, 32);
+            adminPasswordLable.Size = new Size(133, 15);
             adminPasswordLable.TabIndex = 1;
             adminPasswordLable.Text = "Administrator Password";
             // 
             // adminBrugernavnTekstbox
             // 
-            adminBrugernavnTekstbox.Location = new Point(385, 47);
+            adminBrugernavnTekstbox.Location = new Point(207, 22);
+            adminBrugernavnTekstbox.Margin = new Padding(2, 1, 2, 1);
             adminBrugernavnTekstbox.Name = "adminBrugernavnTekstbox";
-            adminBrugernavnTekstbox.Size = new Size(224, 39);
+            adminBrugernavnTekstbox.Size = new Size(122, 23);
             adminBrugernavnTekstbox.TabIndex = 2;
             // 
             // adminPasswordTekstbox
             // 
-            adminPasswordTekstbox.Location = new Point(385, 98);
+            adminPasswordTekstbox.Location = new Point(207, 46);
+            adminPasswordTekstbox.Margin = new Padding(2, 1, 2, 1);
             adminPasswordTekstbox.Name = "adminPasswordTekstbox";
-            adminPasswordTekstbox.Size = new Size(224, 39);
+            adminPasswordTekstbox.Size = new Size(122, 23);
             adminPasswordTekstbox.TabIndex = 3;
+            adminPasswordTekstbox.UseSystemPasswordChar = true;
             // 
             // ejendomsmæglerBrugernavnLable
             // 
             ejendomsmæglerBrugernavnLable.AutoSize = true;
-            ejendomsmæglerBrugernavnLable.Location = new Point(49, 321);
+            ejendomsmæglerBrugernavnLable.Location = new Point(26, 150);
+            ejendomsmæglerBrugernavnLable.Margin = new Padding(2, 0, 2, 0);
             ejendomsmæglerBrugernavnLable.Name = "ejendomsmæglerBrugernavnLable";
-            ejendomsmæglerBrugernavnLable.Size = new Size(330, 32);
+            ejendomsmæglerBrugernavnLable.Size = new Size(164, 15);
             ejendomsmæglerBrugernavnLable.TabIndex = 4;
             ejendomsmæglerBrugernavnLable.Text = "Ejendomsmægler Brugernavn";
             // 
             // ejendomsmæglerPasswordLable
             // 
             ejendomsmæglerPasswordLable.AutoSize = true;
-            ejendomsmæglerPasswordLable.Location = new Point(49, 373);
+            ejendomsmæglerPasswordLable.Location = new Point(26, 175);
+            ejendomsmæglerPasswordLable.Margin = new Padding(2, 0, 2, 0);
             ejendomsmæglerPasswordLable.Name = "ejendomsmæglerPasswordLable";
-            ejendomsmæglerPasswordLable.Size = new Size(304, 32);
+            ejendomsmæglerPasswordLable.Size = new Size(153, 15);
             ejendomsmæglerPasswordLable.TabIndex = 5;
             ejendomsmæglerPasswordLable.Text = "Ejendomsmægler Password";
             // 
             // ejendomsmæglerBrugernavnTekstbox
             // 
-            ejendomsmæglerBrugernavnTekstbox.Location = new Point(385, 318);
+            ejendomsmæglerBrugernavnTekstbox.Location = new Point(207, 149);
+            ejendomsmæglerBrugernavnTekstbox.Margin = new Padding(2, 1, 2, 1);
             ejendomsmæglerBrugernavnTekstbox.Name = "ejendomsmæglerBrugernavnTekstbox";
-            ejendomsmæglerBrugernavnTekstbox.Size = new Size(224, 39);
+            ejendomsmæglerBrugernavnTekstbox.Size = new Size(122, 23);
             ejendomsmæglerBrugernavnTekstbox.TabIndex = 6;
             // 
             // EjendomsmæglerPasswordTekstbox
             // 
-            EjendomsmæglerPasswordTekstbox.Location = new Point(385, 370);
+            EjendomsmæglerPasswordTekstbox.Location = new Point(207, 173);
+            EjendomsmæglerPasswordTekstbox.Margin = new Padding(2, 1, 2, 1);
             EjendomsmæglerPasswordTekstbox.Name = "EjendomsmæglerPasswordTekstbox";
-            EjendomsmæglerPasswordTekstbox.Size = new Size(224, 39);
+            EjendomsmæglerPasswordTekstbox.Size = new Size(122, 23);
             EjendomsmæglerPasswordTekstbox.TabIndex = 7;
+            EjendomsmæglerPasswordTekstbox.UseSystemPasswordChar = true;
             // 
             // godkendAdminKnap
             // 
-            godkendAdminKnap.Location = new Point(652, 99);
+            godkendAdminKnap.Location = new Point(351, 46);
+            godkendAdminKnap.Margin = new Padding(2, 1, 2, 1);
             godkendAdminKnap.Name = "godkendAdminKnap";
-            godkendAdminKnap.Size = new Size(131, 43);
+            godkendAdminKnap.Size = new Size(71, 20);
             godkendAdminKnap.TabIndex = 8;
             godkendAdminKnap.Text = "Godkend";
             godkendAdminKnap.UseVisualStyleBackColor = true;
+            godkendAdminKnap.Click += godkendAdminKnap_Click;
             // 
             // ejendomsmæglerGodkendKanp
             // 
-            ejendomsmæglerGodkendKanp.Location = new Point(652, 368);
+            ejendomsmæglerGodkendKanp.Location = new Point(351, 172);
+            ejendomsmæglerGodkendKanp.Margin = new Padding(2, 1, 2, 1);
             ejendomsmæglerGodkendKanp.Name = "ejendomsmæglerGodkendKanp";
-            ejendomsmæglerGodkendKanp.Size = new Size(131, 43);
+            ejendomsmæglerGodkendKanp.Size = new Size(71, 20);
             ejendomsmæglerGodkendKanp.TabIndex = 9;
             ejendomsmæglerGodkendKanp.Text = "Godkend";
             ejendomsmæglerGodkendKanp.UseVisualStyleBackColor = true;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(835, 468);
+            ClientSize = new Size(450, 219);
             Controls.Add(ejendomsmæglerGodkendKanp);
             Controls.Add(godkendAdminKnap);
             Controls.Add(EjendomsmæglerPasswordTekstbox);
@@ -137,8 +150,11 @@
             Controls.Add(adminBrugernavnTekstbox);
             Controls.Add(adminPasswordLable);
             Controls.Add(adminBrugernavnLable);
+            Margin = new Padding(2, 1, 2, 1);
             Name = "Login";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
+            TopMost = true;
             ResumeLayout(false);
             PerformLayout();
         }
