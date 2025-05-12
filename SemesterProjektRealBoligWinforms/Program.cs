@@ -1,3 +1,5 @@
+using Projekt1Semester;
+
 namespace SemesterProjektRealBoligWinforms
 {
     internal static class Program
@@ -12,6 +14,20 @@ namespace SemesterProjektRealBoligWinforms
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+
+
+            List<Bolig> boliger = new List<Bolig>();
+            List<Ejendomsmaegler> ejendomsmaeglere = new List<Ejendomsmaegler>();
+            List<Administrator> administratorer = new List<Administrator>();
+            List<Person> personer = new List<Person>();
+            List<Saelger> saelgere = new List<Saelger>();
+            List<Koeber> koebere = new List<Koeber>();
+
         }
+
+
     }
+
+
+
 }

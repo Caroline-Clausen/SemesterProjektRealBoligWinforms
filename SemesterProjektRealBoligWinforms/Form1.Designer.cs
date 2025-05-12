@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             seBoligForsideKnap = new Button();
             loginKnap = new Button();
-            toolTip1 = new ToolTip(components);
             seBoligForsideLable = new Label();
             loginLable = new Label();
             SuspendLayout();
@@ -44,6 +42,7 @@
             seBoligForsideKnap.TabIndex = 0;
             seBoligForsideKnap.Text = "Tryk her";
             seBoligForsideKnap.UseVisualStyleBackColor = true;
+            seBoligForsideKnap.Click += seBoligForsideKnap_Click;
             // 
             // loginKnap
             // 
@@ -76,7 +75,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(772, 485);
             Controls.Add(loginLable);
             Controls.Add(seBoligForsideLable);
             Controls.Add(loginKnap);
@@ -92,7 +91,7 @@
 
         private Button seBoligForsideKnap;
         private Button loginKnap;
-        private ToolTip toolTip1;
+       // private ToolTip toolTip1;
         private Label seBoligForsideLable;
         private Label loginLable;
     }
