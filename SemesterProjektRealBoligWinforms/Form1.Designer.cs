@@ -36,9 +36,10 @@
             // 
             // seBoligForsideKnap
             // 
-            seBoligForsideKnap.Location = new Point(262, 130);
+            seBoligForsideKnap.Location = new Point(141, 61);
+            seBoligForsideKnap.Margin = new Padding(2, 1, 2, 1);
             seBoligForsideKnap.Name = "seBoligForsideKnap";
-            seBoligForsideKnap.Size = new Size(205, 94);
+            seBoligForsideKnap.Size = new Size(110, 44);
             seBoligForsideKnap.TabIndex = 0;
             seBoligForsideKnap.Text = "Tryk her";
             seBoligForsideKnap.UseVisualStyleBackColor = true;
@@ -46,41 +47,48 @@
             // 
             // loginKnap
             // 
-            loginKnap.Location = new Point(241, 344);
+            loginKnap.Location = new Point(130, 161);
+            loginKnap.Margin = new Padding(2, 1, 2, 1);
             loginKnap.Name = "loginKnap";
-            loginKnap.Size = new Size(256, 47);
+            loginKnap.Size = new Size(138, 30);
             loginKnap.TabIndex = 1;
             loginKnap.Text = "Login";
             loginKnap.UseVisualStyleBackColor = true;
+            loginKnap.Click += loginKnap_Click;
             // 
             // seBoligForsideLable
             // 
             seBoligForsideLable.AutoSize = true;
-            seBoligForsideLable.Location = new Point(262, 95);
+            seBoligForsideLable.Location = new Point(141, 45);
+            seBoligForsideLable.Margin = new Padding(2, 0, 2, 0);
             seBoligForsideLable.Name = "seBoligForsideLable";
-            seBoligForsideLable.Size = new Size(205, 32);
+            seBoligForsideLable.Size = new Size(99, 15);
             seBoligForsideLable.TabIndex = 2;
             seBoligForsideLable.Text = " Se boliger til salg";
             // 
             // loginLable
             // 
             loginLable.AutoSize = true;
-            loginLable.Location = new Point(165, 309);
+            loginLable.Location = new Point(89, 145);
+            loginLable.Margin = new Padding(2, 0, 2, 0);
             loginLable.Name = "loginLable";
-            loginLable.Size = new Size(408, 32);
+            loginLable.Size = new Size(201, 15);
             loginLable.TabIndex = 3;
             loginLable.Text = "For medarbejdere eller Administrator";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(772, 485);
+            ClientSize = new Size(416, 227);
             Controls.Add(loginLable);
             Controls.Add(seBoligForsideLable);
             Controls.Add(loginKnap);
             Controls.Add(seBoligForsideKnap);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(2, 1, 2, 1);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);

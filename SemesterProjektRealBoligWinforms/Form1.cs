@@ -14,7 +14,14 @@ namespace SemesterProjektRealBoligWinforms
 
         private void seBoligForsideKnap_Click(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void loginKnap_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+
         }
     }
 }
