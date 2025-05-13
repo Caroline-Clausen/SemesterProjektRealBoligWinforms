@@ -4,11 +4,10 @@ using System;
 
 namespace DataAccess
 {
-    public class DBConnection : IDisposable
+    public class DBConnection : IDisposable  // Needed so the connection can be forcefully closed
     {
         const String ConnectionString = "Data Source=uclprojects.database.windows.net;Integrated Security=false;User ID=serverlogin;Password=1234Login;\r\n\r\n";
         private SqlConnection conn;
-        private bool disposed = false;
         private bool disposedValue;
 
 

@@ -10,12 +10,24 @@ namespace BusinessLayer
 {
     public static class Authenticator
     {
-        public static Administrator? LoginAdmin(string username, string password)
+        public static Ejendomsmaegler? LoginRealtor(string username, string password)
         {
+            Ejendomsmaegler? realtor;
             // Connect to database
             using (DBConnection conn = new())
             {
+                realtor = conn.GetRealtor(username);
+            }
 
+            if (realtor == null)
+            {
+                return null;
+            }
+
+            // Check passowrd is correct
+            if (realtor.EjendomsmaeglerPassword == password)
+            {
+                return realtor;
             }
 
             return null;

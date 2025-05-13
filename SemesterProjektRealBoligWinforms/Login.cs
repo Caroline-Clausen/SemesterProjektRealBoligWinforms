@@ -51,11 +51,11 @@ namespace SemesterProjektRealBoligWinforms
         private void ejendomsmæglerGodkendKanp_MouseClick(object sender, MouseEventArgs e)
         {
             // Retrieve username and password from textboxes
-            String username = adminBrugernavnTekstbox.Text;
-            String password = adminPasswordTekstbox.Text;
+            String username = ejendomsmæglerBrugernavnTekstbox.Text;
+            String password = EjendomsmæglerPasswordTekstbox.Text;
 
             // Try to authenticate with provided login
-            Administrator? account = Authenticator.LoginAdmin(username, password);
+            Ejendomsmaegler? account = Authenticator.LoginRealtor(username, password);
 
             // If we get a null value, we know authentication failed.
             if (account == null)
@@ -64,10 +64,10 @@ namespace SemesterProjektRealBoligWinforms
                 return;
             }
 
-            // Show admin form
-            OpretMægler opretMægler = new OpretMægler();
-            opretMægler.Show();
-            this.Hide(); // Hide login form
+            // Show realtor page
+            RealtorForm form = new();
+            form.Show();
+            this.Hide();
         }
     }
 }
