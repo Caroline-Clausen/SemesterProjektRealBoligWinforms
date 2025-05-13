@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,26 +20,51 @@ namespace SemesterProjektRealBoligWinforms
 
         private void godkendAdminKnap_Click(object sender, EventArgs e)
         {
-            // Tjekker om brugernavnet og kodeordet er korrekt
-            // Her skal brugernavn og password kontrolleres med databasen evt skal der her være en liste med oprettede brugere 
-           
-            // For nuværende er det hardkodet til "admin" og "admin"
-            // I en rigtig applikation skal du bruge en database til at gemme og kontrollere brugernavne og adgangskoder
-            // Dette er kun til demonstration
-            
-            // indsæt database kode her eller metode til at hente brugernavn og password fra en database
-            
-            if (adminBrugernavnTekstbox.Text == "admin" && adminPasswordTekstbox.Text == "admin")
+            // 1) Hent input
+            string user = adminBrugernavnTekstbox.Text.Trim();
+            string pass = adminPasswordTekstbox.Text.Trim();
+
+            // 2) Simpel UI-validering
+            if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pass))
             {
-                // Opretter en instans af AdminForm og viser den
-                OpretMægler opretMægler = new OpretMægler();
+                MessageBox.Show(
+                  "Indtast både brugernavn og adgangskode.",
+                  "Manglende input",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            // 3) Kald databasen via Repository
+            var repo = new AdministratorRepository();
+            bool succes = repo.Authenticate(user, pass);
+
+            // 4) Håndter login-resultatet
+            if (succes)
+            {
+                // Hvis login OK, åbn næste form
+                OpretMægler opretMægler = new();
                 opretMægler.Show();
-                this.Hide(); // Skjuler loginvinduet
+                this.Hide();
             }
             else
             {
-                MessageBox.Show("Forkert brugernavn eller kodeord.");
+                MessageBox.Show(
+                  "Forkert brugernavn eller kodeord.",
+                  "Login-fejl",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Error
+                );
+                adminPasswordTekstbox.Clear();
+                adminPasswordTekstbox.Focus();
             }
+        }
+
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
