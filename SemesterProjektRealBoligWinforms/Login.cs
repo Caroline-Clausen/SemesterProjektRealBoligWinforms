@@ -19,6 +19,11 @@ namespace SemesterProjektRealBoligWinforms
             InitializeComponent();
         }
 
+        private void WrongPassword()
+        {
+            MessageBox.Show("Forkert brugernavn eller kodeord.");
+        }
+
         private void godkendAdminKnap_Click(object sender, EventArgs e)
         {
             // Tjekker om brugernavnet og kodeordet er korrekt
@@ -39,7 +44,7 @@ namespace SemesterProjektRealBoligWinforms
             }
             else
             {
-                MessageBox.Show("Forkert brugernavn eller kodeord.");
+                WrongPassword();
             }
         }
 
@@ -55,7 +60,7 @@ namespace SemesterProjektRealBoligWinforms
             // If we get a null value, we know authentication failed.
             if (account == null)
             {
-                MessageBox.Show("Forkert brugernavn eller kodeord.");
+                WrongPassword();
                 return;
             }
 
