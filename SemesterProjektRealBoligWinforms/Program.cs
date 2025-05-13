@@ -1,5 +1,5 @@
-using Projekt1Semester;
-
+using BusinessLayer;
+using Model.RealBolig;
 namespace SemesterProjektRealBoligWinforms
 {
     public static class Program
