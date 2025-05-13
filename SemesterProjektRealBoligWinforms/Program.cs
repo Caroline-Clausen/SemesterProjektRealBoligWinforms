@@ -1,6 +1,7 @@
 using BusinessLayer;
 using Model.RealBolig;
 using Projekt1Semester;
+using System.Windows.Forms;
 namespace SemesterProjektRealBoligWinforms
 {
     public static class Program
@@ -11,10 +12,9 @@ namespace SemesterProjektRealBoligWinforms
         [STAThread]
         public static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
 
             List<Bolig> boliger = new List<Bolig>();
             List<Ejendomsmaegler> ejendomsmaeglere = new List<Ejendomsmaegler>();
@@ -22,6 +22,11 @@ namespace SemesterProjektRealBoligWinforms
             List<Person> personer = new List<Person>();
             List<Saelger> saelgere = new List<Saelger>();
             List<Koeber> koebere = new List<Koeber>();
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            // Det her skal pege på den form du vil starte med:
+            Application.Run(new Login());
 
         }
 
