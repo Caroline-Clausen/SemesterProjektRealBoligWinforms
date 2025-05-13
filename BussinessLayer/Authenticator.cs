@@ -13,7 +13,10 @@ namespace BusinessLayer
         public static Administrator? LoginAdmin(string username, string password)
         {
             // Connect to database
-            SQLConnection conn = new();
+            using (DBConnection conn = new())
+            {
+
+            }
 
             return null;
         }
