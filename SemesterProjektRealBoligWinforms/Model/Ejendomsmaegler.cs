@@ -11,18 +11,14 @@ namespace Projekt1Semester
         public int EjendomsmaeglerID { get; set; } //Primarnøgle tildelt fra database (autogenereret)
         public string EjendomsmaeglerBrugernavn { get; set; } //Brugernavn
         public string EjendomsmaeglerPassword { get; set; } //Password
-       
-        
+
+
         // arver fra Person
 
         //En metode hvor Administrator opretter en ny Ejendomsmaegler
-        public Ejendomsmaegler(string brugernavn, string password, string navn, string email, string telefon)
+        public Ejendomsmaegler()
         {
-            EjendomsmaeglerBrugernavn = brugernavn;
-            EjendomsmaeglerPassword = password;
-            PersonNavn = navn;
-            PersonEmail = email;
-            PersonTelefon = telefon;
+            EjendomsmaeglerID = 0;
         }
         // en metode hvor Administrator får mulighed for at ændre password på Ejendomsmaegler
         public void ÆndrePassword(string nyPassword)

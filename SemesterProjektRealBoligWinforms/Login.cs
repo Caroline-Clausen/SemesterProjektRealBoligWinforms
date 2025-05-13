@@ -20,7 +20,14 @@ namespace SemesterProjektRealBoligWinforms
         private void godkendAdminKnap_Click(object sender, EventArgs e)
         {
             // Tjekker om brugernavnet og kodeordet er korrekt
-            // Her skal brugernavn og password kontrolleres med databasen 
+            // Her skal brugernavn og password kontrolleres med databasen evt skal der her være en liste med oprettede brugere 
+           
+            // For nuværende er det hardkodet til "admin" og "admin"
+            // I en rigtig applikation skal du bruge en database til at gemme og kontrollere brugernavne og adgangskoder
+            // Dette er kun til demonstration
+            
+            // indsæt database kode her eller metode til at hente brugernavn og password fra en database
+            
             if (adminBrugernavnTekstbox.Text == "admin" && adminPasswordTekstbox.Text == "admin")
             {
                 // Opretter en instans af AdminForm og viser den

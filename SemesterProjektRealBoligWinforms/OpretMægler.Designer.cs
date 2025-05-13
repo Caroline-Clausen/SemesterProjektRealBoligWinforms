@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            navnMæglerTekstbox = new TextBox();
-            navnMæglerLable = new Label();
-            opretNyEjendomsmæglerLable = new Label();
-            telefonMæglerLable = new Label();
-            telefonMæglerTekstboks = new TextBox();
-            emailMæglerLable = new Label();
-            emailMæglerTekstboks = new TextBox();
             ejendomsmaeglerBindingSource = new BindingSource(components);
             vistMæglerDataGridView = new DataGridView();
             ejendomsmaeglerIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -45,74 +38,15 @@
             opretMæglerKnap = new Button();
             fjernMæglerLable = new Label();
             fjernMæglerKnap = new Button();
-            brugernavnMæglerTekstboks = new TextBox();
-            parswordMæglerTekstboks = new TextBox();
-            brugernavnMæglerLable = new Label();
-            parswordMæglerLable = new Label();
             redigerMæglerLable = new Label();
             redigerMæglerKnap = new Button();
             afslutOpretMæglerKnap = new Button();
             listeMæglerLable = new Label();
+            opdaterMæglerListeKnap = new Button();
+            opretMæglerLable = new Label();
             ((System.ComponentModel.ISupportInitialize)ejendomsmaeglerBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)vistMæglerDataGridView).BeginInit();
             SuspendLayout();
-            // 
-            // navnMæglerTekstbox
-            // 
-            navnMæglerTekstbox.Location = new Point(137, 46);
-            navnMæglerTekstbox.Name = "navnMæglerTekstbox";
-            navnMæglerTekstbox.Size = new Size(155, 23);
-            navnMæglerTekstbox.TabIndex = 0;
-            // 
-            // navnMæglerLable
-            // 
-            navnMæglerLable.AutoSize = true;
-            navnMæglerLable.Location = new Point(69, 49);
-            navnMæglerLable.Name = "navnMæglerLable";
-            navnMæglerLable.Size = new Size(63, 15);
-            navnMæglerLable.TabIndex = 1;
-            navnMæglerLable.Text = "Fuldt navn";
-            // 
-            // opretNyEjendomsmæglerLable
-            // 
-            opretNyEjendomsmæglerLable.AutoSize = true;
-            opretNyEjendomsmæglerLable.Location = new Point(56, 18);
-            opretNyEjendomsmæglerLable.Name = "opretNyEjendomsmæglerLable";
-            opretNyEjendomsmæglerLable.Size = new Size(236, 15);
-            opretNyEjendomsmæglerLable.TabIndex = 2;
-            opretNyEjendomsmæglerLable.Text = "Indtast oplysninger på ny ejendomsmægler";
-            // 
-            // telefonMæglerLable
-            // 
-            telefonMæglerLable.AutoSize = true;
-            telefonMæglerLable.Location = new Point(40, 83);
-            telefonMæglerLable.Name = "telefonMæglerLable";
-            telefonMæglerLable.Size = new Size(92, 15);
-            telefonMæglerLable.TabIndex = 3;
-            telefonMæglerLable.Text = "Telefonnummer";
-            // 
-            // telefonMæglerTekstboks
-            // 
-            telefonMæglerTekstboks.Location = new Point(137, 80);
-            telefonMæglerTekstboks.Name = "telefonMæglerTekstboks";
-            telefonMæglerTekstboks.Size = new Size(155, 23);
-            telefonMæglerTekstboks.TabIndex = 4;
-            // 
-            // emailMæglerLable
-            // 
-            emailMæglerLable.AutoSize = true;
-            emailMæglerLable.Location = new Point(52, 118);
-            emailMæglerLable.Name = "emailMæglerLable";
-            emailMæglerLable.Size = new Size(80, 15);
-            emailMæglerLable.TabIndex = 5;
-            emailMæglerLable.Text = "E-mailadresse";
-            // 
-            // emailMæglerTekstboks
-            // 
-            emailMæglerTekstboks.Location = new Point(137, 115);
-            emailMæglerTekstboks.Name = "emailMæglerTekstboks";
-            emailMæglerTekstboks.Size = new Size(155, 23);
-            emailMæglerTekstboks.TabIndex = 6;
             // 
             // ejendomsmaeglerBindingSource
             // 
@@ -131,7 +65,7 @@
             vistMæglerDataGridView.MultiSelect = false;
             vistMæglerDataGridView.Name = "vistMæglerDataGridView";
             vistMæglerDataGridView.ReadOnly = true;
-            vistMæglerDataGridView.Size = new Size(448, 210);
+            vistMæglerDataGridView.Size = new Size(454, 342);
             vistMæglerDataGridView.TabIndex = 7;
             // 
             // ejendomsmaeglerIDDataGridViewTextBoxColumn
@@ -164,7 +98,7 @@
             // 
             // opretMæglerKnap
             // 
-            opretMæglerKnap.Location = new Point(136, 232);
+            opretMæglerKnap.Location = new Point(155, 71);
             opretMæglerKnap.Name = "opretMæglerKnap";
             opretMæglerKnap.Size = new Size(155, 23);
             opretMæglerKnap.TabIndex = 8;
@@ -175,7 +109,7 @@
             // fjernMæglerLable
             // 
             fjernMæglerLable.AutoSize = true;
-            fjernMæglerLable.Location = new Point(3, 416);
+            fjernMæglerLable.Location = new Point(20, 367);
             fjernMæglerLable.Name = "fjernMæglerLable";
             fjernMæglerLable.Size = new Size(129, 15);
             fjernMæglerLable.TabIndex = 9;
@@ -183,7 +117,7 @@
             // 
             // fjernMæglerKnap
             // 
-            fjernMæglerKnap.Location = new Point(137, 412);
+            fjernMæglerKnap.Location = new Point(155, 363);
             fjernMæglerKnap.Name = "fjernMæglerKnap";
             fjernMæglerKnap.Size = new Size(155, 23);
             fjernMæglerKnap.TabIndex = 10;
@@ -191,42 +125,10 @@
             fjernMæglerKnap.UseVisualStyleBackColor = true;
             fjernMæglerKnap.Click += fjernMæglerKnap_Click;
             // 
-            // brugernavnMæglerTekstboks
-            // 
-            brugernavnMæglerTekstboks.Location = new Point(137, 153);
-            brugernavnMæglerTekstboks.Name = "brugernavnMæglerTekstboks";
-            brugernavnMæglerTekstboks.Size = new Size(155, 23);
-            brugernavnMæglerTekstboks.TabIndex = 11;
-            // 
-            // parswordMæglerTekstboks
-            // 
-            parswordMæglerTekstboks.Location = new Point(137, 188);
-            parswordMæglerTekstboks.Name = "parswordMæglerTekstboks";
-            parswordMæglerTekstboks.Size = new Size(155, 23);
-            parswordMæglerTekstboks.TabIndex = 12;
-            // 
-            // brugernavnMæglerLable
-            // 
-            brugernavnMæglerLable.AutoSize = true;
-            brugernavnMæglerLable.Location = new Point(64, 156);
-            brugernavnMæglerLable.Name = "brugernavnMæglerLable";
-            brugernavnMæglerLable.Size = new Size(68, 15);
-            brugernavnMæglerLable.TabIndex = 13;
-            brugernavnMæglerLable.Text = "Brugernavn";
-            // 
-            // parswordMæglerLable
-            // 
-            parswordMæglerLable.AutoSize = true;
-            parswordMæglerLable.Location = new Point(75, 196);
-            parswordMæglerLable.Name = "parswordMæglerLable";
-            parswordMæglerLable.Size = new Size(57, 15);
-            parswordMæglerLable.TabIndex = 14;
-            parswordMæglerLable.Text = "Password";
-            // 
             // redigerMæglerLable
             // 
             redigerMæglerLable.AutoSize = true;
-            redigerMæglerLable.Location = new Point(20, 323);
+            redigerMæglerLable.Location = new Point(37, 221);
             redigerMæglerLable.Name = "redigerMæglerLable";
             redigerMæglerLable.Size = new Size(112, 15);
             redigerMæglerLable.TabIndex = 15;
@@ -234,17 +136,18 @@
             // 
             // redigerMæglerKnap
             // 
-            redigerMæglerKnap.Location = new Point(136, 319);
+            redigerMæglerKnap.Location = new Point(155, 217);
             redigerMæglerKnap.Name = "redigerMæglerKnap";
             redigerMæglerKnap.Size = new Size(155, 23);
             redigerMæglerKnap.TabIndex = 16;
-            redigerMæglerKnap.Text = "Marker person og tryk her";
+            redigerMæglerKnap.Text = "Rediger oplysninger";
             redigerMæglerKnap.UseVisualStyleBackColor = true;
+            redigerMæglerKnap.Click += redigerMæglerKnap_Click;
             // 
             // afslutOpretMæglerKnap
             // 
             afslutOpretMæglerKnap.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            afslutOpretMæglerKnap.Location = new Point(657, 406);
+            afslutOpretMæglerKnap.Location = new Point(663, 406);
             afslutOpretMæglerKnap.Name = "afslutOpretMæglerKnap";
             afslutOpretMæglerKnap.Size = new Size(107, 29);
             afslutOpretMæglerKnap.TabIndex = 17;
@@ -255,41 +158,52 @@
             // listeMæglerLable
             // 
             listeMæglerLable.AutoSize = true;
-            listeMæglerLable.Location = new Point(422, 15);
+            listeMæglerLable.Location = new Point(457, 19);
             listeMæglerLable.Name = "listeMæglerLable";
             listeMæglerLable.Size = new Size(193, 15);
             listeMæglerLable.TabIndex = 18;
             listeMæglerLable.Text = "Liste over aktive ejendomsmæglere";
             // 
+            // opdaterMæglerListeKnap
+            // 
+            opdaterMæglerListeKnap.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            opdaterMæglerListeKnap.Location = new Point(316, 406);
+            opdaterMæglerListeKnap.Name = "opdaterMæglerListeKnap";
+            opdaterMæglerListeKnap.Size = new Size(107, 29);
+            opdaterMæglerListeKnap.TabIndex = 19;
+            opdaterMæglerListeKnap.Text = "Opdater liste";
+            opdaterMæglerListeKnap.UseVisualStyleBackColor = true;
+            opdaterMæglerListeKnap.Click += opdaterMæglerListeKnap_Click;
+            // 
+            // opretMæglerLable
+            // 
+            opretMæglerLable.AutoSize = true;
+            opretMæglerLable.Location = new Point(16, 75);
+            opretMæglerLable.Name = "opretMæglerLable";
+            opretMæglerLable.Size = new Size(133, 15);
+            opretMæglerLable.TabIndex = 20;
+            opretMæglerLable.Text = "Opret ejendomsmægler";
+            // 
             // OpretMægler
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(776, 447);
+            ClientSize = new Size(782, 447);
+            Controls.Add(opretMæglerLable);
+            Controls.Add(opdaterMæglerListeKnap);
             Controls.Add(listeMæglerLable);
             Controls.Add(afslutOpretMæglerKnap);
             Controls.Add(redigerMæglerKnap);
             Controls.Add(redigerMæglerLable);
-            Controls.Add(parswordMæglerLable);
-            Controls.Add(brugernavnMæglerLable);
-            Controls.Add(parswordMæglerTekstboks);
-            Controls.Add(brugernavnMæglerTekstboks);
             Controls.Add(fjernMæglerKnap);
             Controls.Add(fjernMæglerLable);
             Controls.Add(opretMæglerKnap);
             Controls.Add(vistMæglerDataGridView);
-            Controls.Add(emailMæglerTekstboks);
-            Controls.Add(emailMæglerLable);
-            Controls.Add(telefonMæglerTekstboks);
-            Controls.Add(telefonMæglerLable);
-            Controls.Add(opretNyEjendomsmæglerLable);
-            Controls.Add(navnMæglerLable);
-            Controls.Add(navnMæglerTekstbox);
             MinimumSize = new Size(792, 486);
             Name = "OpretMægler";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Opret mægler";
-            TopMost = true;
+            Load += OpretMægler_Load;
             ((System.ComponentModel.ISupportInitialize)ejendomsmaeglerBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)vistMæglerDataGridView).EndInit();
             ResumeLayout(false);
@@ -297,14 +211,6 @@
         }
 
         #endregion
-
-        private TextBox navnMæglerTekstbox;
-        private Label navnMæglerLable;
-        private Label opretNyEjendomsmæglerLable;
-        private Label telefonMæglerLable;
-        private TextBox telefonMæglerTekstboks;
-        private Label emailMæglerLable;
-        private TextBox emailMæglerTekstboks;
         private BindingSource ejendomsmaeglerBindingSource;
         private DataGridView vistMæglerDataGridView;
         private DataGridViewTextBoxColumn ejendomsmaeglerIDDataGridViewTextBoxColumn;
@@ -314,13 +220,11 @@
         private Button opretMæglerKnap;
         private Label fjernMæglerLable;
         private Button fjernMæglerKnap;
-        private TextBox brugernavnMæglerTekstboks;
-        private TextBox parswordMæglerTekstboks;
-        private Label brugernavnMæglerLable;
-        private Label parswordMæglerLable;
         private Label redigerMæglerLable;
         private Button redigerMæglerKnap;
         private Button afslutOpretMæglerKnap;
         private Label listeMæglerLable;
+        private Button opdaterMæglerListeKnap;
+        private Label opretMæglerLable;
     }
 }
