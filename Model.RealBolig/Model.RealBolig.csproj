@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\DataAcces\DataAcces.csproj" />
-    <ProjectReference Include="..\SemesterProjektRealBoligWinforms\SemesterProjektRealBoligWinforms.csproj" />
-  </ItemGroup>
-
 </Project>
