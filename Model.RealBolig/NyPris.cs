@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projekt1Semester
 {
-    internal class NyPris
+    public class NyPris
     {
         //Skal ind under bolig - 
        // En metode i bolig der sætter ny pris og samtidig bibeholder den gamle

@@ -3,7 +3,7 @@ using Projekt1Semester;
 
 
 namespace Projekt1Semester { }
-internal class Saelger : Person
+public class Saelger : Person
 {
     public int SaelgerID { get; set; } //Primarnøgle tildelt fra database (autogenereret)
 

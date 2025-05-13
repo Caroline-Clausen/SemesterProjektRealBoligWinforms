@@ -11,5 +11,10 @@ namespace SemesterProjektRealBoligWinforms
         {
 
         }
+
+        private void seBoligForsideKnap_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
