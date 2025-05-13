@@ -12,12 +12,7 @@ namespace BusinessLayer
     {
         public static Ejendomsmaegler? LoginRealtor(string username, string password)
         {
-            Ejendomsmaegler? realtor;
-            // Connect to database
-            using (DBConnection conn = new())
-            {
-                realtor = conn.GetRealtor(username);
-            }
+            Ejendomsmaegler? realtor = DBConnection.GetRealtor(username);
 
             if (realtor == null)
             {
