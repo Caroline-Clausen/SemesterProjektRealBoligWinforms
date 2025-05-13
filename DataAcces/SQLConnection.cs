@@ -3,7 +3,7 @@
 
 namespace DataAccess
 {
-    public class SQLConnection : IDataAccess
+    public class SQLConnection
     {
         const String ConnectionString = "Data Source=uclprojects.database.windows.net;Integrated Security=false;User ID=serverlogin;Password=1234Login;\r\n\r\n";
 
