@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SemesterProjektRealBoligWinforms\SemesterProjektRealBoligWinforms.csproj" />
+    <ProjectReference Include="..\DataAcces\DataAccess.csproj" />
+    <ProjectReference Include="..\Model.RealBolig\Model.RealBolig.csproj" />
+
   </ItemGroup>
 
 </Project>

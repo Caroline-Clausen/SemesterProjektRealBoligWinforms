@@ -1,3 +1,5 @@
+using BusinessLayer;
+using Model.RealBolig;
 namespace SemesterProjektRealBoligWinforms
 {
     internal static class Program
