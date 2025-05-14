@@ -24,8 +24,18 @@ namespace SemesterProjektRealBoligWinforms
 
         private void RealtorForm_Load(object sender, EventArgs e)
         {
+            RefreshDataTable(sender, e);
+        }
+
+        private void RefreshDataTable(object sender, EventArgs e)
+        {
             HomesGridView.DataSource = DBConnection.GetHomesTable();
-            HomesGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            HomesGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
+
+        private void RegisterHomeButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

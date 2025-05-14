@@ -35,10 +35,8 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            RegisterHome = new Button();
+            UpdateDataTableButton = new Button();
+            RegisterHomeButton = new Button();
             ((System.ComponentModel.ISupportInitialize)HomesGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)boligBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ejendomsmaeglerBindingSource).BeginInit();
@@ -98,58 +96,36 @@
             // 
             flowLayoutPanel1.Anchor = AnchorStyles.Top;
             flowLayoutPanel1.AutoSize = true;
-            flowLayoutPanel1.Controls.Add(button1);
-            flowLayoutPanel1.Controls.Add(button2);
-            flowLayoutPanel1.Controls.Add(button3);
-            flowLayoutPanel1.Controls.Add(RegisterHome);
-            flowLayoutPanel1.Location = new Point(381, 446);
+            flowLayoutPanel1.Controls.Add(UpdateDataTableButton);
+            flowLayoutPanel1.Controls.Add(RegisterHomeButton);
+            flowLayoutPanel1.Location = new Point(474, 446);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(538, 48);
+            flowLayoutPanel1.Size = new Size(351, 48);
             flowLayoutPanel1.TabIndex = 2;
             // 
-            // button1
+            // UpdateDataTableButton
             // 
-            button1.AutoSize = true;
-            button1.Font = new Font("Segoe UI", 11F);
-            button1.Location = new Point(3, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 42);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            UpdateDataTableButton.AutoSize = true;
+            UpdateDataTableButton.Font = new Font("Segoe UI", 11F);
+            UpdateDataTableButton.Location = new Point(3, 3);
+            UpdateDataTableButton.Name = "UpdateDataTableButton";
+            UpdateDataTableButton.Size = new Size(161, 42);
+            UpdateDataTableButton.TabIndex = 2;
+            UpdateDataTableButton.Text = "Opdater Tabel";
+            UpdateDataTableButton.UseVisualStyleBackColor = true;
+            UpdateDataTableButton.Click += RefreshDataTable;
             // 
-            // button2
+            // RegisterHomeButton
             // 
-            button2.AutoSize = true;
-            button2.Font = new Font("Segoe UI", 11F);
-            button2.Location = new Point(121, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 42);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.AutoSize = true;
-            button3.Font = new Font("Segoe UI", 11F);
-            button3.Location = new Point(239, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(112, 42);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // RegisterHome
-            // 
-            RegisterHome.AutoSize = true;
-            RegisterHome.Font = new Font("Segoe UI", 11F);
-            RegisterHome.Location = new Point(357, 3);
-            RegisterHome.Name = "RegisterHome";
-            RegisterHome.Size = new Size(178, 42);
-            RegisterHome.TabIndex = 3;
-            RegisterHome.Text = "Registrer Bolig";
-            RegisterHome.UseVisualStyleBackColor = true;
+            RegisterHomeButton.AutoSize = true;
+            RegisterHomeButton.Font = new Font("Segoe UI", 11F);
+            RegisterHomeButton.Location = new Point(170, 3);
+            RegisterHomeButton.Name = "RegisterHomeButton";
+            RegisterHomeButton.Size = new Size(178, 42);
+            RegisterHomeButton.TabIndex = 3;
+            RegisterHomeButton.Text = "Registrer Bolig";
+            RegisterHomeButton.UseVisualStyleBackColor = true;
+            RegisterHomeButton.Click += RegisterHomeButton_Click;
             // 
             // RealtorForm
             // 
@@ -178,9 +154,7 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Label label1;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button RegisterHome;
+        private Button UpdateDataTableButton;
+        private Button RegisterHomeButton;
     }
 }
