@@ -30,8 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             dataGridView1 = new DataGridView();
-            ejendomsmaeglerBindingSource = new BindingSource(components);
-            boligBindingSource = new BindingSource(components);
             boligIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             boligAdresseDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             boligArealDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -42,11 +40,13 @@
             boligNyPrisDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             boligSolgtPrisDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             boligStatusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            boligBindingSource = new BindingSource(components);
+            ejendomsmaeglerBindingSource = new BindingSource(components);
             tableLayoutPanel1 = new TableLayoutPanel();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ejendomsmaeglerBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)boligBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ejendomsmaeglerBindingSource).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -62,14 +62,6 @@
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(794, 309);
             dataGridView1.TabIndex = 0;
-            // 
-            // ejendomsmaeglerBindingSource
-            // 
-            ejendomsmaeglerBindingSource.DataSource = typeof(Projekt1Semester.Ejendomsmaegler);
-            // 
-            // boligBindingSource
-            // 
-            boligBindingSource.DataSource = typeof(Projekt1Semester.Bolig);
             // 
             // boligIDDataGridViewTextBoxColumn
             // 
@@ -151,6 +143,14 @@
             boligStatusDataGridViewTextBoxColumn.Name = "boligStatusDataGridViewTextBoxColumn";
             boligStatusDataGridViewTextBoxColumn.Width = 150;
             // 
+            // boligBindingSource
+            // 
+            boligBindingSource.DataSource = typeof(Projekt1Semester.Bolig);
+            // 
+            // ejendomsmaeglerBindingSource
+            // 
+            ejendomsmaeglerBindingSource.DataSource = typeof(Projekt1Semester.Ejendomsmaegler);
+            // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 1;
@@ -189,8 +189,8 @@
             Name = "RealtorForm";
             Text = "RealtorForm";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ejendomsmaeglerBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)boligBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ejendomsmaeglerBindingSource).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);

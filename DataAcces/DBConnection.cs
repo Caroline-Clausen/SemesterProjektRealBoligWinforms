@@ -24,7 +24,7 @@ namespace DataAccess
                 var command = conn.CreateCommand();
 
                 // Create select query text
-                command.CommandText = "SELECT * FROM ejendomsmæglere WHERE username = @username";
+                command.CommandText = "SELECT * FROM ejendomsmæglere WHERE brugernavn = @username";
                 command.Parameters.AddWithValue("@username", username);
 
                 // Execute command
@@ -37,9 +37,9 @@ namespace DataAccess
                         Ejendomsmaegler realtor = new Ejendomsmaegler
                         {
                             // To-do: Update to match final database design
-                            EjendomsmaeglerID = int.Parse(reader["Id"].ToString()),
-                            EjendomsmaeglerBrugernavn = reader["Username"].ToString(),
-                            EjendomsmaeglerPassword = reader["Password"].ToString(),
+                            EjendomsmaeglerID = Convert.ToInt32(reader["ejendomsmæglerID"].ToString()),
+                            EjendomsmaeglerBrugernavn = reader["brugernavn"].ToString(),
+                            EjendomsmaeglerPassword = reader["password"].ToString(),
                         };
                         return realtor;
                     }
