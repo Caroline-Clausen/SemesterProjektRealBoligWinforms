@@ -44,10 +44,16 @@
             boligNyPrisDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             boligSolgtPrisDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             boligStatusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            RegisterHome = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)boligBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ejendomsmaeglerBindingSource).BeginInit();
             tableLayoutPanel1.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView1
@@ -77,6 +83,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(dataGridView1, 0, 1);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
+            tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 0, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Margin = new Padding(0);
@@ -178,6 +185,63 @@
             boligStatusDataGridViewTextBoxColumn.Name = "boligStatusDataGridViewTextBoxColumn";
             boligStatusDataGridViewTextBoxColumn.Width = 130;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Anchor = AnchorStyles.Top;
+            flowLayoutPanel1.AutoSize = true;
+            flowLayoutPanel1.Controls.Add(button1);
+            flowLayoutPanel1.Controls.Add(button2);
+            flowLayoutPanel1.Controls.Add(button3);
+            flowLayoutPanel1.Controls.Add(RegisterHome);
+            flowLayoutPanel1.Location = new Point(381, 446);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(538, 48);
+            flowLayoutPanel1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            button1.AutoSize = true;
+            button1.Font = new Font("Segoe UI", 11F);
+            button1.Location = new Point(3, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(112, 42);
+            button1.TabIndex = 0;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.AutoSize = true;
+            button2.Font = new Font("Segoe UI", 11F);
+            button2.Location = new Point(121, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(112, 42);
+            button2.TabIndex = 1;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.AutoSize = true;
+            button3.Font = new Font("Segoe UI", 11F);
+            button3.Location = new Point(239, 3);
+            button3.Name = "button3";
+            button3.Size = new Size(112, 42);
+            button3.TabIndex = 2;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // RegisterHome
+            // 
+            RegisterHome.AutoSize = true;
+            RegisterHome.Font = new Font("Segoe UI", 11F);
+            RegisterHome.Location = new Point(357, 3);
+            RegisterHome.Name = "RegisterHome";
+            RegisterHome.Size = new Size(178, 42);
+            RegisterHome.TabIndex = 3;
+            RegisterHome.Text = "Registrer Bolig";
+            RegisterHome.UseVisualStyleBackColor = true;
+            // 
             // RealtorForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -191,6 +255,8 @@
             ((System.ComponentModel.ISupportInitialize)ejendomsmaeglerBindingSource).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -211,5 +277,10 @@
         private DataGridViewTextBoxColumn boligNyPrisDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn boligSolgtPrisDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn boligStatusDataGridViewTextBoxColumn;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button RegisterHome;
     }
 }
