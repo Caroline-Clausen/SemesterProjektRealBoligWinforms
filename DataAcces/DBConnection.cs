@@ -36,6 +36,7 @@ namespace DataAccess
                         // Process the data
                         Ejendomsmaegler realtor = new Ejendomsmaegler
                         {
+                            // To-do: Update to match final database design
                             EjendomsmaeglerID = int.Parse(reader["Id"].ToString()),
                             EjendomsmaeglerBrugernavn = reader["Username"].ToString(),
                             EjendomsmaeglerPassword = reader["Password"].ToString(),
