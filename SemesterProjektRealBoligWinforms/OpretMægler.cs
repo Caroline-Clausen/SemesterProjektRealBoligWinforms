@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataAccess;
 using Projekt1Semester;
 
 namespace SemesterProjektRealBoligWinforms
@@ -20,12 +21,14 @@ namespace SemesterProjektRealBoligWinforms
 
         private void opretMæglerKnap_Click(object sender, EventArgs e)
         {
+            // viser vindue til at oprette ejendomsmægler
             MæglerInformation mæglerInformation = new MæglerInformation(new Ejendomsmaegler());
-            mæglerInformation.Show();
+            mæglerInformation.ShowDialog();
 
-            // opretter ny ejendomsmægler og tilføjer til datagridview
+            EjendomsmæglerRepository ejendomsmæglerRepository = new EjendomsmæglerRepository();
+            ejendomsmæglerRepository.TilføjEjendomsmægler(mæglerInformation.MæglerLokal);
+            opdaterMæglerListeKnap_Click(sender, e);
 
-            // der skal være en metode til at tilføje ejendomsmægler til databasen 
         }
 
         private void afslutOpretMæglerKnap_Click(object sender, EventArgs e)
@@ -46,6 +49,10 @@ namespace SemesterProjektRealBoligWinforms
 
         private void opdaterMæglerListeKnap_Click(object sender, EventArgs e)
         {
+            EjendomsmæglerRepository ejendomsmæglerRepository = new EjendomsmæglerRepository();
+            List<Ejendomsmaegler> ejendomsmæglere = ejendomsmæglerRepository.HentEjendomsmaeglere();
+            vistMæglerDataGridView.DataSource = ejendomsmæglere;
+            
             vistMæglerDataGridView.Update();
             // opdater datagridview over mæglere
 
