@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using BusinessLayer;
+using DataAccess;
+using Projekt1Semester;
 
 namespace SemesterProjektRealBoligWinforms
 {
@@ -17,28 +11,97 @@ namespace SemesterProjektRealBoligWinforms
             InitializeComponent();
         }
 
+        private void IncorrectValues()
+        {
+            MessageBox.Show(
+                "Det indtastede brugernavn eller kodeord er forkert.",
+                "Fokrert brugernavn eller kodeord",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+            );
+        }
+
+        private bool ValidateInput(String username, String password)
+        {
+            // Ensure both strings are not empty
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                // Show error box to user
+                MessageBox.Show(
+                  "Indtast både brugernavn og adgangskode.",
+                  "Manglende input",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Warning
+                );
+                return false;
+            }
+            return true;
+        }
+
         private void godkendAdminKnap_Click(object sender, EventArgs e)
         {
-            // Tjekker om brugernavnet og kodeordet er korrekt
-            // Her skal brugernavn og password kontrolleres med databasen evt skal der her være en liste med oprettede brugere 
-           
-            // For nuværende er det hardkodet til "admin" og "admin"
-            // I en rigtig applikation skal du bruge en database til at gemme og kontrollere brugernavne og adgangskoder
-            // Dette er kun til demonstration
-            
-            // indsæt database kode her eller metode til at hente brugernavn og password fra en database
-            
-            if (adminBrugernavnTekstbox.Text == "admin" && adminPasswordTekstbox.Text == "admin")
+            // 1) Hent input
+            string user = adminBrugernavnTekstbox.Text.Trim();
+            string pass = adminPasswordTekstbox.Text.Trim();
+
+            // 2) Simpel UI-validering
+            if (!ValidateInput(user, pass))
             {
-                // Opretter en instans af AdminForm og viser den
-                OpretMægler opretMægler = new OpretMægler();
+                return;
+            }
+
+            // 3) Kald databasen via Repository
+            var repo = new AdministratorRepository();
+            bool succes = repo.Authenticate(user, pass);
+
+            // 4) Håndter login-resultatet
+            if (succes)
+            {
+                // Hvis login OK, åbn næste form
+                OpretMægler opretMægler = new();
                 opretMægler.Show();
-                this.Hide(); // Skjuler loginvinduet
-            }
-            else
+                this.Hide();
+            } else
             {
-                MessageBox.Show("Forkert brugernavn eller kodeord.");
+                IncorrectValues();
             }
+        }
+
+        private void ejendomsmæglerGodkendKanp_MouseClick(object sender, MouseEventArgs e)
+        {
+            // Retrieve username and password from textboxes
+            String username = ejendomsmæglerBrugernavnTekstbox.Text;
+            String password = EjendomsmæglerPasswordTekstbox.Text;
+
+            if (!ValidateInput(username, password))
+            {
+                return;
+            }
+
+            // Try to authenticate with provided login
+            Ejendomsmaegler? account;
+            try
+            {
+                account = Authenticator.LoginRealtor(username, password);
+            } catch (Exception ex)
+            {
+                // Exception doesn't ocur if the password or username was incorect
+                // Most likely an error occurs if there was a problem connecting with the database
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
+            // If we get a null value, we know authentication failed.
+            if (account == null)
+            {
+                IncorrectValues();
+                return;
+            }
+
+            // Show realtor page
+            RealtorForm form = new();
+            form.Show();
+            this.Hide();
         }
     }
 }
