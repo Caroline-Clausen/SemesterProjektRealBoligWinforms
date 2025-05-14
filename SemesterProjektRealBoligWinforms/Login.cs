@@ -33,8 +33,10 @@ namespace SemesterProjektRealBoligWinforms
 
         private bool ValidateInput(String username, String password)
         {
+            // Ensure both strings are not empty
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
+                // Show error box to user
                 MessageBox.Show(
                   "Indtast både brugernavn og adgangskode.",
                   "Manglende input",
