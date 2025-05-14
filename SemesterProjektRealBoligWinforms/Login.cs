@@ -58,8 +58,7 @@ namespace SemesterProjektRealBoligWinforms
             if (succes)
             {
                 // Hvis login OK, åbn næste form
-                OpretMægler opretMægler = new();
-                Program.PushForm(opretMægler);
+                Program.PushForm(new OpretMægler());
             } else
             {
                 IncorrectValuesPopup();
@@ -98,8 +97,7 @@ namespace SemesterProjektRealBoligWinforms
             }
 
             // Show realtor page
-            RealtorForm form = new();
-            Program.PushForm(form);
+            Program.PushForm(new RealtorForm());
         }
     }
 }
