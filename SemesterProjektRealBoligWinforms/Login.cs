@@ -85,7 +85,7 @@ namespace SemesterProjektRealBoligWinforms
                 account = Authenticator.LoginRealtor(username, password);
             } catch (Exception ex)
             {
-                // Exception doesn't ocur if the password or username was incorect
+                // Exception doesn't occur if the password or username was incorect
                 // Most likely an error occurs if there was a problem connecting with the database
                 MessageBox.Show(ex.Message);
                 return;
