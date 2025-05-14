@@ -55,7 +55,8 @@ namespace SemesterProjektRealBoligWinforms
             FormStack.Pop();
 
             // Show next form in the stack
-            FormStack.Peek().Show();
+            if (FormStack.Count != 0)
+                FormStack.Peek().Show();
         }
     }
 }
