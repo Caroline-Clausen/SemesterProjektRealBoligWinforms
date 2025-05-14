@@ -21,9 +21,14 @@ namespace SemesterProjektRealBoligWinforms
             InitializeComponent();
         }
 
-        private void WrongPassword()
+        private void IncorrectValues()
         {
-            MessageBox.Show("Fokrert brugernavn eller kodeord.");
+            MessageBox.Show(
+                "Det indtastede brugernavn eller kodeord er forkert.",
+                "Fokrert brugernavn eller kodeord",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+            );
         }
 
         private bool ValidateInput(String username, String password)
@@ -64,6 +69,9 @@ namespace SemesterProjektRealBoligWinforms
                 OpretMægler opretMægler = new();
                 opretMægler.Show();
                 this.Hide();
+            } else
+            {
+                IncorrectValues();
             }
         }
 
@@ -94,7 +102,7 @@ namespace SemesterProjektRealBoligWinforms
             // If we get a null value, we know authentication failed.
             if (account == null)
             {
-                WrongPassword();
+                IncorrectValues();
                 return;
             }
 
