@@ -30,6 +30,10 @@
         {
             components = new System.ComponentModel.Container();
             dataGridView1 = new DataGridView();
+            boligBindingSource = new BindingSource(components);
+            ejendomsmaeglerBindingSource = new BindingSource(components);
+            tableLayoutPanel1 = new TableLayoutPanel();
+            label1 = new Label();
             boligIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             boligAdresseDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             boligArealDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -40,10 +44,6 @@
             boligNyPrisDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             boligSolgtPrisDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             boligStatusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            boligBindingSource = new BindingSource(components);
-            ejendomsmaeglerBindingSource = new BindingSource(components);
-            tableLayoutPanel1 = new TableLayoutPanel();
-            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)boligBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ejendomsmaeglerBindingSource).BeginInit();
@@ -57,91 +57,11 @@
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { boligIDDataGridViewTextBoxColumn, boligAdresseDataGridViewTextBoxColumn, boligArealDataGridViewTextBoxColumn, boligTypeDataGridViewTextBoxColumn, boligStartPrisDataGridViewTextBoxColumn, boligAfstandTilIndkoebDataGridViewTextBoxColumn, boligOmrådeDataGridViewTextBoxColumn, boligNyPrisDataGridViewTextBoxColumn, boligSolgtPrisDataGridViewTextBoxColumn, boligStatusDataGridViewTextBoxColumn });
             dataGridView1.DataSource = boligBindingSource;
             dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(3, 70);
+            dataGridView1.Location = new Point(3, 81);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(794, 309);
+            dataGridView1.Size = new Size(1294, 359);
             dataGridView1.TabIndex = 0;
-            // 
-            // boligIDDataGridViewTextBoxColumn
-            // 
-            boligIDDataGridViewTextBoxColumn.DataPropertyName = "BoligID";
-            boligIDDataGridViewTextBoxColumn.HeaderText = "BoligID";
-            boligIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            boligIDDataGridViewTextBoxColumn.Name = "boligIDDataGridViewTextBoxColumn";
-            boligIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // boligAdresseDataGridViewTextBoxColumn
-            // 
-            boligAdresseDataGridViewTextBoxColumn.DataPropertyName = "BoligAdresse";
-            boligAdresseDataGridViewTextBoxColumn.HeaderText = "BoligAdresse";
-            boligAdresseDataGridViewTextBoxColumn.MinimumWidth = 8;
-            boligAdresseDataGridViewTextBoxColumn.Name = "boligAdresseDataGridViewTextBoxColumn";
-            boligAdresseDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // boligArealDataGridViewTextBoxColumn
-            // 
-            boligArealDataGridViewTextBoxColumn.DataPropertyName = "BoligAreal";
-            boligArealDataGridViewTextBoxColumn.HeaderText = "BoligAreal";
-            boligArealDataGridViewTextBoxColumn.MinimumWidth = 8;
-            boligArealDataGridViewTextBoxColumn.Name = "boligArealDataGridViewTextBoxColumn";
-            boligArealDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // boligTypeDataGridViewTextBoxColumn
-            // 
-            boligTypeDataGridViewTextBoxColumn.DataPropertyName = "BoligType";
-            boligTypeDataGridViewTextBoxColumn.HeaderText = "BoligType";
-            boligTypeDataGridViewTextBoxColumn.MinimumWidth = 8;
-            boligTypeDataGridViewTextBoxColumn.Name = "boligTypeDataGridViewTextBoxColumn";
-            boligTypeDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // boligStartPrisDataGridViewTextBoxColumn
-            // 
-            boligStartPrisDataGridViewTextBoxColumn.DataPropertyName = "BoligStartPris";
-            boligStartPrisDataGridViewTextBoxColumn.HeaderText = "BoligStartPris";
-            boligStartPrisDataGridViewTextBoxColumn.MinimumWidth = 8;
-            boligStartPrisDataGridViewTextBoxColumn.Name = "boligStartPrisDataGridViewTextBoxColumn";
-            boligStartPrisDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // boligAfstandTilIndkoebDataGridViewTextBoxColumn
-            // 
-            boligAfstandTilIndkoebDataGridViewTextBoxColumn.DataPropertyName = "BoligAfstandTilIndkoeb";
-            boligAfstandTilIndkoebDataGridViewTextBoxColumn.HeaderText = "BoligAfstandTilIndkoeb";
-            boligAfstandTilIndkoebDataGridViewTextBoxColumn.MinimumWidth = 8;
-            boligAfstandTilIndkoebDataGridViewTextBoxColumn.Name = "boligAfstandTilIndkoebDataGridViewTextBoxColumn";
-            boligAfstandTilIndkoebDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // boligOmrådeDataGridViewTextBoxColumn
-            // 
-            boligOmrådeDataGridViewTextBoxColumn.DataPropertyName = "BoligOmråde";
-            boligOmrådeDataGridViewTextBoxColumn.HeaderText = "BoligOmråde";
-            boligOmrådeDataGridViewTextBoxColumn.MinimumWidth = 8;
-            boligOmrådeDataGridViewTextBoxColumn.Name = "boligOmrådeDataGridViewTextBoxColumn";
-            boligOmrådeDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // boligNyPrisDataGridViewTextBoxColumn
-            // 
-            boligNyPrisDataGridViewTextBoxColumn.DataPropertyName = "BoligNyPris";
-            boligNyPrisDataGridViewTextBoxColumn.HeaderText = "BoligNyPris";
-            boligNyPrisDataGridViewTextBoxColumn.MinimumWidth = 8;
-            boligNyPrisDataGridViewTextBoxColumn.Name = "boligNyPrisDataGridViewTextBoxColumn";
-            boligNyPrisDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // boligSolgtPrisDataGridViewTextBoxColumn
-            // 
-            boligSolgtPrisDataGridViewTextBoxColumn.DataPropertyName = "BoligSolgtPris";
-            boligSolgtPrisDataGridViewTextBoxColumn.HeaderText = "BoligSolgtPris";
-            boligSolgtPrisDataGridViewTextBoxColumn.MinimumWidth = 8;
-            boligSolgtPrisDataGridViewTextBoxColumn.Name = "boligSolgtPrisDataGridViewTextBoxColumn";
-            boligSolgtPrisDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // boligStatusDataGridViewTextBoxColumn
-            // 
-            boligStatusDataGridViewTextBoxColumn.DataPropertyName = "BoligStatus";
-            boligStatusDataGridViewTextBoxColumn.HeaderText = "BoligStatus";
-            boligStatusDataGridViewTextBoxColumn.MinimumWidth = 8;
-            boligStatusDataGridViewTextBoxColumn.Name = "boligStatusDataGridViewTextBoxColumn";
-            boligStatusDataGridViewTextBoxColumn.Width = 150;
             // 
             // boligBindingSource
             // 
@@ -165,7 +85,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 70F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
-            tableLayoutPanel1.Size = new Size(800, 450);
+            tableLayoutPanel1.Size = new Size(1300, 522);
             tableLayoutPanel1.TabIndex = 1;
             // 
             // label1
@@ -175,16 +95,94 @@
             label1.Font = new Font("Segoe UI", 22F);
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(794, 67);
+            label1.Size = new Size(1294, 78);
             label1.TabIndex = 1;
             label1.Text = "Boliger";
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // boligIDDataGridViewTextBoxColumn
+            // 
+            boligIDDataGridViewTextBoxColumn.DataPropertyName = "BoligID";
+            boligIDDataGridViewTextBoxColumn.HeaderText = "BoligID";
+            boligIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            boligIDDataGridViewTextBoxColumn.Name = "boligIDDataGridViewTextBoxColumn";
+            boligIDDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // boligAdresseDataGridViewTextBoxColumn
+            // 
+            boligAdresseDataGridViewTextBoxColumn.DataPropertyName = "BoligAdresse";
+            boligAdresseDataGridViewTextBoxColumn.HeaderText = "BoligAdresse";
+            boligAdresseDataGridViewTextBoxColumn.MinimumWidth = 8;
+            boligAdresseDataGridViewTextBoxColumn.Name = "boligAdresseDataGridViewTextBoxColumn";
+            boligAdresseDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // boligArealDataGridViewTextBoxColumn
+            // 
+            boligArealDataGridViewTextBoxColumn.DataPropertyName = "BoligAreal";
+            boligArealDataGridViewTextBoxColumn.HeaderText = "BoligAreal";
+            boligArealDataGridViewTextBoxColumn.MinimumWidth = 8;
+            boligArealDataGridViewTextBoxColumn.Name = "boligArealDataGridViewTextBoxColumn";
+            // 
+            // boligTypeDataGridViewTextBoxColumn
+            // 
+            boligTypeDataGridViewTextBoxColumn.DataPropertyName = "BoligType";
+            boligTypeDataGridViewTextBoxColumn.HeaderText = "BoligType";
+            boligTypeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            boligTypeDataGridViewTextBoxColumn.Name = "boligTypeDataGridViewTextBoxColumn";
+            // 
+            // boligStartPrisDataGridViewTextBoxColumn
+            // 
+            boligStartPrisDataGridViewTextBoxColumn.DataPropertyName = "BoligStartPris";
+            boligStartPrisDataGridViewTextBoxColumn.HeaderText = "BoligStartPris";
+            boligStartPrisDataGridViewTextBoxColumn.MinimumWidth = 8;
+            boligStartPrisDataGridViewTextBoxColumn.Name = "boligStartPrisDataGridViewTextBoxColumn";
+            boligStartPrisDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // boligAfstandTilIndkoebDataGridViewTextBoxColumn
+            // 
+            boligAfstandTilIndkoebDataGridViewTextBoxColumn.DataPropertyName = "BoligAfstandTilIndkoeb";
+            boligAfstandTilIndkoebDataGridViewTextBoxColumn.HeaderText = "BoligAfstandTilIndkoeb";
+            boligAfstandTilIndkoebDataGridViewTextBoxColumn.MinimumWidth = 8;
+            boligAfstandTilIndkoebDataGridViewTextBoxColumn.Name = "boligAfstandTilIndkoebDataGridViewTextBoxColumn";
+            boligAfstandTilIndkoebDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // boligOmrådeDataGridViewTextBoxColumn
+            // 
+            boligOmrådeDataGridViewTextBoxColumn.DataPropertyName = "BoligOmråde";
+            boligOmrådeDataGridViewTextBoxColumn.HeaderText = "BoligOmråde";
+            boligOmrådeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            boligOmrådeDataGridViewTextBoxColumn.Name = "boligOmrådeDataGridViewTextBoxColumn";
+            boligOmrådeDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // boligNyPrisDataGridViewTextBoxColumn
+            // 
+            boligNyPrisDataGridViewTextBoxColumn.DataPropertyName = "BoligNyPris";
+            boligNyPrisDataGridViewTextBoxColumn.HeaderText = "BoligNyPris";
+            boligNyPrisDataGridViewTextBoxColumn.MinimumWidth = 8;
+            boligNyPrisDataGridViewTextBoxColumn.Name = "boligNyPrisDataGridViewTextBoxColumn";
+            boligNyPrisDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // boligSolgtPrisDataGridViewTextBoxColumn
+            // 
+            boligSolgtPrisDataGridViewTextBoxColumn.DataPropertyName = "BoligSolgtPris";
+            boligSolgtPrisDataGridViewTextBoxColumn.HeaderText = "BoligSolgtPris";
+            boligSolgtPrisDataGridViewTextBoxColumn.MinimumWidth = 8;
+            boligSolgtPrisDataGridViewTextBoxColumn.Name = "boligSolgtPrisDataGridViewTextBoxColumn";
+            boligSolgtPrisDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // boligStatusDataGridViewTextBoxColumn
+            // 
+            boligStatusDataGridViewTextBoxColumn.DataPropertyName = "BoligStatus";
+            boligStatusDataGridViewTextBoxColumn.HeaderText = "BoligStatus";
+            boligStatusDataGridViewTextBoxColumn.MinimumWidth = 8;
+            boligStatusDataGridViewTextBoxColumn.Name = "boligStatusDataGridViewTextBoxColumn";
+            boligStatusDataGridViewTextBoxColumn.Width = 130;
             // 
             // RealtorForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1300, 522);
             Controls.Add(tableLayoutPanel1);
             Name = "RealtorForm";
             Text = "RealtorForm";
@@ -199,6 +197,10 @@
         #endregion
 
         private DataGridView dataGridView1;
+        private BindingSource boligBindingSource;
+        private BindingSource ejendomsmaeglerBindingSource;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Label label1;
         private DataGridViewTextBoxColumn boligIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn boligAdresseDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn boligArealDataGridViewTextBoxColumn;
@@ -209,9 +211,5 @@
         private DataGridViewTextBoxColumn boligNyPrisDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn boligSolgtPrisDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn boligStatusDataGridViewTextBoxColumn;
-        private BindingSource boligBindingSource;
-        private BindingSource ejendomsmaeglerBindingSource;
-        private TableLayoutPanel tableLayoutPanel1;
-        private Label label1;
     }
 }
