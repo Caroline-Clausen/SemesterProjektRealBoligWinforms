@@ -11,7 +11,7 @@ namespace SemesterProjektRealBoligWinforms
             InitializeComponent();
         }
 
-        private void IncorrectValues()
+        private void IncorrectValuesPopup()
         {
             MessageBox.Show(
                 "Det indtastede brugernavn eller kodeord er forkert.",
@@ -63,7 +63,7 @@ namespace SemesterProjektRealBoligWinforms
                 this.Hide();
             } else
             {
-                IncorrectValues();
+                IncorrectValuesPopup();
             }
         }
 
@@ -94,7 +94,7 @@ namespace SemesterProjektRealBoligWinforms
             // If we get a null value, we know authentication failed.
             if (account == null)
             {
-                IncorrectValues();
+                IncorrectValuesPopup();
                 return;
             }
 
