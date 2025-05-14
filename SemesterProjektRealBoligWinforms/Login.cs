@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
 using DataAccess;
+using Microsoft.VisualBasic.ApplicationServices;
 using Projekt1Semester;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,22 @@ namespace SemesterProjektRealBoligWinforms
 
         private void WrongPassword()
         {
-            MessageBox.Show("Forkert brugernavn eller kodeord.");
+            MessageBox.Show("Fokrert brugernavn eller kodeord.");
+        }
+
+        private bool ValidateInput(String username, String password)
+        {
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show(
+                  "Indtast både brugernavn og adgangskode.",
+                  "Manglende input",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Warning
+                );
+                return false;
+            }
+            return true;
         }
 
         private void godkendAdminKnap_Click(object sender, EventArgs e)
@@ -32,14 +48,8 @@ namespace SemesterProjektRealBoligWinforms
             string pass = adminPasswordTekstbox.Text.Trim();
 
             // 2) Simpel UI-validering
-            if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pass))
+            if (!ValidateInput(user, pass))
             {
-                MessageBox.Show(
-                  "Indtast både brugernavn og adgangskode.",
-                  "Manglende input",
-                  MessageBoxButtons.OK,
-                  MessageBoxIcon.Warning
-                );
                 return;
             }
 
@@ -63,6 +73,10 @@ namespace SemesterProjektRealBoligWinforms
             String username = ejendomsmæglerBrugernavnTekstbox.Text;
             String password = EjendomsmæglerPasswordTekstbox.Text;
 
+            if (!ValidateInput(username, password))
+            {
+                return;
+            }
 
             // Try to authenticate with provided login
             Ejendomsmaegler? account;
@@ -88,12 +102,6 @@ namespace SemesterProjektRealBoligWinforms
             RealtorForm form = new();
             form.Show();
             this.Hide();
-        }
-
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
