@@ -54,8 +54,19 @@ namespace SemesterProjektRealBoligWinforms
             String username = ejendomsmæglerBrugernavnTekstbox.Text;
             String password = EjendomsmæglerPasswordTekstbox.Text;
 
+
             // Try to authenticate with provided login
-            Ejendomsmaegler? account = Authenticator.LoginRealtor(username, password);
+            Ejendomsmaegler? account;
+            try
+            {
+                account = Authenticator.LoginRealtor(username, password);
+            } catch (Exception ex)
+            {
+                // Exception doesn't ocur if the password or username was incorect
+                // Most likely an error occurs if there was a problem connecting with the database
+                MessageBox.Show(ex.Message);
+                return;
+            }
 
             // If we get a null value, we know authentication failed.
             if (account == null)

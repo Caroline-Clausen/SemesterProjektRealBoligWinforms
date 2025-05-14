@@ -11,8 +11,11 @@ namespace DataAccess
 
         public static Ejendomsmaegler? GetRealtor(String username)
         {
+            // Start a connection to the database
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
+                conn.Open();
+
                 // Ensure connection is open
                 if (conn.State == System.Data.ConnectionState.Closed)
                     return null;
@@ -27,25 +30,17 @@ namespace DataAccess
                 // Execute command
                 using (var reader = command.ExecuteReader())
                 {
-                    // Try to parse the querry response into a Realtor object
-                    try
+                    // We only need to read the first record
+                    if (reader.Read())
                     {
-                        // We only need to read the first record
-                        if (reader.Read())
+                        // Process the data
+                        Ejendomsmaegler realtor = new Ejendomsmaegler
                         {
-                            // Process the data
-                            Ejendomsmaegler realtor = new Ejendomsmaegler
-                            {
-                                EjendomsmaeglerID = int.Parse(reader["Id"].ToString()),
-                                EjendomsmaeglerBrugernavn = reader["Username"].ToString(),
-                                EjendomsmaeglerPassword = reader["Password"].ToString(),
-                            };
-                            return realtor;
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        return null;
+                            EjendomsmaeglerID = int.Parse(reader["Id"].ToString()),
+                            EjendomsmaeglerBrugernavn = reader["Username"].ToString(),
+                            EjendomsmaeglerPassword = reader["Password"].ToString(),
+                        };
+                        return realtor;
                     }
                 }
 
