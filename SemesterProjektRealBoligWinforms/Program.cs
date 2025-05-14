@@ -26,7 +26,7 @@ namespace SemesterProjektRealBoligWinforms
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // Det her skal pege på den form du vil starte med:
-            Application.Run(new Login());
+            Application.Run(new Form1());
 
         }
 
