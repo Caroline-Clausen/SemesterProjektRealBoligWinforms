@@ -46,10 +46,17 @@
             // 
             // HomesGridView
             // 
+            HomesGridView.AllowUserToAddRows = false;
+            HomesGridView.AllowUserToDeleteRows = false;
+            HomesGridView.AllowUserToResizeColumns = false;
+            HomesGridView.AllowUserToResizeRows = false;
+            HomesGridView.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             HomesGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             HomesGridView.Dock = DockStyle.Fill;
+            HomesGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
             HomesGridView.Location = new Point(3, 81);
             HomesGridView.Name = "HomesGridView";
+            HomesGridView.ReadOnly = true;
             HomesGridView.RowHeadersWidth = 62;
             HomesGridView.Size = new Size(1294, 359);
             HomesGridView.TabIndex = 0;
