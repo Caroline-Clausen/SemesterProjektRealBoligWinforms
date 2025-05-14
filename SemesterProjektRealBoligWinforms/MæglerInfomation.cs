@@ -37,8 +37,6 @@ namespace SemesterProjektRealBoligWinforms
 
             //gem MæglerLokal i database
 
-           
-
             MæglerInformation.ActiveForm.Close();
             // lukker vindue
 
