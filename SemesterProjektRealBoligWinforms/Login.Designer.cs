@@ -152,6 +152,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             TopMost = true;
+            Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }

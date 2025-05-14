@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>    <ProjectReference Include="..\BussinessLayer\BusinessLayer.csproj" />
-    <ProjectReference Include="..\Model.RealBolig\Model.RealBolig.csproj" />
 
   </ItemGroup>
 
