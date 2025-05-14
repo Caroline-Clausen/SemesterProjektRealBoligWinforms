@@ -95,7 +95,7 @@
             // 
             // ejendomsmæglerBrugernavnTekstbox
             // 
-            ejendomsmæglerBrugernavnTekstbox.Location = new Point(296, 248);
+            ejendomsmæglerBrugernavnTekstbox.Location = new Point(296, 247);
             ejendomsmæglerBrugernavnTekstbox.Margin = new Padding(3, 2, 3, 2);
             ejendomsmæglerBrugernavnTekstbox.Name = "ejendomsmæglerBrugernavnTekstbox";
             ejendomsmæglerBrugernavnTekstbox.Size = new Size(173, 31);
@@ -136,7 +136,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(643, 365);
+            ClientSize = new Size(643, 362);
             Controls.Add(ejendomsmæglerGodkendKanp);
             Controls.Add(godkendAdminKnap);
             Controls.Add(EjendomsmæglerPasswordTekstbox);

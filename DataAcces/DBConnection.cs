@@ -1,6 +1,9 @@
 ﻿using Microsoft.Data.SqlClient;
 using Projekt1Semester;
 using System;
+using System.Data.Common;
+using System.Data;
+using System.Globalization;
 
 namespace DataAccess
 {
@@ -47,6 +50,25 @@ namespace DataAccess
 
                 return null;
             }
+        }
+    
+        public static DataTable GetHomesTable()
+        {
+            // Create a new data adapter based on the specified query.
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM boliger;", ConnectionString);
+
+            // Create a command builder to generate SQL update, insert, and
+            // delete commands based on selectCommand.
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+            // Populate a new data table and bind it to the BindingSource.
+            DataTable table = new DataTable
+            {
+                Locale = CultureInfo.InvariantCulture
+            };
+            dataAdapter.Fill(table);
+
+            return table;
         }
     }
 }
