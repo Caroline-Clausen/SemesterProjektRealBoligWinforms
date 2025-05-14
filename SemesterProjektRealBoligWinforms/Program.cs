@@ -6,7 +6,6 @@ namespace SemesterProjektRealBoligWinforms
 {
     public static class Program
     {
-        static Form EntryForm = new Form1();
         static Stack<Form> FormStack = new();
 
         /// <summary>
@@ -15,12 +14,20 @@ namespace SemesterProjektRealBoligWinforms
         [STAThread]
         public static void Main()
         {
+            // Configure application
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Run application with the entry form
-            FormStack.Push(EntryForm);
-            Application.Run(EntryForm);
+            // Create the initial form
+            Form initialForm = new Form1();
+
+            // Add it o the FormStack manually.
+            // If we used PushForm, it would connect the forms FormClosing event to PopForm.
+            // This would cause PopForm to look for a parent form that doesn't exist and give an error.
+            FormStack.Push(initialForm);
+
+            // Start application
+            Application.Run(initialForm);
         }
 
         /// <summary>
@@ -29,13 +36,13 @@ namespace SemesterProjektRealBoligWinforms
         /// </summary>
         public static void PushForm(Form form)
         {
-            // Hide current form
+            // Hide old form
             FormStack.Peek().Hide();
             // Show new form
             form.Show();
-            // Add callback to FormClosing, so that we can show the old form again.
+            // Add callback to FormClosing, so that we can show the old form when the new form closes.
             form.FormClosing += PopForm;
-            // Add new form to FormStack
+            // Add new form to the FormStack
             FormStack.Push(form);
         }
 
@@ -44,9 +51,10 @@ namespace SemesterProjektRealBoligWinforms
         /// </summary>
         private static void PopForm(object? sender, FormClosingEventArgs e)
         {
-            // Remove form from stack
+            // Remove old form from stack
             FormStack.Pop();
-            // Show old form
+
+            // Show next form in the stack
             FormStack.Peek().Show();
         }
     }
