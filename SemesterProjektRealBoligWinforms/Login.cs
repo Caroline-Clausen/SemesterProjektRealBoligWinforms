@@ -11,7 +11,7 @@ namespace SemesterProjektRealBoligWinforms
             InitializeComponent();
         }
 
-        private void IncorrectValues()
+        private void IncorrectValuesPopup()
         {
             MessageBox.Show(
                 "Det indtastede brugernavn eller kodeord er forkert.",
@@ -63,7 +63,7 @@ namespace SemesterProjektRealBoligWinforms
                 this.Hide();
             } else
             {
-                IncorrectValues();
+                IncorrectValuesPopup();
             }
         }
 
@@ -85,7 +85,7 @@ namespace SemesterProjektRealBoligWinforms
                 account = Authenticator.LoginRealtor(username, password);
             } catch (Exception ex)
             {
-                // Exception doesn't ocur if the password or username was incorect
+                // Exception doesn't occur if the password or username was incorect
                 // Most likely an error occurs if there was a problem connecting with the database
                 MessageBox.Show(ex.Message);
                 return;
@@ -94,7 +94,7 @@ namespace SemesterProjektRealBoligWinforms
             // If we get a null value, we know authentication failed.
             if (account == null)
             {
-                IncorrectValues();
+                IncorrectValuesPopup();
                 return;
             }
 
