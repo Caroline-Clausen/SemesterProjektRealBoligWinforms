@@ -40,11 +40,25 @@ namespace SemesterProjektRealBoligWinforms
         private void fjernMæglerKnap_Click(object sender, EventArgs e)
         {
             //Bruger Id til at finde ejendomsmægler i SQL database
-            var ejendomsmaeglerId = vistMæglerDataGridView.SelectedRows[0].Cells[0].Value.ToString();
-            //ID sendes til database for at finde ejendomsmægler
-            // Fjern i database
-            // gen indlæs liste 
-            // opdater datagridview
+
+            EjendomsmæglerRepository ejendomsmæglerRepository = new EjendomsmæglerRepository();
+
+            var ejendomsmaeglerId = (int)vistMæglerDataGridView.SelectedRows[0].Cells[0].Value;
+
+            ejendomsmæglerRepository.FjernEjendomsmægler(ejendomsmaeglerId);
+
+            // opdater datagridview over mæglere
+            opdaterMæglerListeKnap_Click(sender, e);
+
+            //vistMæglerDataGridView.Rows.Remove(vistMæglerDataGridView.SelectedRows[0]); længere oppe sættes værdier og grit opdateres
+
+            //ikke nødvendigt at slette celler i datagridview, da det opdateres ved at hente ny liste fra databasen
+            //for (int i = 1; i < vistMæglerDataGridView.SelectedRows[0].Cells.Count; i++)
+            //{
+            //    vistMæglerDataGridView.SelectedRows[0].Cells[i].Value = null;
+            //}
+            // Eventuelt opdater databasen og visningen, hvis nødvendigt
+
         }
 
         private void opdaterMæglerListeKnap_Click(object sender, EventArgs e)
@@ -52,7 +66,7 @@ namespace SemesterProjektRealBoligWinforms
             EjendomsmæglerRepository ejendomsmæglerRepository = new EjendomsmæglerRepository();
             List<Ejendomsmaegler> ejendomsmæglere = ejendomsmæglerRepository.HentEjendomsmaeglere();
             vistMæglerDataGridView.DataSource = ejendomsmæglere;
-            
+
             vistMæglerDataGridView.Update();
             // opdater datagridview over mæglere
 
@@ -74,7 +88,11 @@ namespace SemesterProjektRealBoligWinforms
 
         private void OpretMægler_Load(object sender, EventArgs e)
         {
+            opdaterMæglerListeKnap_Click(sender, e);
+        }
 
+        private void vistMæglerDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

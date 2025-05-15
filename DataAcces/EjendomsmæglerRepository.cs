@@ -25,7 +25,7 @@ namespace DataAccess
 
                 con.Open();
 
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM ejendomsmæglere", con))
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM ejendomsmæglere WHERE navn<> 'slettet'", con))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -65,6 +65,19 @@ namespace DataAccess
                     cmd.Parameters.AddWithValue("@mail", ejendomsmægler.PersonEmail);
                     cmd.Parameters.AddWithValue("@brugernavn", ejendomsmægler.EjendomsmaeglerBrugernavn);
                     cmd.Parameters.AddWithValue("@password", ejendomsmægler.EjendomsmaeglerPassword);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        public void FjernEjendomsmægler(int ejendomsmæglerID)
+        {
+            using (SqlConnection con = new SqlConnection(ConnString))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("UPDATE ejendomsmæglere set navn='slettet', telefonnummer='0', mail='slettet', brugernavn='', password='' WHERE ejendomsmæglerID = @ejendomsmæglerID", con)) 
+                    //brugernavn og password er tomme for ikke at kunne logge ind med slettet, slettet.
+                {
+                    cmd.Parameters.AddWithValue("@ejendomsmæglerID", ejendomsmæglerID);
                     cmd.ExecuteNonQuery();
                 }
             }
