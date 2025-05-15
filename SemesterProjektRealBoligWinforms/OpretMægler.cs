@@ -50,15 +50,6 @@ namespace SemesterProjektRealBoligWinforms
             // opdater datagridview over mæglere
             opdaterMæglerListeKnap_Click(sender, e);
 
-            //vistMæglerDataGridView.Rows.Remove(vistMæglerDataGridView.SelectedRows[0]); længere oppe sættes værdier og grit opdateres
-
-            //ikke nødvendigt at slette celler i datagridview, da det opdateres ved at hente ny liste fra databasen
-            //for (int i = 1; i < vistMæglerDataGridView.SelectedRows[0].Cells.Count; i++)
-            //{
-            //    vistMæglerDataGridView.SelectedRows[0].Cells[i].Value = null;
-            //}
-            // Eventuelt opdater databasen og visningen, hvis nødvendigt
-
         }
 
         private void opdaterMæglerListeKnap_Click(object sender, EventArgs e)
