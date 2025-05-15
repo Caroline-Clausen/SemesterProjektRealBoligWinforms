@@ -23,7 +23,7 @@ namespace SemesterProjektRealBoligWinforms
             emailMæglerTekstboks.Text = ejendomsmaegler.PersonEmail;
             telefonMæglerTekstboks.Text = ejendomsmaegler.PersonTelefon;
             brugernavnMæglerTekstboks.Text = ejendomsmaegler.EjendomsmaeglerBrugernavn;
-            parswordMæglerLable.Text = ejendomsmaegler.EjendomsmaeglerPassword;
+            parswordMæglerTekstboks.Text = ejendomsmaegler.EjendomsmaeglerPassword;
         }
 
         private void mæglerInfoGemKnap_Click(object sender, EventArgs e)
