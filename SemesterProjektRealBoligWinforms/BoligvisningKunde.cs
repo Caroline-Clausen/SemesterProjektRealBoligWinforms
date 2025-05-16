@@ -16,5 +16,20 @@ namespace SemesterProjektRealBoligWinforms
         {
             InitializeComponent();
         }
+
+        private void krLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BoligVisningKunde_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BoligVisningKunde_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
