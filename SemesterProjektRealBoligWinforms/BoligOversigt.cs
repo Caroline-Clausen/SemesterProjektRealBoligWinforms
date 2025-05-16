@@ -7,28 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataAccess;
 
 namespace SemesterProjektRealBoligWinforms
 {
-    public partial class BoligVisningKunde : Form
+    public partial class BoligOversigtKunde : Form
     {
-        public BoligVisningKunde()
+        public BoligOversigtKunde()
         {
             InitializeComponent();
         }
 
-        private void krLabel_Click(object sender, EventArgs e)
+        private void boligKundeGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void BoligVisningKunde_Load(object sender, EventArgs e)
+        private void BoligOversigtKunde_Load(object sender, EventArgs e)
         {
+           
+            DBConnection.GetHomesTable();
 
-        }
-
-        private void BoligVisningKunde_Load_1(object sender, EventArgs e)
-        {
 
         }
     }
