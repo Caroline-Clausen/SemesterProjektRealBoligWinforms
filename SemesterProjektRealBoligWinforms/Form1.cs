@@ -19,9 +19,7 @@ namespace SemesterProjektRealBoligWinforms
 
         private void loginKnap_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.Show();
-
+            Program.PushForm(new Login());
         }
     }
 }
