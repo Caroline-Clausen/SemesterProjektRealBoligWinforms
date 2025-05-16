@@ -20,8 +20,14 @@ namespace SemesterProjektRealBoligWinforms
 
         private void boligKundeGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-         //DBConnection dbConnection = new DBConnection();
-           DBConnection.GetHomesTable();
+
+        }
+
+        private void BoligOversigtKunde_Load(object sender, EventArgs e)
+        {
+           
+            DBConnection.GetHomesTable();
+
 
         }
     }

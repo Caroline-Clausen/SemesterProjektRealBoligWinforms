@@ -31,31 +31,34 @@
             boligKundeGridView = new DataGridView();
             afslutKnap = new Button();
             seBoligKnap = new Button();
-            boligTilSalgLable = new Label();
-            begrænsVisningLable = new Label();
             områdeComboBox = new ComboBox();
             områdeLable = new Label();
             seBoligLable = new Label();
             budBoligTextBox = new TextBox();
             budBoligKnap = new Button();
             label1 = new Label();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            labelFilter = new Label();
+            tableLayoutPanel2 = new TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)boligKundeGridView).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
             // boligKundeGridView
             // 
-            boligKundeGridView.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             boligKundeGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            boligKundeGridView.Location = new Point(44, 54);
+            boligKundeGridView.Dock = DockStyle.Fill;
+            boligKundeGridView.Location = new Point(3, 3);
             boligKundeGridView.Name = "boligKundeGridView";
-            boligKundeGridView.Size = new Size(691, 167);
+            boligKundeGridView.Size = new Size(857, 348);
             boligKundeGridView.TabIndex = 0;
             boligKundeGridView.CellContentClick += boligKundeGridView_CellContentClick;
             // 
             // afslutKnap
             // 
             afslutKnap.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            afslutKnap.Location = new Point(629, 385);
+            afslutKnap.Location = new Point(781, 21);
             afslutKnap.Name = "afslutKnap";
             afslutKnap.Size = new Size(73, 30);
             afslutKnap.TabIndex = 1;
@@ -66,72 +69,57 @@
             // 
             seBoligKnap.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             seBoligKnap.Enabled = false;
-            seBoligKnap.Location = new Point(629, 270);
+            seBoligKnap.Location = new Point(576, 21);
             seBoligKnap.Name = "seBoligKnap";
             seBoligKnap.Size = new Size(73, 30);
             seBoligKnap.TabIndex = 2;
             seBoligKnap.Text = "Se bolig";
             seBoligKnap.UseVisualStyleBackColor = true;
             // 
-            // boligTilSalgLable
-            // 
-            boligTilSalgLable.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            boligTilSalgLable.AutoSize = true;
-            boligTilSalgLable.Location = new Point(340, 36);
-            boligTilSalgLable.Name = "boligTilSalgLable";
-            boligTilSalgLable.Size = new Size(81, 15);
-            boligTilSalgLable.TabIndex = 3;
-            boligTilSalgLable.Text = "Boliger til salg";
-            // 
-            // begrænsVisningLable
-            // 
-            begrænsVisningLable.AutoSize = true;
-            begrænsVisningLable.Location = new Point(76, 257);
-            begrænsVisningLable.Name = "begrænsVisningLable";
-            begrænsVisningLable.Size = new Size(157, 15);
-            begrænsVisningLable.TabIndex = 4;
-            begrænsVisningLable.Text = "Begræns viste boliger ud fra:";
-            // 
             // områdeComboBox
             // 
+            områdeComboBox.Anchor = AnchorStyles.None;
             områdeComboBox.FormattingEnabled = true;
-            områdeComboBox.Location = new Point(128, 275);
+            områdeComboBox.Location = new Point(101, 6);
             områdeComboBox.Name = "områdeComboBox";
-            områdeComboBox.Size = new Size(131, 23);
+            områdeComboBox.Size = new Size(236, 23);
             områdeComboBox.TabIndex = 5;
             // 
             // områdeLable
             // 
+            områdeLable.Anchor = AnchorStyles.None;
             områdeLable.AutoSize = true;
-            områdeLable.Location = new Point(76, 278);
+            områdeLable.Location = new Point(45, 10);
             områdeLable.Name = "områdeLable";
             områdeLable.Size = new Size(50, 15);
             områdeLable.TabIndex = 6;
             områdeLable.Text = "Område";
+            områdeLable.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // seBoligLable
             // 
-            seBoligLable.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            seBoligLable.Anchor = AnchorStyles.Right;
             seBoligLable.AutoSize = true;
-            seBoligLable.Location = new Point(449, 278);
+            seBoligLable.Location = new Point(343, 28);
             seBoligLable.Name = "seBoligLable";
-            seBoligLable.Size = new Size(177, 15);
+            seBoligLable.Padding = new Padding(50, 0, 0, 0);
+            seBoligLable.Size = new Size(227, 15);
             seBoligLable.TabIndex = 7;
             seBoligLable.Text = "Se den valgte boligs oplysninger";
             // 
             // budBoligTextBox
             // 
-            budBoligTextBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            budBoligTextBox.Location = new Point(76, 390);
+            budBoligTextBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            budBoligTextBox.Location = new Point(3, 24);
             budBoligTextBox.Name = "budBoligTextBox";
-            budBoligTextBox.Size = new Size(131, 23);
+            budBoligTextBox.Size = new Size(255, 23);
             budBoligTextBox.TabIndex = 8;
             // 
             // budBoligKnap
             // 
             budBoligKnap.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             budBoligKnap.Enabled = false;
-            budBoligKnap.Location = new Point(224, 385);
+            budBoligKnap.Location = new Point(264, 21);
             budBoligKnap.Name = "budBoligKnap";
             budBoligKnap.Size = new Size(73, 30);
             budBoligKnap.TabIndex = 9;
@@ -140,34 +128,86 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Location = new Point(76, 367);
+            label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(255, 15);
+            label1.Padding = new Padding(0, 3, 0, 0);
+            label1.Size = new Size(255, 18);
             label1.TabIndex = 10;
             label1.Text = "Ønsker du at afgive et bud på den valgte bolig?";
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 4;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(labelFilter, 0, 0);
+            tableLayoutPanel1.Controls.Add(områdeLable, 1, 0);
+            tableLayoutPanel1.Controls.Add(områdeComboBox, 2, 0);
+            tableLayoutPanel1.Dock = DockStyle.Top;
+            tableLayoutPanel1.Location = new Point(3, 3);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.Size = new Size(857, 35);
+            tableLayoutPanel1.TabIndex = 12;
+            // 
+            // labelFilter
+            // 
+            labelFilter.Anchor = AnchorStyles.None;
+            labelFilter.AutoSize = true;
+            labelFilter.Location = new Point(3, 10);
+            labelFilter.Name = "labelFilter";
+            labelFilter.Size = new Size(36, 15);
+            labelFilter.TabIndex = 0;
+            labelFilter.Text = "Filter:";
+            labelFilter.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.AutoSize = true;
+            tableLayoutPanel2.ColumnCount = 5;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Controls.Add(budBoligKnap, 1, 1);
+            tableLayoutPanel2.Controls.Add(budBoligTextBox, 0, 1);
+            tableLayoutPanel2.Controls.Add(seBoligLable, 2, 1);
+            tableLayoutPanel2.Controls.Add(label1, 0, 0);
+            tableLayoutPanel2.Controls.Add(seBoligKnap, 3, 1);
+            tableLayoutPanel2.Controls.Add(afslutKnap, 4, 1);
+            tableLayoutPanel2.Dock = DockStyle.Bottom;
+            tableLayoutPanel2.Location = new Point(3, 297);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 2;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle());
+            tableLayoutPanel2.RowStyles.Add(new RowStyle());
+            tableLayoutPanel2.Size = new Size(857, 54);
+            tableLayoutPanel2.TabIndex = 13;
             // 
             // BoligOversigtKunde
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label1);
-            Controls.Add(budBoligKnap);
-            Controls.Add(budBoligTextBox);
-            Controls.Add(seBoligLable);
-            Controls.Add(områdeLable);
-            Controls.Add(områdeComboBox);
-            Controls.Add(begrænsVisningLable);
-            Controls.Add(boligTilSalgLable);
-            Controls.Add(seBoligKnap);
-            Controls.Add(afslutKnap);
+            ClientSize = new Size(863, 354);
+            Controls.Add(tableLayoutPanel2);
+            Controls.Add(tableLayoutPanel1);
             Controls.Add(boligKundeGridView);
+            MinimumSize = new Size(765, 200);
             Name = "BoligOversigtKunde";
+            Padding = new Padding(3);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Boliger til salg";
+            Load += BoligOversigtKunde_Load;
             ((System.ComponentModel.ISupportInitialize)boligKundeGridView).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -177,13 +217,14 @@
         private DataGridView boligKundeGridView;
         private Button afslutKnap;
         private Button seBoligKnap;
-        private Label boligTilSalgLable;
-        private Label begrænsVisningLable;
         private ComboBox områdeComboBox;
         private Label områdeLable;
         private Label seBoligLable;
         private TextBox budBoligTextBox;
         private Button budBoligKnap;
         private Label label1;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Label labelFilter;
+        private TableLayoutPanel tableLayoutPanel2;
     }
 }
