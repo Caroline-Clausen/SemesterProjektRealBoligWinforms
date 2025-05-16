@@ -8,14 +8,8 @@ using Projekt1Semester;
 
 namespace DataAccess
 {
-    public class EjendomsmæglerRepository
+    public class EjendomsmæglerRepository : RepositoryBase
     {
-        // Connection string
-        private const string ConnString =
-          "Server=tcp:uclprojects.database.windows.net,1433;" +
-          "Initial Catalog=SemesterProjekt2025;" +
-          "User ID=serverlogin;Password=1234Login;" +
-          "Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
         public List<Ejendomsmaegler> HentEjendomsmaeglere()
         {
