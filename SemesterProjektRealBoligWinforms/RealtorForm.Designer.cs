@@ -37,6 +37,8 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             UpdateDataTableButton = new Button();
             RegisterHomeButton = new Button();
+            EditHomeButton = new Button();
+            SortListButton = new Button();
             ((System.ComponentModel.ISupportInitialize)HomesGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)boligBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ejendomsmaeglerBindingSource).BeginInit();
@@ -86,6 +88,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
             tableLayoutPanel1.Size = new Size(1300, 522);
             tableLayoutPanel1.TabIndex = 1;
+            tableLayoutPanel1.Paint += this.tableLayoutPanel1_Paint;
             // 
             // label1
             // 
@@ -104,10 +107,12 @@
             flowLayoutPanel1.Anchor = AnchorStyles.Top;
             flowLayoutPanel1.AutoSize = true;
             flowLayoutPanel1.Controls.Add(UpdateDataTableButton);
+            flowLayoutPanel1.Controls.Add(SortListButton);
             flowLayoutPanel1.Controls.Add(RegisterHomeButton);
-            flowLayoutPanel1.Location = new Point(474, 446);
+            flowLayoutPanel1.Controls.Add(EditHomeButton);
+            flowLayoutPanel1.Location = new Point(318, 446);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(351, 48);
+            flowLayoutPanel1.Size = new Size(663, 48);
             flowLayoutPanel1.TabIndex = 2;
             // 
             // UpdateDataTableButton
@@ -126,13 +131,38 @@
             // 
             RegisterHomeButton.AutoSize = true;
             RegisterHomeButton.Font = new Font("Segoe UI", 11F);
-            RegisterHomeButton.Location = new Point(170, 3);
+            RegisterHomeButton.Location = new Point(259, 3);
             RegisterHomeButton.Name = "RegisterHomeButton";
             RegisterHomeButton.Size = new Size(178, 42);
             RegisterHomeButton.TabIndex = 3;
             RegisterHomeButton.Text = "Registrer Bolig";
             RegisterHomeButton.UseVisualStyleBackColor = true;
             RegisterHomeButton.Click += RegisterHomeButton_Click;
+            // 
+            // EditHomeButton
+            // 
+            EditHomeButton.AutoSize = true;
+            EditHomeButton.Font = new Font("Segoe UI", 11F);
+            EditHomeButton.Location = new Point(443, 3);
+            EditHomeButton.Name = "EditHomeButton";
+            EditHomeButton.Size = new Size(217, 42);
+            EditHomeButton.TabIndex = 4;
+            EditHomeButton.Text = "Rediger Boligopslag";
+            EditHomeButton.UseVisualStyleBackColor = true;
+            EditHomeButton.Click += EditHomeButton_Click;
+            // 
+            // SortListButton
+            // 
+            SortListButton.AutoSize = true;
+            SortListButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            SortListButton.Font = new Font("Segoe UI", 11F);
+            SortListButton.Location = new Point(170, 3);
+            SortListButton.Name = "SortListButton";
+            SortListButton.Size = new Size(83, 40);
+            SortListButton.TabIndex = 5;
+            SortListButton.Text = "Sorter";
+            SortListButton.UseVisualStyleBackColor = true;
+            SortListButton.Click += SortListButton_Click;
             // 
             // RealtorForm
             // 
@@ -163,5 +193,7 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Button UpdateDataTableButton;
         private Button RegisterHomeButton;
+        private Button EditHomeButton;
+        private Button SortListButton;
     }
 }

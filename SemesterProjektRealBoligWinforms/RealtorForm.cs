@@ -37,5 +37,15 @@ namespace SemesterProjektRealBoligWinforms
         {
 
         }
+
+        private void EditHomeButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SortListButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
