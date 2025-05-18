@@ -30,14 +30,12 @@
         {
             components = new System.ComponentModel.Container();
             boligKundeGridView = new DataGridView();
-            boligIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             adresseDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             kvadratmeterDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             typeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             prisDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             afstandTilIndkoebDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             statusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            saelgerIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             områdeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             boligBindingSource = new BindingSource(components);
             afslutKnap = new Button();
@@ -64,7 +62,7 @@
             boligKundeGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             boligKundeGridView.AutoGenerateColumns = false;
             boligKundeGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            boligKundeGridView.Columns.AddRange(new DataGridViewColumn[] { boligIDDataGridViewTextBoxColumn, adresseDataGridViewTextBoxColumn, kvadratmeterDataGridViewTextBoxColumn, typeDataGridViewTextBoxColumn, prisDataGridViewTextBoxColumn, afstandTilIndkoebDataGridViewTextBoxColumn, statusDataGridViewTextBoxColumn, saelgerIDDataGridViewTextBoxColumn, områdeDataGridViewTextBoxColumn });
+            boligKundeGridView.Columns.AddRange(new DataGridViewColumn[] { adresseDataGridViewTextBoxColumn, kvadratmeterDataGridViewTextBoxColumn, typeDataGridViewTextBoxColumn, prisDataGridViewTextBoxColumn, afstandTilIndkoebDataGridViewTextBoxColumn, statusDataGridViewTextBoxColumn, områdeDataGridViewTextBoxColumn });
             boligKundeGridView.DataSource = boligBindingSource;
             boligKundeGridView.Location = new Point(3, 38);
             boligKundeGridView.MultiSelect = false;
@@ -74,13 +72,6 @@
             boligKundeGridView.Size = new Size(950, 517);
             boligKundeGridView.TabIndex = 0;
             boligKundeGridView.CellContentClick += boligKundeGridView_CellContentClick;
-            // 
-            // boligIDDataGridViewTextBoxColumn
-            // 
-            boligIDDataGridViewTextBoxColumn.DataPropertyName = "BoligID";
-            boligIDDataGridViewTextBoxColumn.HeaderText = "BoligID";
-            boligIDDataGridViewTextBoxColumn.Name = "boligIDDataGridViewTextBoxColumn";
-            boligIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // adresseDataGridViewTextBoxColumn
             // 
@@ -113,9 +104,10 @@
             // afstandTilIndkoebDataGridViewTextBoxColumn
             // 
             afstandTilIndkoebDataGridViewTextBoxColumn.DataPropertyName = "AfstandTilIndkoeb";
-            afstandTilIndkoebDataGridViewTextBoxColumn.HeaderText = "AfstandTilIndkoeb";
+            afstandTilIndkoebDataGridViewTextBoxColumn.HeaderText = "Afstand til indkøb";
             afstandTilIndkoebDataGridViewTextBoxColumn.Name = "afstandTilIndkoebDataGridViewTextBoxColumn";
             afstandTilIndkoebDataGridViewTextBoxColumn.ReadOnly = true;
+            afstandTilIndkoebDataGridViewTextBoxColumn.Width = 130;
             // 
             // statusDataGridViewTextBoxColumn
             // 
@@ -123,13 +115,6 @@
             statusDataGridViewTextBoxColumn.HeaderText = "Status";
             statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             statusDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // saelgerIDDataGridViewTextBoxColumn
-            // 
-            saelgerIDDataGridViewTextBoxColumn.DataPropertyName = "SaelgerID";
-            saelgerIDDataGridViewTextBoxColumn.HeaderText = "SaelgerID";
-            saelgerIDDataGridViewTextBoxColumn.Name = "saelgerIDDataGridViewTextBoxColumn";
-            saelgerIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // områdeDataGridViewTextBoxColumn
             // 
@@ -167,11 +152,14 @@
             // områdeComboBox
             // 
             områdeComboBox.Anchor = AnchorStyles.None;
+            områdeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             områdeComboBox.FormattingEnabled = true;
             områdeComboBox.Location = new Point(101, 6);
             områdeComboBox.Name = "områdeComboBox";
             områdeComboBox.Size = new Size(236, 23);
+            områdeComboBox.Sorted = true;
             områdeComboBox.TabIndex = 5;
+            områdeComboBox.SelectedIndexChanged += områdeComboBox_SelectedIndexChanged;
             // 
             // områdeLable
             // 
@@ -315,15 +303,13 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Label labelFilter;
         private TableLayoutPanel tableLayoutPanel2;
-        private DataGridViewTextBoxColumn boligIDDataGridViewTextBoxColumn;
+        private BindingSource boligBindingSource;
         private DataGridViewTextBoxColumn adresseDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn kvadratmeterDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn prisDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn afstandTilIndkoebDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn saelgerIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn områdeDataGridViewTextBoxColumn;
-        private BindingSource boligBindingSource;
     }
 }

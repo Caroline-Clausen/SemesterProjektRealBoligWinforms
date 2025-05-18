@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,8 +29,15 @@ namespace SemesterProjektRealBoligWinforms
 
         }
 
-        private void krLabel_Click(object sender, EventArgs e)
+        public void krLabel_Click(object sender, EventArgs e)
         {
+
+
+
+            //-----------------------------------------------------
+            //
+            //Her kan systemet sende en e-mail til ejendomsmægler.
+            //Det har vi ikke sat op.
 
         }
 

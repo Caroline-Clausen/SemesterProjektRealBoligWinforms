@@ -27,12 +27,33 @@ namespace SemesterProjektRealBoligWinforms
         private void BoligOversigtKunde_Load(object sender, EventArgs e)
         {
             BoligRepository boligRepository = new BoligRepository();
-            List<Bolig> boliger = boligRepository.HentBoliger();
-            boligKundeGridView.DataSource = boliger;
+           
+            List<string> områder = boligRepository.HentOmråder();
+            områder.Add(" Alle");
+            områdeComboBox.Items.AddRange(områder.ToArray());
+            områdeComboBox.Update();
+            områdeComboBox.SelectedIndex = 0;
 
+        }
+
+        private void områdeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BoligRepository boligRepository = new BoligRepository();
+            string valgtOmråde = områdeComboBox.SelectedItem.ToString();
+            if (valgtOmråde == " Alle")
+            {
+                List<Bolig> boliger = boligRepository.HentBoliger();
+                boligBindingSource.DataSource = boliger;
+            }
+            else
+            {
+                List<Bolig> boliger = boligRepository.HentBoligerOmråde(valgtOmråde);
+                boligBindingSource.DataSource = boliger;
+
+                boligBindingSource.Filter = $"Område = '{valgtOmråde}'";
+            }
+       
             boligKundeGridView.Update();
-
-
         }
 
         private void seBoligKnap_Click(object sender, EventArgs e)
@@ -40,7 +61,7 @@ namespace SemesterProjektRealBoligWinforms
 
             var boligId = (Bolig)boligKundeGridView.SelectedRows[0].DataBoundItem;
             BoligVisningKunde boligVisningKunde = new BoligVisningKunde(boligId);
-           
+
             this.Hide();
             boligVisningKunde.ShowDialog();
             this.Show();
