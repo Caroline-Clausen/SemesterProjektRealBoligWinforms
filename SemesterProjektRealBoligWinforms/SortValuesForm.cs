@@ -13,9 +13,9 @@ namespace SemesterProjektRealBoligWinforms
 {
     public partial class SortValuesForm : Form
     {
-        public Bolig SortValues;
+        public BoligSortValues SortValues;
 
-        public SortValuesForm(Bolig SortValues)
+        public SortValuesForm(BoligSortValues SortValues)
         {
             this.SortValues = SortValues;
 
@@ -24,14 +24,18 @@ namespace SemesterProjektRealBoligWinforms
 
         private void Godkend_Click(object sender, EventArgs e)
         {
-            SortValues.Adresse = AddressBox.Text;
-            SortValues.Kvadratmeter = Convert.ToDouble(SizeBox.Text);
+            SortValues.Address = AddressBox.Text;
             SortValues.Type = TypeBox.Text;
-            SortValues.Pris = Convert.ToDouble(PriceBox.Text);
-            SortValues.AfstandTilIndkoeb = Convert.ToDouble(ShoppingDistanceBox.Text);
-            SortValues.Område = AreaBox.Text;
+            SortValues.Area = AreaBox.Text;
 
             Close();
+        }
+
+        private void SortValuesForm_Load(object sender, EventArgs e)
+        {
+            AddressBox.Text = SortValues.Address;
+            TypeBox.Text = SortValues.Type;
+            AreaBox.Text = SortValues.Area;
         }
     }
 }
