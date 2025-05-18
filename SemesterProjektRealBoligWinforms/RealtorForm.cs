@@ -17,6 +17,8 @@ namespace SemesterProjektRealBoligWinforms
 {
     public partial class RealtorForm : Form
     {
+        Bolig SortValues = new Bolig();
+
         public RealtorForm()
         {
             InitializeComponent();
@@ -44,6 +46,12 @@ namespace SemesterProjektRealBoligWinforms
         }
 
         private void SortListButton_Click(object sender, EventArgs e)
+        {
+            SortValuesForm form = new SortValuesForm(SortValues);
+            form.Show();
+        }
+
+        private void ExportListButton_MouseClick(object sender, MouseEventArgs e)
         {
 
         }

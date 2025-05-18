@@ -36,9 +36,10 @@
             label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             UpdateDataTableButton = new Button();
+            SortListButton = new Button();
             RegisterHomeButton = new Button();
             EditHomeButton = new Button();
-            SortListButton = new Button();
+            ExportListButton = new Button();
             ((System.ComponentModel.ISupportInitialize)HomesGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)boligBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ejendomsmaeglerBindingSource).BeginInit();
@@ -88,7 +89,6 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
             tableLayoutPanel1.Size = new Size(1300, 522);
             tableLayoutPanel1.TabIndex = 1;
-            tableLayoutPanel1.Paint += this.tableLayoutPanel1_Paint;
             // 
             // label1
             // 
@@ -110,9 +110,10 @@
             flowLayoutPanel1.Controls.Add(SortListButton);
             flowLayoutPanel1.Controls.Add(RegisterHomeButton);
             flowLayoutPanel1.Controls.Add(EditHomeButton);
-            flowLayoutPanel1.Location = new Point(318, 446);
+            flowLayoutPanel1.Controls.Add(ExportListButton);
+            flowLayoutPanel1.Location = new Point(207, 446);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(663, 48);
+            flowLayoutPanel1.Size = new Size(886, 48);
             flowLayoutPanel1.TabIndex = 2;
             // 
             // UpdateDataTableButton
@@ -126,6 +127,19 @@
             UpdateDataTableButton.Text = "Opdater Tabel";
             UpdateDataTableButton.UseVisualStyleBackColor = true;
             UpdateDataTableButton.Click += RefreshDataTable;
+            // 
+            // SortListButton
+            // 
+            SortListButton.AutoSize = true;
+            SortListButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            SortListButton.Font = new Font("Segoe UI", 11F);
+            SortListButton.Location = new Point(170, 3);
+            SortListButton.Name = "SortListButton";
+            SortListButton.Size = new Size(83, 40);
+            SortListButton.TabIndex = 5;
+            SortListButton.Text = "Sorter";
+            SortListButton.UseVisualStyleBackColor = true;
+            SortListButton.Click += SortListButton_Click;
             // 
             // RegisterHomeButton
             // 
@@ -151,18 +165,17 @@
             EditHomeButton.UseVisualStyleBackColor = true;
             EditHomeButton.Click += EditHomeButton_Click;
             // 
-            // SortListButton
+            // ExportListButton
             // 
-            SortListButton.AutoSize = true;
-            SortListButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            SortListButton.Font = new Font("Segoe UI", 11F);
-            SortListButton.Location = new Point(170, 3);
-            SortListButton.Name = "SortListButton";
-            SortListButton.Size = new Size(83, 40);
-            SortListButton.TabIndex = 5;
-            SortListButton.Text = "Sorter";
-            SortListButton.UseVisualStyleBackColor = true;
-            SortListButton.Click += SortListButton_Click;
+            ExportListButton.AutoSize = true;
+            ExportListButton.Font = new Font("Segoe UI", 11F);
+            ExportListButton.Location = new Point(666, 3);
+            ExportListButton.Name = "ExportListButton";
+            ExportListButton.Size = new Size(217, 42);
+            ExportListButton.TabIndex = 6;
+            ExportListButton.Text = "Exporter Liste";
+            ExportListButton.UseVisualStyleBackColor = true;
+            ExportListButton.MouseClick += ExportListButton_MouseClick;
             // 
             // RealtorForm
             // 
@@ -195,5 +208,6 @@
         private Button RegisterHomeButton;
         private Button EditHomeButton;
         private Button SortListButton;
+        private Button ExportListButton;
     }
 }
