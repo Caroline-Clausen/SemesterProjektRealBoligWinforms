@@ -18,10 +18,12 @@ namespace Projekt1Semester
         public string Status { get; set; } //boligens status (til salg, solgt, annulleret)
         public int? SaelgerID { get; set; } // fra saelgerID (nullable)
         public string Område { get; set; } //område fx Bredballe. Skal med er sprøgsmål i problemformuleringen
-        //public double BoligSolgtPris { get; set; } //salgspris på boligen
-        //public double BoligNyPris { get; set; } //ny pris på boligen
+      
+        
 
         // hvis vi synes det er nødvendigt at have flere felter til bolig, kan vi tilføje dem her
+        //public double BoligSolgtPris { get; set; } //salgspris på boligen
+        //public double BoligNyPris { get; set; } //ny pris på boligen
         //public int BoligGrundAreal { get; set; }
         //public int BoligAntalEtager { get; set; }
         //public int BoligAntalKældre { get; set; }

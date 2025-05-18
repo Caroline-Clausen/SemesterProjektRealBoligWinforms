@@ -14,7 +14,7 @@ namespace SemesterProjektRealBoligWinforms
 
         private void seBoligForsideKnap_Click(object sender, EventArgs e)
         {
-
+            Program.PushForm(new BoligOversigtKunde());
         }
 
         private void loginKnap_Click(object sender, EventArgs e)

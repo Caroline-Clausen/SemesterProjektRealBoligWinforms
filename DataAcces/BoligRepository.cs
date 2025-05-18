@@ -16,7 +16,7 @@ namespace DataAccess
             using (SqlConnection con = new SqlConnection(ConnString))
             {
                 con.Open();
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM boliger WHERE navn<> 'slettet'", con))
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM boliger WHERE adresse <> 'slettet'", con))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -28,13 +28,12 @@ namespace DataAccess
                                 {
                                     BoligID = Convert.ToInt32(reader["boligID"]), // Primarnøgle tildelt fra database (autogenereret)
                                     Adresse = reader["adresse"].ToString(),
-                                    Kvadratmeter = Convert.ToInt32(reader["m2"]),
+                                    Kvadratmeter = Convert.ToInt32(reader["kvadratmeter"]),
                                     Type = reader["type"].ToString(),
                                     Pris = Convert.ToDouble(reader["pris"]),
-                                    AfstandTilIndkoeb = Convert.ToDouble(reader["afstand_til_indkoeb"]),
+                                    AfstandTilIndkoeb = Convert.ToDouble(reader["afstandtilindkøb"]),
                                     Status = reader["status"].ToString(),
                                     Område = reader["område"].ToString(),
-                                                                       
                                 };
                                 boliger.Add(bolig);
                             }
@@ -46,13 +45,26 @@ namespace DataAccess
         }
         public void TilføjBolig(Bolig bolig)
         {
-            // Implementer tilføjelse af bolig til databasen
+            using (SqlConnection con = new SqlConnection(ConnString))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO boliger (adresse, m2, type, pris, afstand_til_indkoeb, status, område) VALUES (@adresse, @kvadratmeter, @type, @pris, @afstandTilIndkøb, @status, @område)", con))
+                {
+                    cmd.Parameters.AddWithValue("@adresse", bolig.Adresse);
+                    cmd.Parameters.AddWithValue("@kvadratmeter", bolig.Kvadratmeter);
+                    cmd.Parameters.AddWithValue("@type", bolig.Type);
+                    cmd.Parameters.AddWithValue("@pris", bolig.Pris);
+                    cmd.Parameters.AddWithValue("@afstandTilIndkøb", bolig.AfstandTilIndkoeb);
+                    cmd.Parameters.AddWithValue("@status", bolig.Status);
+                    cmd.Parameters.AddWithValue("@område", bolig.Område);
+                    cmd.ExecuteNonQuery();
+                }
+                // Implementer tilføjelse af bolig til databasen
+            }
         }
         public void FjernBolig(int boligId)
         {
             // Implementer fjernelse af bolig fra databasen
         }
-    }
-    {
     }
 }
