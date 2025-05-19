@@ -28,7 +28,32 @@ namespace SemesterProjektRealBoligWinforms
             SortValues.Type = TypeBox.Text;
             SortValues.Area = AreaBox.Text;
 
+            if (SizeMinBox.Text != "")
+                SortValues.SizeMin = GetIntFromTextBox(SizeMinBox);
+            if (SizeMaxBox.Text != "")
+                SortValues.SizeMax = GetIntFromTextBox(SizeMaxBox);
+            if (PriceMinBox.Text != "")
+                SortValues.PriceMin = GetIntFromTextBox(PriceMinBox);
+            if (PriceMaxBox.Text != "")
+                SortValues.PriceMax = GetIntFromTextBox(PriceMaxBox);
+            if (ShoppingDistanceMinBox.Text != "")
+                SortValues.ShoppingDistanceMin = GetIntFromTextBox(ShoppingDistanceMinBox);
+            if (ShoppingDistanceMaxBox.Text != "")
+                SortValues.ShoppingDistanceMax = GetIntFromTextBox(ShoppingDistanceMaxBox);
+
             Close();
+        }
+
+        private static int GetIntFromTextBox(TextBox box)
+        {
+            int value;
+            if (!int.TryParse(box.Text, out value))
+            {
+                box.Text = "";  // Remove invalid input from textbox
+                return 0;
+            }
+
+            return value;
         }
 
         private void SortValuesForm_Load(object sender, EventArgs e)
@@ -36,6 +61,12 @@ namespace SemesterProjektRealBoligWinforms
             AddressBox.Text = SortValues.Address;
             TypeBox.Text = SortValues.Type;
             AreaBox.Text = SortValues.Area;
+            SizeMinBox.Text = SortValues.SizeMin.ToString();
+            SizeMaxBox.Text = SortValues.SizeMax.ToString();
+            PriceMinBox.Text = SortValues.PriceMin.ToString();
+            PriceMaxBox.Text = SortValues.PriceMax.ToString();
+            ShoppingDistanceMinBox.Text = SortValues.ShoppingDistanceMin.ToString();
+            ShoppingDistanceMaxBox.Text = SortValues.ShoppingDistanceMax.ToString();
         }
     }
 }
