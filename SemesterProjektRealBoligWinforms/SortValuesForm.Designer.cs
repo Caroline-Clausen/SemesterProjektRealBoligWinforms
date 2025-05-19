@@ -35,10 +35,10 @@
             label3 = new Label();
             label6 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
-            Godkend = new Button();
             label5 = new Label();
             label4 = new Label();
             label2 = new Label();
+            Godkend = new Button();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -126,18 +126,6 @@
             tableLayoutPanel1.Size = new Size(728, 323);
             tableLayoutPanel1.TabIndex = 13;
             // 
-            // Godkend
-            // 
-            tableLayoutPanel1.SetColumnSpan(Godkend, 2);
-            Godkend.Dock = DockStyle.Fill;
-            Godkend.Location = new Point(3, 189);
-            Godkend.Name = "Godkend";
-            Godkend.Size = new Size(722, 131);
-            Godkend.TabIndex = 12;
-            Godkend.Text = "Godkend";
-            Godkend.UseVisualStyleBackColor = true;
-            Godkend.Click += Godkend_Click;
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -167,6 +155,18 @@
             label2.Size = new Size(117, 25);
             label2.TabIndex = 7;
             label2.Text = "Kvadratmeter";
+            // 
+            // Godkend
+            // 
+            tableLayoutPanel1.SetColumnSpan(Godkend, 2);
+            Godkend.Dock = DockStyle.Fill;
+            Godkend.Location = new Point(3, 189);
+            Godkend.Name = "Godkend";
+            Godkend.Size = new Size(722, 131);
+            Godkend.TabIndex = 12;
+            Godkend.Text = "Godkend";
+            Godkend.UseVisualStyleBackColor = true;
+            Godkend.Click += Godkend_Click;
             // 
             // SortValuesForm
             // 
