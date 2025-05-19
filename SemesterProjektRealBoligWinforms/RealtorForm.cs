@@ -81,7 +81,7 @@ namespace SemesterProjektRealBoligWinforms
 
         private void EditHomeButton_Click(object? sender, EventArgs e)
         {
-            Bolig bolig = (Bolig) HomesGridView.SelectedRows[0].DataBoundItem;
+            Bolig bolig = (Bolig)HomesGridView.SelectedRows[0].DataBoundItem;
             BoligOplysninger boligOplysninger = new BoligOplysninger(bolig);
 
             this.Hide();
@@ -107,6 +107,20 @@ namespace SemesterProjektRealBoligWinforms
 
         private void ExportListButton_MouseClick(object? sender, MouseEventArgs e)
         {
+
+        }
+
+        private void sletBoligButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Er du sikker på at du vil slette denne bolig?", "Slet bolig", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+
+            BoligRepository boligRepository = new BoligRepository();
+            var boligID = (int)HomesGridView.SelectedRows[0].Cells[0].Value;
+            boligRepository.FjernBolig(boligID);
+            RefreshDataTable(sender, e);
 
         }
     }

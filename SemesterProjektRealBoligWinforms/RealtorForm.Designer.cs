@@ -40,6 +40,7 @@
             RegisterHomeButton = new Button();
             EditHomeButton = new Button();
             ExportListButton = new Button();
+            sletBoligButton = new Button();
             ((System.ComponentModel.ISupportInitialize)HomesGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)boligBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ejendomsmaeglerBindingSource).BeginInit();
@@ -113,11 +114,12 @@
             flowLayoutPanel1.Controls.Add(SortListButton);
             flowLayoutPanel1.Controls.Add(RegisterHomeButton);
             flowLayoutPanel1.Controls.Add(EditHomeButton);
+            flowLayoutPanel1.Controls.Add(sletBoligButton);
             flowLayoutPanel1.Controls.Add(ExportListButton);
-            flowLayoutPanel1.Location = new Point(146, 267);
+            flowLayoutPanel1.Location = new Point(132, 267);
             flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(617, 34);
+            flowLayoutPanel1.Size = new Size(646, 34);
             flowLayoutPanel1.TabIndex = 2;
             // 
             // UpdateDataTableButton
@@ -127,7 +129,7 @@
             UpdateDataTableButton.Location = new Point(2, 2);
             UpdateDataTableButton.Margin = new Padding(2);
             UpdateDataTableButton.Name = "UpdateDataTableButton";
-            UpdateDataTableButton.Size = new Size(113, 30);
+            UpdateDataTableButton.Size = new Size(114, 30);
             UpdateDataTableButton.TabIndex = 2;
             UpdateDataTableButton.Text = "Opdater Tabel";
             UpdateDataTableButton.UseVisualStyleBackColor = true;
@@ -138,7 +140,7 @@
             SortListButton.AutoSize = true;
             SortListButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             SortListButton.Font = new Font("Segoe UI", 11F);
-            SortListButton.Location = new Point(119, 2);
+            SortListButton.Location = new Point(120, 2);
             SortListButton.Margin = new Padding(2);
             SortListButton.Name = "SortListButton";
             SortListButton.Size = new Size(52, 30);
@@ -151,12 +153,12 @@
             // 
             RegisterHomeButton.AutoSize = true;
             RegisterHomeButton.Font = new Font("Segoe UI", 11F);
-            RegisterHomeButton.Location = new Point(175, 2);
+            RegisterHomeButton.Location = new Point(176, 2);
             RegisterHomeButton.Margin = new Padding(2);
             RegisterHomeButton.Name = "RegisterHomeButton";
-            RegisterHomeButton.Size = new Size(125, 30);
+            RegisterHomeButton.Size = new Size(114, 30);
             RegisterHomeButton.TabIndex = 3;
-            RegisterHomeButton.Text = "Registrer Bolig";
+            RegisterHomeButton.Text = "Opret Bolig";
             RegisterHomeButton.UseVisualStyleBackColor = true;
             RegisterHomeButton.Click += RegisterHomeButton_Click;
             // 
@@ -164,12 +166,12 @@
             // 
             EditHomeButton.AutoSize = true;
             EditHomeButton.Font = new Font("Segoe UI", 11F);
-            EditHomeButton.Location = new Point(304, 2);
+            EditHomeButton.Location = new Point(294, 2);
             EditHomeButton.Margin = new Padding(2);
             EditHomeButton.Name = "EditHomeButton";
-            EditHomeButton.Size = new Size(155, 30);
+            EditHomeButton.Size = new Size(114, 30);
             EditHomeButton.TabIndex = 4;
-            EditHomeButton.Text = "Rediger Boligopslag";
+            EditHomeButton.Text = "Rediger Bolig";
             EditHomeButton.UseVisualStyleBackColor = true;
             EditHomeButton.Click += EditHomeButton_Click;
             // 
@@ -177,14 +179,27 @@
             // 
             ExportListButton.AutoSize = true;
             ExportListButton.Font = new Font("Segoe UI", 11F);
-            ExportListButton.Location = new Point(463, 2);
+            ExportListButton.Location = new Point(530, 2);
             ExportListButton.Margin = new Padding(2);
             ExportListButton.Name = "ExportListButton";
-            ExportListButton.Size = new Size(152, 30);
+            ExportListButton.Size = new Size(114, 30);
             ExportListButton.TabIndex = 6;
             ExportListButton.Text = "Exporter Liste";
             ExportListButton.UseVisualStyleBackColor = true;
             ExportListButton.MouseClick += ExportListButton_MouseClick;
+            // 
+            // sletBoligButton
+            // 
+            sletBoligButton.AutoSize = true;
+            sletBoligButton.Font = new Font("Segoe UI", 11F);
+            sletBoligButton.Location = new Point(412, 2);
+            sletBoligButton.Margin = new Padding(2);
+            sletBoligButton.Name = "sletBoligButton";
+            sletBoligButton.Size = new Size(114, 30);
+            sletBoligButton.TabIndex = 7;
+            sletBoligButton.Text = "Slet Bolig";
+            sletBoligButton.UseVisualStyleBackColor = true;
+            sletBoligButton.Click += sletBoligButton_Click;
             // 
             // RealtorForm
             // 
@@ -219,5 +234,6 @@
         private Button EditHomeButton;
         private Button SortListButton;
         private Button ExportListButton;
+        private Button sletBoligButton;
     }
 }
