@@ -36,7 +36,10 @@
             label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             UpdateDataTableButton = new Button();
+            SortListButton = new Button();
             RegisterHomeButton = new Button();
+            EditHomeButton = new Button();
+            ExportListButton = new Button();
             ((System.ComponentModel.ISupportInitialize)HomesGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)boligBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ejendomsmaeglerBindingSource).BeginInit();
@@ -104,10 +107,13 @@
             flowLayoutPanel1.Anchor = AnchorStyles.Top;
             flowLayoutPanel1.AutoSize = true;
             flowLayoutPanel1.Controls.Add(UpdateDataTableButton);
+            flowLayoutPanel1.Controls.Add(SortListButton);
             flowLayoutPanel1.Controls.Add(RegisterHomeButton);
-            flowLayoutPanel1.Location = new Point(474, 446);
+            flowLayoutPanel1.Controls.Add(EditHomeButton);
+            flowLayoutPanel1.Controls.Add(ExportListButton);
+            flowLayoutPanel1.Location = new Point(207, 446);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(351, 48);
+            flowLayoutPanel1.Size = new Size(886, 48);
             flowLayoutPanel1.TabIndex = 2;
             // 
             // UpdateDataTableButton
@@ -122,17 +128,54 @@
             UpdateDataTableButton.UseVisualStyleBackColor = true;
             UpdateDataTableButton.Click += RefreshDataTable;
             // 
+            // SortListButton
+            // 
+            SortListButton.AutoSize = true;
+            SortListButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            SortListButton.Font = new Font("Segoe UI", 11F);
+            SortListButton.Location = new Point(170, 3);
+            SortListButton.Name = "SortListButton";
+            SortListButton.Size = new Size(83, 40);
+            SortListButton.TabIndex = 5;
+            SortListButton.Text = "Sorter";
+            SortListButton.UseVisualStyleBackColor = true;
+            SortListButton.Click += SortListButton_Click;
+            // 
             // RegisterHomeButton
             // 
             RegisterHomeButton.AutoSize = true;
             RegisterHomeButton.Font = new Font("Segoe UI", 11F);
-            RegisterHomeButton.Location = new Point(170, 3);
+            RegisterHomeButton.Location = new Point(259, 3);
             RegisterHomeButton.Name = "RegisterHomeButton";
             RegisterHomeButton.Size = new Size(178, 42);
             RegisterHomeButton.TabIndex = 3;
             RegisterHomeButton.Text = "Registrer Bolig";
             RegisterHomeButton.UseVisualStyleBackColor = true;
             RegisterHomeButton.Click += RegisterHomeButton_Click;
+            // 
+            // EditHomeButton
+            // 
+            EditHomeButton.AutoSize = true;
+            EditHomeButton.Font = new Font("Segoe UI", 11F);
+            EditHomeButton.Location = new Point(443, 3);
+            EditHomeButton.Name = "EditHomeButton";
+            EditHomeButton.Size = new Size(217, 42);
+            EditHomeButton.TabIndex = 4;
+            EditHomeButton.Text = "Rediger Boligopslag";
+            EditHomeButton.UseVisualStyleBackColor = true;
+            EditHomeButton.Click += EditHomeButton_Click;
+            // 
+            // ExportListButton
+            // 
+            ExportListButton.AutoSize = true;
+            ExportListButton.Font = new Font("Segoe UI", 11F);
+            ExportListButton.Location = new Point(666, 3);
+            ExportListButton.Name = "ExportListButton";
+            ExportListButton.Size = new Size(217, 42);
+            ExportListButton.TabIndex = 6;
+            ExportListButton.Text = "Exporter Liste";
+            ExportListButton.UseVisualStyleBackColor = true;
+            ExportListButton.MouseClick += ExportListButton_MouseClick;
             // 
             // RealtorForm
             // 
@@ -163,5 +206,8 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Button UpdateDataTableButton;
         private Button RegisterHomeButton;
+        private Button EditHomeButton;
+        private Button SortListButton;
+        private Button ExportListButton;
     }
 }

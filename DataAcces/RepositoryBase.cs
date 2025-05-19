@@ -15,6 +15,5 @@ namespace DataAccess
           "Initial Catalog=SemesterProjekt2025;" +
           "User ID=serverlogin;Password=1234Login;" +
           "Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-
     }
 }
