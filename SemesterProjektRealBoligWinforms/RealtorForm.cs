@@ -60,12 +60,12 @@ namespace SemesterProjektRealBoligWinforms
                 where bolig.Field<String>("adresse").Contains(SortValues.Address)
                 where bolig.Field<String>("type").Contains(SortValues.Type)
                 where bolig.Field<String>("område").Contains(SortValues.Area)
-                where bolig.Field<int>("kvadratmeter") > SortValues.SizeMin
-                where bolig.Field<int>("kvadratmeter") < SortValues.SizeMax
-                where bolig.Field<int>("pris") > SortValues.PriceMin
-                where bolig.Field<int>("pris") < SortValues.PriceMax
-                where bolig.Field<int>("afstandTilIndkøb") > SortValues.ShoppingDistanceMin
-                where bolig.Field<int>("afstandTilIndkøb") < SortValues.ShoppingDistanceMax
+                where bolig.Field<int>("kvadratmeter") >= SortValues.SizeMin
+                where bolig.Field<int>("kvadratmeter") <= SortValues.SizeMax
+                where bolig.Field<int>("pris") >= SortValues.PriceMin
+                where bolig.Field<int>("pris") <= SortValues.PriceMax
+                where bolig.Field<int>("afstandTilIndkøb") >= SortValues.ShoppingDistanceMin
+                where bolig.Field<int>("afstandTilIndkøb") <= SortValues.ShoppingDistanceMax
                 select bolig;
 
             DataSorted = SortQuery.CopyToDataTable<DataRow>();
