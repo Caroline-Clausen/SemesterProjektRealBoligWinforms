@@ -124,6 +124,16 @@ namespace DataAccess
         }
         public void FjernBolig(int boligId)
         {
+            using(SqlConnection con = new SqlConnection(ConnString))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("DELETE from boliger WHERE boligID = @boligID", con))
+                {
+                    cmd.Parameters.AddWithValue("@boligID", boligId);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
 
             // Implementer fjernelse af bolig fra databasen
         }

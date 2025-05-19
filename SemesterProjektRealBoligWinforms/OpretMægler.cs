@@ -39,12 +39,18 @@ namespace SemesterProjektRealBoligWinforms
 
         private void fjernMæglerKnap_Click(object sender, EventArgs e)
         {
+           if (MessageBox.Show("Er du sikker på at du vil slette denne ejendomsmægler?", "Slet ejendomsmægler", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+
             //Bruger Id til at finde ejendomsmægler i SQL database
 
             EjendomsmæglerRepository ejendomsmæglerRepository = new EjendomsmæglerRepository();
 
             var ejendomsmaeglerId = (int)vistMæglerDataGridView.SelectedRows[0].Cells[0].Value;
 
+           
             ejendomsmæglerRepository.FjernEjendomsmægler(ejendomsmaeglerId);
 
             // opdater datagridview over mæglere
