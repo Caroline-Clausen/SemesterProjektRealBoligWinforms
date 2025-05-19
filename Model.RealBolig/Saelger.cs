@@ -7,10 +7,8 @@ public class Saelger : Person
 {
     public int SaelgerID { get; set; } //Primarnøgle tildelt fra database (autogenereret)
 
-    public Saelger(string navn, string email, string telefon)
+    public Saelger()
     {
-        PersonNavn = navn;
-        PersonEmail = email;
-        PersonTelefon = telefon;
+        SaelgerID = 0;
     }
 }

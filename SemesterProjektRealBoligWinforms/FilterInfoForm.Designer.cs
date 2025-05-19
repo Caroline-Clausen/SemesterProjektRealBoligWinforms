@@ -374,14 +374,14 @@
             SizeMaxBox.Size = new Size(182, 23);
             SizeMaxBox.TabIndex = 3;
             // 
-            // SortValuesForm
+            // FilterInfoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(542, 199);
             Controls.Add(tableLayoutPanel1);
             Margin = new Padding(2);
-            Name = "SortValuesForm";
+            Name = "FilterInfoForm";
             Text = "Filter";
             Load += SortValuesForm_Load;
             tableLayoutPanel1.ResumeLayout(false);

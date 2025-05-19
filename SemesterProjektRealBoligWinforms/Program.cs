@@ -1,5 +1,4 @@
 using BusinessLayer;
-using Model.RealBolig;
 using Projekt1Semester;
 using System.Windows.Forms;
 namespace SemesterProjektRealBoligWinforms

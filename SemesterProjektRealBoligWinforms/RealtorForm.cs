@@ -18,8 +18,8 @@ namespace SemesterProjektRealBoligWinforms
     public partial class RealtorForm : Form
     {
         BoligSortValues SortValues = new BoligSortValues();
-        DataTable Data;
-        DataTable DataSorted;
+        List<Bolig> Data;
+        List<Bolig> DataSorted;
 
         public RealtorForm()
         {
@@ -34,7 +34,8 @@ namespace SemesterProjektRealBoligWinforms
         private void RefreshDataTable(object? sender, EventArgs e)
         {
             // Get all data
-            Data = DBConnection.GetHomesTable();
+            BoligRepository boligRepository = new BoligRepository();
+            Data = boligRepository.HentBoliger();
             // Resort new data
             SortDataTable(sender, e);
         }
@@ -42,39 +43,66 @@ namespace SemesterProjektRealBoligWinforms
         private void SortDataTable(object? sender, EventArgs e)
         {
             // Sort data
-            IEnumerable<DataRow> SortQuery =
-                from bolig in Data.AsEnumerable()
-                where bolig.Field<String>("adresse").Contains(SortValues.Address)
-                where bolig.Field<String>("type").Contains(SortValues.Type)
-                where bolig.Field<String>("område").Contains(SortValues.Area)
-                where bolig.Field<int>("kvadratmeter") >= SortValues.SizeMin
-                where bolig.Field<int>("kvadratmeter") <= SortValues.SizeMax
-                where bolig.Field<int>("pris") >= SortValues.PriceMin
-                where bolig.Field<int>("pris") <= SortValues.PriceMax
-                where bolig.Field<int>("afstandTilIndkøb") >= SortValues.ShoppingDistanceMin
-                where bolig.Field<int>("afstandTilIndkøb") <= SortValues.ShoppingDistanceMax
+            IEnumerable<Bolig> sortQuery =
+                from bolig in Data
+                where bolig.Adresse.Contains(SortValues.Address)
+                where bolig.Type.Contains(SortValues.Type)
+                where bolig.Område.Contains(SortValues.Area)
+                where bolig.Kvadratmeter >= SortValues.SizeMin
+                where bolig.Kvadratmeter <= SortValues.SizeMax
+                where bolig.Pris >= SortValues.PriceMin
+                where bolig.Pris <= SortValues.PriceMax
+                where bolig.AfstandTilIndkoeb >= SortValues.ShoppingDistanceMin
+                where bolig.AfstandTilIndkoeb <= SortValues.ShoppingDistanceMax
                 select bolig;
 
-            DataSorted = SortQuery.CopyToDataTable<DataRow>();
+            DataSorted = sortQuery.ToList();
             HomesGridView.DataSource = DataSorted;
             HomesGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
         private void RegisterHomeButton_Click(object? sender, EventArgs e)
         {
+            Bolig bolig = new Bolig();
+            BoligOplysninger boligOplysninger = new BoligOplysninger(bolig);
 
+            this.Hide();
+            boligOplysninger.ShowDialog();
+            this.Show();
+
+            if (boligOplysninger.DialogResult == DialogResult.OK)
+            {
+                BoligRepository boligRepository = new BoligRepository();
+                boligRepository.TilføjBolig(bolig);
+            }
+
+            RefreshDataTable(sender, e);
         }
 
         private void EditHomeButton_Click(object? sender, EventArgs e)
         {
+            Bolig bolig = (Bolig) HomesGridView.SelectedRows[0].DataBoundItem;
+            BoligOplysninger boligOplysninger = new BoligOplysninger(bolig);
 
+            this.Hide();
+            boligOplysninger.ShowDialog();
+            this.Show();
+
+            if (boligOplysninger.DialogResult == DialogResult.OK)
+            {
+                BoligRepository boligRepository = new BoligRepository();
+                boligRepository.OpdaterBolig(bolig);
+            }
+
+            RefreshDataTable(sender, e);
         }
 
         private void SortListButton_Click(object? sender, EventArgs e)
         {
             FilterInfoForm form = new FilterInfoForm(SortValues);
-            form.FormClosing += SortDataTable;
-            form.Show();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
         }
 
         private void ExportListButton_MouseClick(object? sender, MouseEventArgs e)
