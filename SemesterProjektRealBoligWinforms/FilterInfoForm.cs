@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace SemesterProjektRealBoligWinforms
 {
-    public partial class SortValuesForm : Form
+    public partial class FilterInfoForm : Form
     {
         public BoligSortValues SortValues;
 
-        public SortValuesForm(BoligSortValues SortValues)
+        public FilterInfoForm(BoligSortValues SortValues)
         {
             this.SortValues = SortValues;
 

@@ -15,19 +15,6 @@ using System.Windows.Forms;
 
 namespace SemesterProjektRealBoligWinforms
 {
-    public class BoligSortValues
-    {
-        public String Address = "";
-        public String Type = "";
-        public String Area = "";
-        public int SizeMin = int.MinValue;
-        public int SizeMax = int.MaxValue;
-        public int PriceMin = int.MinValue;
-        public int PriceMax = int.MaxValue;
-        public int ShoppingDistanceMin = int.MinValue;
-        public int ShoppingDistanceMax = int.MaxValue;
-    }
-
     public partial class RealtorForm : Form
     {
         BoligSortValues SortValues = new BoligSortValues();
@@ -85,7 +72,7 @@ namespace SemesterProjektRealBoligWinforms
 
         private void SortListButton_Click(object? sender, EventArgs e)
         {
-            SortValuesForm form = new SortValuesForm(SortValues);
+            FilterInfoForm form = new FilterInfoForm(SortValues);
             form.FormClosing += SortDataTable;
             form.Show();
         }
@@ -94,5 +81,17 @@ namespace SemesterProjektRealBoligWinforms
         {
 
         }
+    }
+    public class BoligSortValues
+    {
+        public String Address = "";
+        public String Type = "";
+        public String Area = "";
+        public int SizeMin = int.MinValue;
+        public int SizeMax = int.MaxValue;
+        public int PriceMin = int.MinValue;
+        public int PriceMax = int.MaxValue;
+        public int ShoppingDistanceMin = int.MinValue;
+        public int ShoppingDistanceMax = int.MaxValue;
     }
 }

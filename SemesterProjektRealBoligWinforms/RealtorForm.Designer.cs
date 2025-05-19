@@ -137,7 +137,7 @@
             SortListButton.Name = "SortListButton";
             SortListButton.Size = new Size(83, 40);
             SortListButton.TabIndex = 5;
-            SortListButton.Text = "Sorter";
+            SortListButton.Text = "Filter";
             SortListButton.UseVisualStyleBackColor = true;
             SortListButton.Click += SortListButton_Click;
             // 

@@ -27,7 +27,7 @@ namespace SemesterProjektRealBoligWinforms
         private void BoligOversigtKunde_Load(object sender, EventArgs e)
         {
             BoligRepository boligRepository = new BoligRepository();
-           
+
             List<string> områder = boligRepository.HentOmråder();
             områder.Add(" Alle");
             områdeComboBox.Items.AddRange(områder.ToArray());
@@ -52,7 +52,7 @@ namespace SemesterProjektRealBoligWinforms
 
                 boligBindingSource.Filter = $"Område = '{valgtOmråde}'";
             }
-       
+
             boligKundeGridView.Update();
         }
 
