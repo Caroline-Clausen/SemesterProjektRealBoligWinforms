@@ -19,7 +19,7 @@ namespace SemesterProjektRealBoligWinforms
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Create the initial form
-            Form initialForm = new Form1();
+            Form initialForm = new StartVindue();
 
             // Add it o the FormStack manually.
             // If we used PushForm, it would connect the forms FormClosing event to PopForm.

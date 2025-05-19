@@ -5,7 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        public System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -43,11 +43,11 @@
             afstandIndkøbTextBox = new TextBox();
             arealTextBox = new TextBox();
             boligTypeTextBox = new TextBox();
-            adresseLable = new Label();
             adresseTextBox = new TextBox();
             krLabel = new Label();
             kmLabel = new Label();
             m2Label = new Label();
+            adresseLable = new Label();
             boligTableLayoutPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -215,23 +215,13 @@
             boligTypeTextBox.Size = new Size(217, 23);
             boligTypeTextBox.TabIndex = 17;
             // 
-            // adresseLable
-            // 
-            adresseLable.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            adresseLable.AutoSize = true;
-            adresseLable.Location = new Point(2, 7);
-            adresseLable.Margin = new Padding(2, 0, 2, 0);
-            adresseLable.Name = "adresseLable";
-            adresseLable.Size = new Size(105, 15);
-            adresseLable.TabIndex = 16;
-            adresseLable.Text = "Adresse";
-            // 
             // adresseTextBox
             // 
             adresseTextBox.Location = new Point(112, 3);
             adresseTextBox.Name = "adresseTextBox";
             adresseTextBox.Size = new Size(217, 23);
             adresseTextBox.TabIndex = 16;
+            adresseTextBox.TextChanged += adresseTextBox_TextChanged;
             // 
             // krLabel
             // 
@@ -263,6 +253,17 @@
             m2Label.Size = new Size(39, 15);
             m2Label.TabIndex = 24;
             m2Label.Text = "m2";
+            // 
+            // adresseLable
+            // 
+            adresseLable.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            adresseLable.AutoSize = true;
+            adresseLable.Location = new Point(2, 7);
+            adresseLable.Margin = new Padding(2, 0, 2, 0);
+            adresseLable.Name = "adresseLable";
+            adresseLable.Size = new Size(105, 15);
+            adresseLable.TabIndex = 16;
+            adresseLable.Text = "Adresse";
             // 
             // BoligVisningKunde
             // 
@@ -296,10 +297,10 @@
         private Label boligPrisLable;
         private Label label1;
         private Button budBoligKnap;
-        private TextBox budBoligTextBox;
+        public TextBox budBoligTextBox;
         private Label afstandLable;
         private TableLayoutPanel boligTableLayoutPanel;
-        private TextBox adresseTextBox;
+        public TextBox adresseTextBox;
         private Label adresseLable;
         private TextBox boligTypeTextBox;
         private TextBox prisTextBox;

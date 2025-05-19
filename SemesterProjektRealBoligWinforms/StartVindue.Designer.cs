@@ -1,6 +1,6 @@
 ﻿namespace SemesterProjektRealBoligWinforms
 {
-    partial class Form1
+    partial class StartVindue
     {
         /// <summary>
         ///  Required designer variable.
@@ -76,7 +76,7 @@
             loginLable.TabIndex = 3;
             loginLable.Text = "For medarbejdere eller Administrator";
             // 
-            // Form1
+            // StartVindue
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -87,9 +87,9 @@
             Controls.Add(seBoligForsideKnap);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2, 1, 2, 1);
-            Name = "Form1";
+            Name = "StartVindue";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Velkommen";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();

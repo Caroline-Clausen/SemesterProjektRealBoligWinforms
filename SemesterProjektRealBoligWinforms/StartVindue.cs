@@ -1,8 +1,8 @@
 namespace SemesterProjektRealBoligWinforms
 {
-    public partial class Form1 : Form
+    public partial class StartVindue : Form
     {
-        public Form1()
+        public StartVindue()
         {
             InitializeComponent();
         }
