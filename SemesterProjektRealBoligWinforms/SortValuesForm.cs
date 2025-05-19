@@ -61,12 +61,18 @@ namespace SemesterProjektRealBoligWinforms
             AddressBox.Text = SortValues.Address;
             TypeBox.Text = SortValues.Type;
             AreaBox.Text = SortValues.Area;
-            SizeMinBox.Text = SortValues.SizeMin.ToString();
-            SizeMaxBox.Text = SortValues.SizeMax.ToString();
-            PriceMinBox.Text = SortValues.PriceMin.ToString();
-            PriceMaxBox.Text = SortValues.PriceMax.ToString();
-            ShoppingDistanceMinBox.Text = SortValues.ShoppingDistanceMin.ToString();
-            ShoppingDistanceMaxBox.Text = SortValues.ShoppingDistanceMax.ToString();
+            if (SortValues.SizeMin != int.MinValue)
+                SizeMinBox.Text = SortValues.SizeMin.ToString();
+            if (SortValues.SizeMax != int.MaxValue)
+                SizeMaxBox.Text = SortValues.SizeMax.ToString();
+            if (SortValues.PriceMin != int.MinValue)
+                PriceMinBox.Text = SortValues.PriceMin.ToString();
+            if (SortValues.PriceMax != int.MaxValue)
+                PriceMaxBox.Text = SortValues.PriceMax.ToString();
+            if (SortValues.ShoppingDistanceMin != int.MinValue)
+                ShoppingDistanceMinBox.Text = SortValues.ShoppingDistanceMin.ToString();
+            if (SortValues.ShoppingDistanceMax != int.MaxValue)
+                ShoppingDistanceMaxBox.Text = SortValues.ShoppingDistanceMax.ToString();
         }
     }
 }
