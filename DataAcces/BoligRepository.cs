@@ -34,6 +34,7 @@ namespace DataAccess
                                     AfstandTilIndkoeb = Convert.ToDouble(reader["afstandtilindkøb"]),
                                     Status = reader["status"].ToString(),
                                     Område = reader["område"].ToString(),
+                                    SaelgerID = Convert.ToInt32(reader["sælgerID"]),
                                 };
                                 boliger.Add(bolig);
                             }
@@ -81,16 +82,35 @@ namespace DataAccess
         }
 
 
-
-
-
         public void TilføjBolig(Bolig bolig)
         {
             using (SqlConnection con = new SqlConnection(ConnString))
             {
                 con.Open();
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO boliger (adresse, m2, type, pris, afstand_til_indkoeb, status, område) VALUES (@adresse, @kvadratmeter, @type, @pris, @afstandTilIndkøb, @status, @område)", con))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO boliger (adresse, kvadratmeter, type, pris, afstandTilIndkøb, status, område, SælgerID) VALUES (@adresse, @kvadratmeter, @type, @pris, @afstandTilIndkøb, @status, @område, @sælgerID)", con))
                 {
+                    cmd.Parameters.AddWithValue("@adresse", bolig.Adresse);
+                    cmd.Parameters.AddWithValue("@kvadratmeter", bolig.Kvadratmeter);
+                    cmd.Parameters.AddWithValue("@type", bolig.Type);
+                    cmd.Parameters.AddWithValue("@pris", bolig.Pris);
+                    cmd.Parameters.AddWithValue("@afstandTilIndkøb", bolig.AfstandTilIndkoeb);
+                    cmd.Parameters.AddWithValue("@status", bolig.Status);
+                    cmd.Parameters.AddWithValue("@område", bolig.Område);
+                    cmd.Parameters.AddWithValue("@sælgerID", bolig.SaelgerID);
+                    cmd.ExecuteNonQuery();
+                }
+                // Implementer tilføjelse af bolig til databasen
+            }
+        }
+
+        public void OpdaterBolig(Bolig bolig)
+        {
+            using (SqlConnection con = new SqlConnection(ConnString))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("UPDATE boliger SET adresse = @adresse, kvadratmeter = @kvadratmeter, type = @type, pris = @pris, afstandTilIndkøb = @afstandTilIndkøb, status = @status, område = @område WHERE boligID = @boligID", con))
+                {
+                    cmd.Parameters.AddWithValue("@boligID", bolig.BoligID);
                     cmd.Parameters.AddWithValue("@adresse", bolig.Adresse);
                     cmd.Parameters.AddWithValue("@kvadratmeter", bolig.Kvadratmeter);
                     cmd.Parameters.AddWithValue("@type", bolig.Type);
@@ -100,11 +120,11 @@ namespace DataAccess
                     cmd.Parameters.AddWithValue("@område", bolig.Område);
                     cmd.ExecuteNonQuery();
                 }
-                // Implementer tilføjelse af bolig til databasen
             }
         }
         public void FjernBolig(int boligId)
         {
+
             // Implementer fjernelse af bolig fra databasen
         }
 

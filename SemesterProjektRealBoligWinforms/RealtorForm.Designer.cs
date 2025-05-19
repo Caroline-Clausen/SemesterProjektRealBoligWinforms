@@ -57,11 +57,13 @@
             HomesGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             HomesGridView.Dock = DockStyle.Fill;
             HomesGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
-            HomesGridView.Location = new Point(3, 81);
+            HomesGridView.Location = new Point(2, 48);
+            HomesGridView.Margin = new Padding(2);
             HomesGridView.Name = "HomesGridView";
             HomesGridView.ReadOnly = true;
             HomesGridView.RowHeadersWidth = 62;
-            HomesGridView.Size = new Size(1294, 359);
+            HomesGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            HomesGridView.Size = new Size(906, 215);
             HomesGridView.TabIndex = 0;
             // 
             // boligBindingSource
@@ -87,7 +89,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 70F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
-            tableLayoutPanel1.Size = new Size(1300, 522);
+            tableLayoutPanel1.Size = new Size(910, 313);
             tableLayoutPanel1.TabIndex = 1;
             // 
             // label1
@@ -95,9 +97,10 @@
             label1.AutoSize = true;
             label1.Dock = DockStyle.Fill;
             label1.Font = new Font("Segoe UI", 22F);
-            label1.Location = new Point(3, 0);
+            label1.Location = new Point(2, 0);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(1294, 78);
+            label1.Size = new Size(906, 46);
             label1.TabIndex = 1;
             label1.Text = "Boliger";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -111,18 +114,20 @@
             flowLayoutPanel1.Controls.Add(RegisterHomeButton);
             flowLayoutPanel1.Controls.Add(EditHomeButton);
             flowLayoutPanel1.Controls.Add(ExportListButton);
-            flowLayoutPanel1.Location = new Point(207, 446);
+            flowLayoutPanel1.Location = new Point(146, 267);
+            flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(886, 48);
+            flowLayoutPanel1.Size = new Size(617, 34);
             flowLayoutPanel1.TabIndex = 2;
             // 
             // UpdateDataTableButton
             // 
             UpdateDataTableButton.AutoSize = true;
             UpdateDataTableButton.Font = new Font("Segoe UI", 11F);
-            UpdateDataTableButton.Location = new Point(3, 3);
+            UpdateDataTableButton.Location = new Point(2, 2);
+            UpdateDataTableButton.Margin = new Padding(2);
             UpdateDataTableButton.Name = "UpdateDataTableButton";
-            UpdateDataTableButton.Size = new Size(161, 42);
+            UpdateDataTableButton.Size = new Size(113, 30);
             UpdateDataTableButton.TabIndex = 2;
             UpdateDataTableButton.Text = "Opdater Tabel";
             UpdateDataTableButton.UseVisualStyleBackColor = true;
@@ -133,11 +138,12 @@
             SortListButton.AutoSize = true;
             SortListButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             SortListButton.Font = new Font("Segoe UI", 11F);
-            SortListButton.Location = new Point(170, 3);
+            SortListButton.Location = new Point(119, 2);
+            SortListButton.Margin = new Padding(2);
             SortListButton.Name = "SortListButton";
-            SortListButton.Size = new Size(83, 40);
+            SortListButton.Size = new Size(52, 30);
             SortListButton.TabIndex = 5;
-            SortListButton.Text = "Sorter";
+            SortListButton.Text = "Filter";
             SortListButton.UseVisualStyleBackColor = true;
             SortListButton.Click += SortListButton_Click;
             // 
@@ -145,9 +151,10 @@
             // 
             RegisterHomeButton.AutoSize = true;
             RegisterHomeButton.Font = new Font("Segoe UI", 11F);
-            RegisterHomeButton.Location = new Point(259, 3);
+            RegisterHomeButton.Location = new Point(175, 2);
+            RegisterHomeButton.Margin = new Padding(2);
             RegisterHomeButton.Name = "RegisterHomeButton";
-            RegisterHomeButton.Size = new Size(178, 42);
+            RegisterHomeButton.Size = new Size(125, 30);
             RegisterHomeButton.TabIndex = 3;
             RegisterHomeButton.Text = "Registrer Bolig";
             RegisterHomeButton.UseVisualStyleBackColor = true;
@@ -157,9 +164,10 @@
             // 
             EditHomeButton.AutoSize = true;
             EditHomeButton.Font = new Font("Segoe UI", 11F);
-            EditHomeButton.Location = new Point(443, 3);
+            EditHomeButton.Location = new Point(304, 2);
+            EditHomeButton.Margin = new Padding(2);
             EditHomeButton.Name = "EditHomeButton";
-            EditHomeButton.Size = new Size(217, 42);
+            EditHomeButton.Size = new Size(155, 30);
             EditHomeButton.TabIndex = 4;
             EditHomeButton.Text = "Rediger Boligopslag";
             EditHomeButton.UseVisualStyleBackColor = true;
@@ -169,9 +177,10 @@
             // 
             ExportListButton.AutoSize = true;
             ExportListButton.Font = new Font("Segoe UI", 11F);
-            ExportListButton.Location = new Point(666, 3);
+            ExportListButton.Location = new Point(463, 2);
+            ExportListButton.Margin = new Padding(2);
             ExportListButton.Name = "ExportListButton";
-            ExportListButton.Size = new Size(217, 42);
+            ExportListButton.Size = new Size(152, 30);
             ExportListButton.TabIndex = 6;
             ExportListButton.Text = "Exporter Liste";
             ExportListButton.UseVisualStyleBackColor = true;
@@ -179,10 +188,11 @@
             // 
             // RealtorForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1300, 522);
+            ClientSize = new Size(910, 313);
             Controls.Add(tableLayoutPanel1);
+            Margin = new Padding(2);
             Name = "RealtorForm";
             Text = "RealtorForm";
             Load += RealtorForm_Load;

@@ -33,7 +33,7 @@ namespace SemesterProjektRealBoligWinforms
 
         private void afslutOpretMæglerKnap_Click(object sender, EventArgs e)
         {
-            OpretMægler.ActiveForm.Close();
+           Close();
             // lukker vindue
         }
 
