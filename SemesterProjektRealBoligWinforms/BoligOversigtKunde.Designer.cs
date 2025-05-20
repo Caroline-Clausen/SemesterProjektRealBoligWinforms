@@ -71,7 +71,7 @@
             boligKundeGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             boligKundeGridView.Size = new Size(950, 517);
             boligKundeGridView.TabIndex = 0;
-            boligKundeGridView.CellContentClick += boligKundeGridView_CellContentClick;
+           
             // 
             // adresseDataGridViewTextBoxColumn
             // 

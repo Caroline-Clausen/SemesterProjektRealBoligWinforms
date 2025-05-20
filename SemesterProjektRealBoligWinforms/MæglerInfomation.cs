@@ -46,6 +46,8 @@ namespace SemesterProjektRealBoligWinforms
 
         private void fortrydMæglerInfoKnap_Click(object sender, EventArgs e)
         {
+
+            //afbryd oprettelse af ejendomsmægler
             MæglerInformation.ActiveForm.Close();
         }
 
@@ -63,6 +65,16 @@ namespace SemesterProjektRealBoligWinforms
             {
                 mæglerInfoGemKnap.Enabled = true;
             }
+        }
+
+        private void telefonMæglerTekstboks_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            // det gør at kun tal kommer med. 
+ 
         }
     }
 }

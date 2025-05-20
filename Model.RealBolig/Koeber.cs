@@ -10,14 +10,5 @@ namespace Projekt1Semester
     {
         public int KoeberID { get; set; } //Primarnøgle tildelt fra database (autogenereret)
 
-        //arver fra Person
-        //public string PersonNavn { get; set; } //Personens navn
-
-        public Koeber(string navn, string email, string telefon, string rolle)
-        {
-            PersonNavn = navn;
-            PersonEmail = email;
-            PersonTelefon = telefon;
-        }
     }
 }
