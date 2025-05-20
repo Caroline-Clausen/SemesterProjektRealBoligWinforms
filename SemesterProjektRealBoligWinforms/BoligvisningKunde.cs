@@ -61,5 +61,10 @@ namespace SemesterProjektRealBoligWinforms
         {
 
         }
+
+        private void boligTableLayoutPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

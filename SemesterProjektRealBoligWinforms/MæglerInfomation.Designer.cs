@@ -139,6 +139,7 @@
             // 
             // mæglerInfoGemKnap
             // 
+            mæglerInfoGemKnap.DialogResult = DialogResult.OK;
             mæglerInfoGemKnap.Enabled = false;
             mæglerInfoGemKnap.Location = new Point(358, 185);
             mæglerInfoGemKnap.Name = "mæglerInfoGemKnap";
@@ -150,6 +151,7 @@
             // 
             // fortrydMæglerInfoKnap
             // 
+            fortrydMæglerInfoKnap.DialogResult = DialogResult.Cancel;
             fortrydMæglerInfoKnap.Location = new Point(434, 185);
             fortrydMæglerInfoKnap.Name = "fortrydMæglerInfoKnap";
             fortrydMæglerInfoKnap.Size = new Size(70, 32);

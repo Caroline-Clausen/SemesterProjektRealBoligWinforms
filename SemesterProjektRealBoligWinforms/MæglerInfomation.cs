@@ -46,6 +46,8 @@ namespace SemesterProjektRealBoligWinforms
 
         private void fortrydMæglerInfoKnap_Click(object sender, EventArgs e)
         {
+
+            //afbryd oprettelse af ejendomsmægler
             MæglerInformation.ActiveForm.Close();
         }
 
