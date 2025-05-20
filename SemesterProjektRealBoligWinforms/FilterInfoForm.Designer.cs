@@ -62,14 +62,15 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Dock = DockStyle.Right;
-            label1.Location = new Point(51, 0);
+            label1.Location = new Point(2, 6);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(55, 27);
+            label1.Size = new Size(104, 15);
             label1.TabIndex = 0;
             label1.Text = "Addresse";
+            label1.TextAlign = ContentAlignment.MiddleRight;
             // 
             // AddressBox
             // 
@@ -77,7 +78,7 @@
             AddressBox.Location = new Point(110, 2);
             AddressBox.Margin = new Padding(2);
             AddressBox.Name = "AddressBox";
-            AddressBox.Size = new Size(462, 23);
+            AddressBox.Size = new Size(482, 23);
             AddressBox.TabIndex = 1;
             // 
             // TypeBox
@@ -86,7 +87,7 @@
             TypeBox.Location = new Point(110, 56);
             TypeBox.Margin = new Padding(2);
             TypeBox.Name = "TypeBox";
-            TypeBox.Size = new Size(462, 23);
+            TypeBox.Size = new Size(482, 23);
             TypeBox.TabIndex = 3;
             // 
             // AreaBox
@@ -95,30 +96,32 @@
             AreaBox.Location = new Point(110, 137);
             AreaBox.Margin = new Padding(2);
             AreaBox.Name = "AreaBox";
-            AreaBox.Size = new Size(462, 23);
+            AreaBox.Size = new Size(482, 23);
             AreaBox.TabIndex = 6;
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Dock = DockStyle.Right;
-            label3.Location = new Point(74, 54);
+            label3.Location = new Point(2, 60);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(32, 27);
+            label3.Size = new Size(104, 15);
             label3.TabIndex = 8;
             label3.Text = "Type";
+            label3.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label6.AutoSize = true;
-            label6.Dock = DockStyle.Right;
-            label6.Location = new Point(56, 135);
+            label6.Location = new Point(2, 141);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(50, 27);
+            label6.Size = new Size(104, 15);
             label6.TabIndex = 11;
             label6.Text = "Område";
+            label6.TextAlign = ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel1
             // 
@@ -151,7 +154,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 12F));
-            tableLayoutPanel1.Size = new Size(542, 199);
+            tableLayoutPanel1.Size = new Size(594, 219);
             tableLayoutPanel1.TabIndex = 13;
             // 
             // tableLayoutPanel4
@@ -171,46 +174,50 @@
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 1;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.Size = new Size(462, 23);
+            tableLayoutPanel4.Size = new Size(482, 23);
             tableLayoutPanel4.TabIndex = 15;
             // 
             // label11
             // 
+            label11.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label11.AutoSize = true;
-            label11.Location = new Point(2, 0);
+            label11.Location = new Point(2, 4);
             label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
-            label11.Size = new Size(28, 15);
+            label11.Size = new Size(44, 15);
             label11.TabIndex = 0;
             label11.Text = "Min";
+            label11.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label12
             // 
+            label12.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label12.AutoSize = true;
-            label12.Location = new Point(232, 0);
+            label12.Location = new Point(242, 4);
             label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
-            label12.Size = new Size(29, 15);
+            label12.Size = new Size(44, 15);
             label12.TabIndex = 1;
             label12.Text = "Max";
+            label12.TextAlign = ContentAlignment.MiddleRight;
             // 
             // ShoppingDistanceMinBox
             // 
             ShoppingDistanceMinBox.Dock = DockStyle.Top;
-            ShoppingDistanceMinBox.Location = new Point(48, 2);
+            ShoppingDistanceMinBox.Location = new Point(50, 2);
             ShoppingDistanceMinBox.Margin = new Padding(2);
             ShoppingDistanceMinBox.Name = "ShoppingDistanceMinBox";
-            ShoppingDistanceMinBox.Size = new Size(180, 23);
+            ShoppingDistanceMinBox.Size = new Size(188, 23);
             ShoppingDistanceMinBox.TabIndex = 2;
             ShoppingDistanceMinBox.KeyPress += int_KeyPress;
             // 
             // ShoppingDistanceMaxBox
             // 
             ShoppingDistanceMaxBox.Dock = DockStyle.Top;
-            ShoppingDistanceMaxBox.Location = new Point(278, 2);
+            ShoppingDistanceMaxBox.Location = new Point(290, 2);
             ShoppingDistanceMaxBox.Margin = new Padding(2);
             ShoppingDistanceMaxBox.Name = "ShoppingDistanceMaxBox";
-            ShoppingDistanceMaxBox.Size = new Size(182, 23);
+            ShoppingDistanceMaxBox.Size = new Size(190, 23);
             ShoppingDistanceMaxBox.TabIndex = 3;
             ShoppingDistanceMaxBox.KeyPress += int_KeyPress;
             // 
@@ -231,81 +238,88 @@
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(462, 23);
+            tableLayoutPanel3.Size = new Size(482, 23);
             tableLayoutPanel3.TabIndex = 14;
             // 
             // label9
             // 
+            label9.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label9.AutoSize = true;
-            label9.Location = new Point(2, 0);
+            label9.Location = new Point(2, 4);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
-            label9.Size = new Size(28, 15);
+            label9.Size = new Size(44, 15);
             label9.TabIndex = 0;
             label9.Text = "Min";
+            label9.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label10
             // 
+            label10.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label10.AutoSize = true;
-            label10.Location = new Point(232, 0);
+            label10.Location = new Point(242, 4);
             label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
-            label10.Size = new Size(29, 15);
+            label10.Size = new Size(44, 15);
             label10.TabIndex = 1;
             label10.Text = "Max";
+            label10.TextAlign = ContentAlignment.MiddleRight;
             // 
             // PriceMinBox
             // 
             PriceMinBox.Dock = DockStyle.Top;
-            PriceMinBox.Location = new Point(48, 2);
+            PriceMinBox.Location = new Point(50, 2);
             PriceMinBox.Margin = new Padding(2);
             PriceMinBox.Name = "PriceMinBox";
-            PriceMinBox.Size = new Size(180, 23);
+            PriceMinBox.Size = new Size(188, 23);
             PriceMinBox.TabIndex = 2;
             PriceMinBox.KeyPress += pris_KeyPress;
             // 
             // PriceMaxBox
             // 
             PriceMaxBox.Dock = DockStyle.Top;
-            PriceMaxBox.Location = new Point(278, 2);
+            PriceMaxBox.Location = new Point(290, 2);
             PriceMaxBox.Margin = new Padding(2);
             PriceMaxBox.Name = "PriceMaxBox";
-            PriceMaxBox.Size = new Size(182, 23);
+            PriceMaxBox.Size = new Size(190, 23);
             PriceMaxBox.TabIndex = 3;
             PriceMaxBox.KeyPress += pris_KeyPress;
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Dock = DockStyle.Right;
-            label5.Location = new Point(2, 108);
+            label5.Location = new Point(2, 114);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(104, 27);
+            label5.Size = new Size(104, 15);
             label5.TabIndex = 10;
             label5.Text = "Afstand Til Indkøb";
+            label5.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.Dock = DockStyle.Right;
-            label4.Location = new Point(80, 81);
+            label4.Location = new Point(2, 87);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(26, 27);
+            label4.Size = new Size(104, 15);
             label4.TabIndex = 9;
             label4.Text = "Pris";
+            label4.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Dock = DockStyle.Right;
-            label2.Location = new Point(28, 27);
+            label2.Location = new Point(2, 33);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(78, 27);
+            label2.Size = new Size(104, 15);
             label2.TabIndex = 7;
             label2.Text = "Kvadratmeter";
+            label2.TextAlign = ContentAlignment.MiddleRight;
             // 
             // Godkend
             // 
@@ -314,7 +328,7 @@
             Godkend.Location = new Point(2, 164);
             Godkend.Margin = new Padding(2);
             Godkend.Name = "Godkend";
-            Godkend.Size = new Size(570, 33);
+            Godkend.Size = new Size(590, 53);
             Godkend.TabIndex = 12;
             Godkend.Text = "Godkend";
             Godkend.UseVisualStyleBackColor = true;
@@ -337,46 +351,50 @@
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(462, 23);
+            tableLayoutPanel2.Size = new Size(482, 23);
             tableLayoutPanel2.TabIndex = 13;
             // 
             // label7
             // 
+            label7.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label7.AutoSize = true;
-            label7.Location = new Point(2, 0);
+            label7.Location = new Point(2, 4);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(28, 15);
+            label7.Size = new Size(44, 15);
             label7.TabIndex = 0;
             label7.Text = "Min";
+            label7.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label8
             // 
+            label8.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label8.AutoSize = true;
-            label8.Location = new Point(232, 0);
+            label8.Location = new Point(242, 4);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
-            label8.Size = new Size(29, 15);
+            label8.Size = new Size(44, 15);
             label8.TabIndex = 1;
             label8.Text = "Max";
+            label8.TextAlign = ContentAlignment.MiddleRight;
             // 
             // SizeMinBox
             // 
             SizeMinBox.Dock = DockStyle.Top;
-            SizeMinBox.Location = new Point(48, 2);
+            SizeMinBox.Location = new Point(50, 2);
             SizeMinBox.Margin = new Padding(2);
             SizeMinBox.Name = "SizeMinBox";
-            SizeMinBox.Size = new Size(180, 23);
+            SizeMinBox.Size = new Size(188, 23);
             SizeMinBox.TabIndex = 2;
             SizeMinBox.KeyPress += int_KeyPress;
             // 
             // SizeMaxBox
             // 
             SizeMaxBox.Dock = DockStyle.Top;
-            SizeMaxBox.Location = new Point(278, 2);
+            SizeMaxBox.Location = new Point(290, 2);
             SizeMaxBox.Margin = new Padding(2);
             SizeMaxBox.Name = "SizeMaxBox";
-            SizeMaxBox.Size = new Size(182, 23);
+            SizeMaxBox.Size = new Size(190, 23);
             SizeMaxBox.TabIndex = 3;
             SizeMaxBox.KeyPress += int_KeyPress;
             // 
@@ -384,9 +402,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(542, 199);
+            ClientSize = new Size(594, 219);
             Controls.Add(tableLayoutPanel1);
             Margin = new Padding(2);
+            MinimumSize = new Size(610, 258);
             Name = "FilterInfoForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Filter";
