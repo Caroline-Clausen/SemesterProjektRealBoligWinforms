@@ -10,12 +10,12 @@ namespace DataAccess
 {
     public class SalgRepository : RepositoryBase
     {
-        public Salg? HentSalg(int boligId)
+        public static Salg? HentSalg(int boligId)
         {
             using (SqlConnection con = new SqlConnection(ConnString))
             {
                 con.Open();
-                SqlCommand command = new SqlCommand("SELECT * FROM salg wher boligID = @boligID", con)
+                SqlCommand command = new SqlCommand("SELECT * FROM salg WHERE boligID = @boligID", con);
                 command.Parameters.AddWithValue("@boligID", boligId.ToString());
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
