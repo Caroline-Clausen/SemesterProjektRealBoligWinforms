@@ -94,12 +94,14 @@ namespace SemesterProjektRealBoligWinforms
 
         private void int_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) )
+            if (!char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
             // det gør at kun tal kommer med. 
 
         }
+
+       
     }
 }
