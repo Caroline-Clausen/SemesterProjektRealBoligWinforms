@@ -40,10 +40,19 @@ namespace SemesterProjektRealBoligWinforms
                 SortValues.ShoppingDistanceMin = GetIntFromTextBox(ShoppingDistanceMinBox);
             if (ShoppingDistanceMaxBox.Text != "")
                 SortValues.ShoppingDistanceMax = GetIntFromTextBox(ShoppingDistanceMaxBox);
-            if (StatusComboBox.SelectedText != "")
-                SortValues.Status = StatusComboBox.SelectedText;
-
-            Close();
+            String? statusStr = StatusComboBox.GetItemText(StatusComboBox.SelectedItem);
+            if (statusStr != null && statusStr != "")
+                SortValues.Status = statusStr;
+            if (statusStr == "solgt")
+            {
+                SortValues.SoldFromDate = SalePeriodFromDateTimePicker.Value; ;
+                SortValues.SoldToDate = SalePeriodToDateTimePicker.Value;
+            } else
+            {
+                SortValues.SoldFromDate = null;
+                SortValues.SoldToDate = null;
+            }
+                Close();
         }
 
         private static int GetIntFromTextBox(TextBox box)
@@ -75,8 +84,25 @@ namespace SemesterProjektRealBoligWinforms
                 ShoppingDistanceMinBox.Text = SortValues.ShoppingDistanceMin.ToString();
             if (SortValues.ShoppingDistanceMax != int.MaxValue)
                 ShoppingDistanceMaxBox.Text = SortValues.ShoppingDistanceMax.ToString();
-            if (SortValues.Status != "")
-                StatusComboBox.SelectedText = SortValues.Status;
+            switch (SortValues.Status)
+            {
+                case "til salg":
+                    StatusComboBox.SelectedIndex = 0;
+                    break;
+                case "solgt":
+                    StatusComboBox.SelectedIndex = 1;
+                    break;
+                default:
+                    StatusComboBox.SelectedIndex = 2;
+                    break;
+            }
+            if (SortValues.SoldFromDate != null)
+                SalePeriodFromDateTimePicker.Value = (DateTime)SortValues.SoldFromDate;
+            if (SortValues.SoldToDate != null)
+                SalePeriodToDateTimePicker.Value = (DateTime)SortValues.SoldToDate;
+
+            // Hide/show sales period filter options depending on relevancy
+            StatusComboBox_SelectedIndexChanged(sender, e);
         }
 
         private void pris_KeyPress(object sender, KeyPressEventArgs e)
@@ -106,6 +132,14 @@ namespace SemesterProjektRealBoligWinforms
 
         }
 
-       
+        private void StatusComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // We check if Status filter is set to sold.
+            // Only then is it relevant to also search for a time and date.
+            bool showSalesPeriod = StatusComboBox.SelectedIndex == 1;
+
+            SalePeriodLabel.Visible = showSalesPeriod;
+            SaleTimePeriodValues.Visible = showSalesPeriod;
+        }
     }
 }
