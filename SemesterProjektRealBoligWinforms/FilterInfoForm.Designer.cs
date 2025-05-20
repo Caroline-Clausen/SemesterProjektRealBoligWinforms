@@ -202,6 +202,7 @@
             ShoppingDistanceMinBox.Name = "ShoppingDistanceMinBox";
             ShoppingDistanceMinBox.Size = new Size(180, 23);
             ShoppingDistanceMinBox.TabIndex = 2;
+            ShoppingDistanceMinBox.KeyPress += int_KeyPress;
             // 
             // ShoppingDistanceMaxBox
             // 
@@ -211,6 +212,7 @@
             ShoppingDistanceMaxBox.Name = "ShoppingDistanceMaxBox";
             ShoppingDistanceMaxBox.Size = new Size(182, 23);
             ShoppingDistanceMaxBox.TabIndex = 3;
+            ShoppingDistanceMaxBox.KeyPress += int_KeyPress;
             // 
             // tableLayoutPanel3
             // 
@@ -260,6 +262,7 @@
             PriceMinBox.Name = "PriceMinBox";
             PriceMinBox.Size = new Size(180, 23);
             PriceMinBox.TabIndex = 2;
+            PriceMinBox.KeyPress += pris_KeyPress;
             // 
             // PriceMaxBox
             // 
@@ -269,6 +272,7 @@
             PriceMaxBox.Name = "PriceMaxBox";
             PriceMaxBox.Size = new Size(182, 23);
             PriceMaxBox.TabIndex = 3;
+            PriceMaxBox.KeyPress += pris_KeyPress;
             // 
             // label5
             // 
@@ -364,6 +368,7 @@
             SizeMinBox.Name = "SizeMinBox";
             SizeMinBox.Size = new Size(180, 23);
             SizeMinBox.TabIndex = 2;
+            SizeMinBox.KeyPress += int_KeyPress;
             // 
             // SizeMaxBox
             // 
@@ -373,6 +378,7 @@
             SizeMaxBox.Name = "SizeMaxBox";
             SizeMaxBox.Size = new Size(182, 23);
             SizeMaxBox.TabIndex = 3;
+            SizeMaxBox.KeyPress += int_KeyPress;
             // 
             // FilterInfoForm
             // 
@@ -382,6 +388,7 @@
             Controls.Add(tableLayoutPanel1);
             Margin = new Padding(2);
             Name = "FilterInfoForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Filter";
             Load += SortValuesForm_Load;
             tableLayoutPanel1.ResumeLayout(false);

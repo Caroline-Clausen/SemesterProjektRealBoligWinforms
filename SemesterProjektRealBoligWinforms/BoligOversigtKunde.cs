@@ -19,11 +19,7 @@ namespace SemesterProjektRealBoligWinforms
             InitializeComponent();
         }
 
-        private void boligKundeGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+      
         private void BoligOversigtKunde_Load(object sender, EventArgs e)
         {
             BoligRepository boligRepository = new BoligRepository();

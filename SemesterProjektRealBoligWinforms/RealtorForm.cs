@@ -132,10 +132,11 @@ namespace SemesterProjektRealBoligWinforms
 
                         // Write the JSON string to the file
                         File.WriteAllText(filePath, jsonString);
-                    } catch(Exception ex)
+                    }
+                    catch (Exception ex)
                     {
                         MessageBox.Show($"Filen kunne ikke gemmes: {ex.Message}", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }                
+                    }
                 }
             }
         }
@@ -152,6 +153,21 @@ namespace SemesterProjektRealBoligWinforms
             boligRepository.FjernBolig(boligID);
             RefreshDataTable(sender, e);
 
+        }
+
+        private void homeSaleButton_Click(object sender, EventArgs e)
+        {
+            Bolig bolig = (Bolig)HomesGridView.SelectedRows[0].DataBoundItem;
+            salgBolig salgBolig = new salgBolig(bolig);
+            this.Hide();
+            salgBolig.ShowDialog();
+            this.Show();
+
+            if (salgBolig.DialogResult != DialogResult.OK)
+            {
+                return;
+            }
+            RefreshDataTable(sender, e);
         }
     }
     public class BoligSortValues

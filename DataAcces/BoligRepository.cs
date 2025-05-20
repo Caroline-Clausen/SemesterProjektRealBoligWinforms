@@ -53,7 +53,7 @@ namespace DataAccess
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("SELECT * FROM boliger WHERE adresse <> 'slettet' and område=@område", con))
                 {
-                   cmd.Parameters.AddWithValue("@område", område);
+                    cmd.Parameters.AddWithValue("@område", område);
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -124,7 +124,7 @@ namespace DataAccess
         }
         public void FjernBolig(int boligId)
         {
-            using(SqlConnection con = new SqlConnection(ConnString))
+            using (SqlConnection con = new SqlConnection(ConnString))
             {
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("DELETE from boliger WHERE boligID = @boligID", con))
@@ -160,6 +160,20 @@ namespace DataAccess
             }
             return områder;
         }
-        
+
+        public void SætStatus(int boligID, string status)
+        {
+            using (SqlConnection con = new SqlConnection(ConnString))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("UPDATE boliger SET  status = @status WHERE boligID = @boligID", con))
+                {
+                    cmd.Parameters.AddWithValue("@status", status);
+                    cmd.Parameters.AddWithValue("@boligID", boligID);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
     }
 }

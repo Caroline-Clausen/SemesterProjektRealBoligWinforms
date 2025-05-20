@@ -23,7 +23,14 @@ namespace SemesterProjektRealBoligWinforms
         {
             // viser vindue til at oprette ejendomsmægler
             MæglerInformation mæglerInformation = new MæglerInformation(new Ejendomsmaegler());
+            this.Hide();
             mæglerInformation.ShowDialog();
+            this.Show();
+
+            if (mæglerInformation.DialogResult != DialogResult.OK)
+            {
+                return;
+            }
 
             EjendomsmæglerRepository ejendomsmæglerRepository = new EjendomsmæglerRepository();
             ejendomsmæglerRepository.TilføjEjendomsmægler(mæglerInformation.MæglerLokal);
@@ -33,13 +40,13 @@ namespace SemesterProjektRealBoligWinforms
 
         private void afslutOpretMæglerKnap_Click(object sender, EventArgs e)
         {
-           Close();
+            Close();
             // lukker vindue
         }
 
         private void fjernMæglerKnap_Click(object sender, EventArgs e)
         {
-           if (MessageBox.Show("Er du sikker på at du vil slette denne ejendomsmægler?", "Slet ejendomsmægler", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show("Er du sikker på at du vil slette denne ejendomsmægler?", "Slet ejendomsmægler", MessageBoxButtons.YesNo) == DialogResult.No)
             {
                 return;
             }
@@ -50,7 +57,7 @@ namespace SemesterProjektRealBoligWinforms
 
             var ejendomsmaeglerId = (int)vistMæglerDataGridView.SelectedRows[0].Cells[0].Value;
 
-           
+
             ejendomsmæglerRepository.FjernEjendomsmægler(ejendomsmaeglerId);
 
             // opdater datagridview over mæglere
@@ -74,13 +81,16 @@ namespace SemesterProjektRealBoligWinforms
             //Bruger Id til at finde ejendomsmægler i SQL database
             var ejendomsmaeglerId = (Ejendomsmaegler)vistMæglerDataGridView.SelectedRows[0].DataBoundItem;
 
+
             //ID sendes til database for at finde ejendomsmægler
             // vise data i nyt vindue
-
             MæglerInformation mæglerInformation = new MæglerInformation(ejendomsmaeglerId);
 
+            this.Hide();
+            mæglerInformation.ShowDialog();
+            this.Show();
 
-            mæglerInformation.Show();
+
         }
 
         private void OpretMægler_Load(object sender, EventArgs e)
@@ -88,9 +98,5 @@ namespace SemesterProjektRealBoligWinforms
             opdaterMæglerListeKnap_Click(sender, e);
         }
 
-        private void vistMæglerDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

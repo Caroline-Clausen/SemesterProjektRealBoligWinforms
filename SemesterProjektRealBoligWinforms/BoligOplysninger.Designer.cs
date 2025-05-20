@@ -109,6 +109,7 @@
             AfstandIndkøbTextBox.TabIndex = 20;
             AfstandIndkøbTextBox.TextAlign = HorizontalAlignment.Right;
             AfstandIndkøbTextBox.TextChanged += TextBox_TextChanged;
+            AfstandIndkøbTextBox.KeyPress += int_KeyPress;
             // 
             // PrisTextBox
             // 
@@ -119,6 +120,7 @@
             PrisTextBox.TabIndex = 19;
             PrisTextBox.TextAlign = HorizontalAlignment.Right;
             PrisTextBox.TextChanged += TextBox_TextChanged;
+            PrisTextBox.KeyPress += PrisTextBox_KeyPress;
             // 
             // BoligTypeTextBox
             // 
@@ -139,6 +141,7 @@
             ArealText.TabIndex = 17;
             ArealText.TextAlign = HorizontalAlignment.Right;
             ArealText.TextChanged += TextBox_TextChanged;
+            ArealText.KeyPress += int_KeyPress;
             // 
             // AdresseTextBox
             // 
@@ -303,6 +306,7 @@
             Controls.Add(boligTableLayoutPanel);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "BoligOplysninger";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Oplysninger om bolig";
             boligTableLayoutPanel.ResumeLayout(false);
             boligTableLayoutPanel.PerformLayout();

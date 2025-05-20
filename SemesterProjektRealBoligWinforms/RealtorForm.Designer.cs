@@ -39,8 +39,9 @@
             SortListButton = new Button();
             RegisterHomeButton = new Button();
             EditHomeButton = new Button();
-            ExportListButton = new Button();
+            homeSaleButton = new Button();
             sletBoligButton = new Button();
+            ExportListButton = new Button();
             ((System.ComponentModel.ISupportInitialize)HomesGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)boligBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ejendomsmaeglerBindingSource).BeginInit();
@@ -114,12 +115,13 @@
             flowLayoutPanel1.Controls.Add(SortListButton);
             flowLayoutPanel1.Controls.Add(RegisterHomeButton);
             flowLayoutPanel1.Controls.Add(EditHomeButton);
+            flowLayoutPanel1.Controls.Add(homeSaleButton);
             flowLayoutPanel1.Controls.Add(sletBoligButton);
             flowLayoutPanel1.Controls.Add(ExportListButton);
-            flowLayoutPanel1.Location = new Point(132, 267);
+            flowLayoutPanel1.Location = new Point(73, 267);
             flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(646, 34);
+            flowLayoutPanel1.Size = new Size(764, 34);
             flowLayoutPanel1.TabIndex = 2;
             // 
             // UpdateDataTableButton
@@ -175,24 +177,24 @@
             EditHomeButton.UseVisualStyleBackColor = true;
             EditHomeButton.Click += EditHomeButton_Click;
             // 
-            // ExportListButton
+            // homeSaleButton
             // 
-            ExportListButton.AutoSize = true;
-            ExportListButton.Font = new Font("Segoe UI", 11F);
-            ExportListButton.Location = new Point(530, 2);
-            ExportListButton.Margin = new Padding(2);
-            ExportListButton.Name = "ExportListButton";
-            ExportListButton.Size = new Size(114, 30);
-            ExportListButton.TabIndex = 6;
-            ExportListButton.Text = "Exporter Liste";
-            ExportListButton.UseVisualStyleBackColor = true;
-            ExportListButton.MouseClick += ExportListButton_MouseClick;
+            homeSaleButton.AutoSize = true;
+            homeSaleButton.Font = new Font("Segoe UI", 11F);
+            homeSaleButton.Location = new Point(412, 2);
+            homeSaleButton.Margin = new Padding(2);
+            homeSaleButton.Name = "homeSaleButton";
+            homeSaleButton.Size = new Size(114, 30);
+            homeSaleButton.TabIndex = 8;
+            homeSaleButton.Text = "Bolig Solgt";
+            homeSaleButton.UseVisualStyleBackColor = true;
+            homeSaleButton.Click += homeSaleButton_Click;
             // 
             // sletBoligButton
             // 
             sletBoligButton.AutoSize = true;
             sletBoligButton.Font = new Font("Segoe UI", 11F);
-            sletBoligButton.Location = new Point(412, 2);
+            sletBoligButton.Location = new Point(530, 2);
             sletBoligButton.Margin = new Padding(2);
             sletBoligButton.Name = "sletBoligButton";
             sletBoligButton.Size = new Size(114, 30);
@@ -200,6 +202,19 @@
             sletBoligButton.Text = "Slet Bolig";
             sletBoligButton.UseVisualStyleBackColor = true;
             sletBoligButton.Click += sletBoligButton_Click;
+            // 
+            // ExportListButton
+            // 
+            ExportListButton.AutoSize = true;
+            ExportListButton.Font = new Font("Segoe UI", 11F);
+            ExportListButton.Location = new Point(648, 2);
+            ExportListButton.Margin = new Padding(2);
+            ExportListButton.Name = "ExportListButton";
+            ExportListButton.Size = new Size(114, 30);
+            ExportListButton.TabIndex = 6;
+            ExportListButton.Text = "Exporter Liste";
+            ExportListButton.UseVisualStyleBackColor = true;
+            ExportListButton.MouseClick += ExportListButton_MouseClick;
             // 
             // RealtorForm
             // 
@@ -209,6 +224,7 @@
             Controls.Add(tableLayoutPanel1);
             Margin = new Padding(2);
             Name = "RealtorForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "RealtorForm";
             Load += RealtorForm_Load;
             ((System.ComponentModel.ISupportInitialize)HomesGridView).EndInit();
@@ -235,5 +251,6 @@
         private Button SortListButton;
         private Button ExportListButton;
         private Button sletBoligButton;
+        private Button homeSaleButton;
     }
 }
