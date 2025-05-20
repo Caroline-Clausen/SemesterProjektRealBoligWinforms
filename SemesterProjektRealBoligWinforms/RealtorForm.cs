@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,8 +19,8 @@ namespace SemesterProjektRealBoligWinforms
     public partial class RealtorForm : Form
     {
         BoligSortValues SortValues = new BoligSortValues();
-        List<Bolig> Data;
-        List<Bolig> DataSorted;
+        List<Bolig>? Data;
+        List<Bolig>? DataSorted;
 
         public RealtorForm()
         {
@@ -103,11 +104,40 @@ namespace SemesterProjektRealBoligWinforms
             this.Hide();
             form.ShowDialog();
             this.Show();
+
+            SortDataTable(sender, e);
         }
 
         private void ExportListButton_MouseClick(object? sender, MouseEventArgs e)
         {
+            // Create a SaveFileDialog to prompt the user for a file location
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
+                saveFileDialog.Title = "Gem sortering til fil";
 
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = saveFileDialog.FileName;
+
+                    try
+                    {
+                        // Serialize the data to JSON
+                        var options = new JsonSerializerOptions
+                        {
+                            WriteIndented = true,
+                            Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All)
+                        };
+                        string jsonString = JsonSerializer.Serialize(DataSorted, options);
+
+                        // Write the JSON string to the file
+                        File.WriteAllText(filePath, jsonString);
+                    } catch(Exception ex)
+                    {
+                        MessageBox.Show($"Filen kunne ikke gemmes: {ex.Message}", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }                
+                }
+            }
         }
 
         private void sletBoligButton_Click(object sender, EventArgs e)
