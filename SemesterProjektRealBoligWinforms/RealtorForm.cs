@@ -55,6 +55,7 @@ namespace SemesterProjektRealBoligWinforms
                 where bolig.Pris <= SortValues.PriceMax
                 where bolig.AfstandTilIndkoeb >= SortValues.ShoppingDistanceMin
                 where bolig.AfstandTilIndkoeb <= SortValues.ShoppingDistanceMax
+                where bolig.Status == SortValues.Status
                 select bolig;
 
             DataSorted = sortQuery.ToList();
@@ -175,6 +176,7 @@ namespace SemesterProjektRealBoligWinforms
         public String Address = "";
         public String Type = "";
         public String Area = "";
+        public String Status = "";
         public int SizeMin = int.MinValue;
         public int SizeMax = int.MaxValue;
         public int PriceMin = int.MinValue;

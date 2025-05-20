@@ -40,6 +40,8 @@ namespace SemesterProjektRealBoligWinforms
                 SortValues.ShoppingDistanceMin = GetIntFromTextBox(ShoppingDistanceMinBox);
             if (ShoppingDistanceMaxBox.Text != "")
                 SortValues.ShoppingDistanceMax = GetIntFromTextBox(ShoppingDistanceMaxBox);
+            if (StatusComboBox.SelectedText != "")
+                SortValues.Status = StatusComboBox.SelectedText;
 
             Close();
         }
@@ -73,6 +75,8 @@ namespace SemesterProjektRealBoligWinforms
                 ShoppingDistanceMinBox.Text = SortValues.ShoppingDistanceMin.ToString();
             if (SortValues.ShoppingDistanceMax != int.MaxValue)
                 ShoppingDistanceMaxBox.Text = SortValues.ShoppingDistanceMax.ToString();
+            if (SortValues.Status != "")
+                StatusComboBox.SelectedText = SortValues.Status;
         }
 
         private void pris_KeyPress(object sender, KeyPressEventArgs e)
