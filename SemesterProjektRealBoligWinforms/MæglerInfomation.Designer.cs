@@ -101,6 +101,7 @@
             telefonMæglerTekstboks.Size = new Size(226, 23);
             telefonMæglerTekstboks.TabIndex = 19;
             telefonMæglerTekstboks.TextChanged += Tekstbox_TextChanged;
+            telefonMæglerTekstboks.KeyPress += telefonMæglerTekstboks_KeyPress;
             // 
             // telefonMæglerLable
             // 

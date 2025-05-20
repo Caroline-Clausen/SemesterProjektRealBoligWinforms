@@ -167,8 +167,7 @@ namespace SemesterProjektRealBoligWinforms
             {
                 return;
             }
-
-
+            RefreshDataTable(sender, e);
         }
     }
     public class BoligSortValues

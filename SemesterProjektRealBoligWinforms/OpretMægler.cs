@@ -98,9 +98,5 @@ namespace SemesterProjektRealBoligWinforms
             opdaterMæglerListeKnap_Click(sender, e);
         }
 
-        private void vistMæglerDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

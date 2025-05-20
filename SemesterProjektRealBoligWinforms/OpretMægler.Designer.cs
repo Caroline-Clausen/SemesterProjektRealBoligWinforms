@@ -68,7 +68,6 @@
             vistMæglerDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             vistMæglerDataGridView.Size = new Size(454, 342);
             vistMæglerDataGridView.TabIndex = 7;
-            vistMæglerDataGridView.CellContentClick += vistMæglerDataGridView_CellContentClick;
             // 
             // ejendomsmaeglerIDDataGridViewTextBoxColumn
             // 

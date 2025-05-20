@@ -176,7 +176,6 @@
             boligTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             boligTableLayoutPanel.Size = new Size(330, 204);
             boligTableLayoutPanel.TabIndex = 15;
-            boligTableLayoutPanel.Paint += boligTableLayoutPanel_Paint;
             // 
             // prisTextBox
             // 
@@ -225,7 +224,6 @@
             adresseTextBox.Size = new Size(171, 23);
             adresseTextBox.TabIndex = 16;
             adresseTextBox.TextAlign = HorizontalAlignment.Right;
-            adresseTextBox.TextChanged += adresseTextBox_TextChanged;
             // 
             // krLabel
             // 
@@ -301,7 +299,6 @@
             Name = "BoligVisningKunde";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Infomation om den valgte bolig";
-            Load += BoligVisningKunde_Load_1;
             boligTableLayoutPanel.ResumeLayout(false);
             boligTableLayoutPanel.PerformLayout();
             ResumeLayout(false);

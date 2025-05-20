@@ -108,7 +108,6 @@
             navnKundeTekstbox.Name = "navnKundeTekstbox";
             navnKundeTekstbox.Size = new Size(226, 23);
             navnKundeTekstbox.TabIndex = 28;
-            navnKundeTekstbox.TextChanged += navnKundeTekstbox_TextChanged;
             // 
             // kundeTekst
             // 
@@ -174,8 +173,8 @@
             Controls.Add(navnKundeTekstbox);
             Controls.Add(okKnap);
             Name = "KundeBud";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Kundeoplysninger ";
-            Load += KundeBud_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -19,13 +19,6 @@ namespace SemesterProjektRealBoligWinforms
             //adresseLable.Text = bolig.Adresse;
         }
 
-        private void KundeBud_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void navnKundeTekstbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

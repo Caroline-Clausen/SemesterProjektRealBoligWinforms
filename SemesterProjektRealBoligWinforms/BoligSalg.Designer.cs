@@ -1,4 +1,5 @@
-﻿namespace SemesterProjektRealBoligWinforms
+﻿
+namespace SemesterProjektRealBoligWinforms
 {
     partial class salgBolig
     {
@@ -31,16 +32,16 @@
             FortrydButton = new Button();
             GemButton = new Button();
             boligTableLayoutPanel = new TableLayoutPanel();
-            dateTimePicker1 = new DateTimePicker();
+            salgsDatoDateTimePicker = new DateTimePicker();
             AdresseTextBox = new TextBox();
             adresseLable = new Label();
             koeberIDLable = new Label();
-            label1 = new Label();
-            SælgerComboBox = new ComboBox();
+            mæglerLable = new Label();
+            mæglerComboBox = new ComboBox();
             datoLable = new Label();
             boligPrisLable = new Label();
             afstandLable = new Label();
-            PrisTextBox = new TextBox();
+            prisTextBox = new TextBox();
             krLabel = new Label();
             saelgerComboBox = new ComboBox();
             koeberComboBox = new ComboBox();
@@ -68,6 +69,7 @@
             GemButton.TabIndex = 20;
             GemButton.Text = "Gem";
             GemButton.UseVisualStyleBackColor = true;
+            GemButton.Click += GemButton_Click;
             // 
             // boligTableLayoutPanel
             // 
@@ -76,16 +78,16 @@
             boligTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 32.84884F));
             boligTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 67.15116F));
             boligTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 30F));
-            boligTableLayoutPanel.Controls.Add(dateTimePicker1, 1, 3);
+            boligTableLayoutPanel.Controls.Add(salgsDatoDateTimePicker, 1, 3);
             boligTableLayoutPanel.Controls.Add(AdresseTextBox, 1, 0);
             boligTableLayoutPanel.Controls.Add(adresseLable, 0, 0);
             boligTableLayoutPanel.Controls.Add(koeberIDLable, 0, 2);
-            boligTableLayoutPanel.Controls.Add(label1, 0, 6);
-            boligTableLayoutPanel.Controls.Add(SælgerComboBox, 1, 6);
+            boligTableLayoutPanel.Controls.Add(mæglerLable, 0, 6);
+            boligTableLayoutPanel.Controls.Add(mæglerComboBox, 1, 6);
             boligTableLayoutPanel.Controls.Add(datoLable, 0, 3);
             boligTableLayoutPanel.Controls.Add(boligPrisLable, 0, 4);
             boligTableLayoutPanel.Controls.Add(afstandLable, 0, 1);
-            boligTableLayoutPanel.Controls.Add(PrisTextBox, 1, 4);
+            boligTableLayoutPanel.Controls.Add(prisTextBox, 1, 4);
             boligTableLayoutPanel.Controls.Add(krLabel, 2, 4);
             boligTableLayoutPanel.Controls.Add(saelgerComboBox, 1, 1);
             boligTableLayoutPanel.Controls.Add(koeberComboBox, 1, 2);
@@ -101,20 +103,20 @@
             boligTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             boligTableLayoutPanel.Size = new Size(373, 181);
             boligTableLayoutPanel.TabIndex = 19;
-            boligTableLayoutPanel.Paint += boligTableLayoutPanel_Paint;
             // 
-            // dateTimePicker1
+            // salgsDatoDateTimePicker
             // 
-            dateTimePicker1.Location = new Point(115, 93);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(224, 23);
-            dateTimePicker1.TabIndex = 22;
+            salgsDatoDateTimePicker.Location = new Point(115, 93);
+            salgsDatoDateTimePicker.Name = "salgsDatoDateTimePicker";
+            salgsDatoDateTimePicker.Size = new Size(224, 23);
+            salgsDatoDateTimePicker.TabIndex = 22;
             // 
             // AdresseTextBox
             // 
             AdresseTextBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             AdresseTextBox.Location = new Point(115, 3);
             AdresseTextBox.Name = "AdresseTextBox";
+            AdresseTextBox.ReadOnly = true;
             AdresseTextBox.Size = new Size(224, 23);
             AdresseTextBox.TabIndex = 16;
             AdresseTextBox.TextAlign = HorizontalAlignment.Right;
@@ -141,27 +143,27 @@
             koeberIDLable.TabIndex = 2;
             koeberIDLable.Text = "Køber (hvis ikke på liste, opret)";
             // 
-            // label1
+            // mæglerLable
             // 
-            label1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Location = new Point(2, 157);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(108, 15);
-            label1.TabIndex = 27;
-            label1.Text = "Sælger";
+            mæglerLable.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            mæglerLable.AutoSize = true;
+            mæglerLable.Location = new Point(2, 157);
+            mæglerLable.Margin = new Padding(2, 0, 2, 0);
+            mæglerLable.Name = "mæglerLable";
+            mæglerLable.Size = new Size(108, 15);
+            mæglerLable.TabIndex = 27;
+            mæglerLable.Text = "Ejendomsmægler";
             // 
-            // SælgerComboBox
+            // mæglerComboBox
             // 
-            SælgerComboBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            SælgerComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            SælgerComboBox.FormattingEnabled = true;
-            SælgerComboBox.Location = new Point(115, 153);
-            SælgerComboBox.Name = "SælgerComboBox";
-            SælgerComboBox.Size = new Size(224, 23);
-            SælgerComboBox.Sorted = true;
-            SælgerComboBox.TabIndex = 30;
+            mæglerComboBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            mæglerComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            mæglerComboBox.FormattingEnabled = true;
+            mæglerComboBox.Location = new Point(115, 153);
+            mæglerComboBox.Name = "mæglerComboBox";
+            mæglerComboBox.Size = new Size(224, 23);
+            mæglerComboBox.Sorted = true;
+            mæglerComboBox.TabIndex = 30;
             // 
             // datoLable
             // 
@@ -196,14 +198,15 @@
             afstandLable.TabIndex = 14;
             afstandLable.Text = "Sælges navn (vælg fra liste)";
             // 
-            // PrisTextBox
+            // prisTextBox
             // 
-            PrisTextBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            PrisTextBox.Location = new Point(115, 122);
-            PrisTextBox.Name = "PrisTextBox";
-            PrisTextBox.Size = new Size(224, 23);
-            PrisTextBox.TabIndex = 19;
-            PrisTextBox.TextAlign = HorizontalAlignment.Right;
+            prisTextBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            prisTextBox.Location = new Point(115, 122);
+            prisTextBox.Name = "prisTextBox";
+            prisTextBox.Size = new Size(224, 23);
+            prisTextBox.TabIndex = 19;
+            prisTextBox.TextAlign = HorizontalAlignment.Right;
+            prisTextBox.KeyPress += prisTextBox_KeyPress;
             // 
             // krLabel
             // 
@@ -259,7 +262,7 @@
         private Button FortrydButton;
         private Button GemButton;
         private TableLayoutPanel boligTableLayoutPanel;
-        private TextBox PrisTextBox;
+        private TextBox prisTextBox;
         public TextBox AdresseTextBox;
         private Label adresseLable;
         private Label datoLable;
@@ -267,9 +270,9 @@
         private Label boligPrisLable;
         private Label krLabel;
         private Label afstandLable;
-        private Label label1;
-        private ComboBox SælgerComboBox;
-        private DateTimePicker dateTimePicker1;
+        private Label mæglerLable;
+        private ComboBox mæglerComboBox;
+        private DateTimePicker salgsDatoDateTimePicker;
         private ComboBox saelgerComboBox;
         private ComboBox koeberComboBox;
     }

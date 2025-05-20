@@ -41,30 +41,12 @@ namespace SemesterProjektRealBoligWinforms
 
         }
 
-        public void BoligVisningKunde_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BoligVisningKunde_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void tilbageBoligKnap_Click(object sender, EventArgs e)
         {
             BoligVisningKunde.ActiveForm.Close();
 
         }
 
-        private void adresseTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void boligTableLayoutPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

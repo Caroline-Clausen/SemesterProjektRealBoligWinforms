@@ -74,5 +74,32 @@ namespace SemesterProjektRealBoligWinforms
             if (SortValues.ShoppingDistanceMax != int.MaxValue)
                 ShoppingDistanceMaxBox.Text = SortValues.ShoppingDistanceMax.ToString();
         }
+
+        private void pris_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+            // det gør at kun tal kommer med. Hvis det bruges andet end tal eller komma, så ignorerer den det.
+
+
+            // only allow one decimal point
+            if ((e.KeyChar == ',') && (((TextBox)sender).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+            // hvis der er mere end et komma i feltet, så ignorerer den det.
+        }
+
+        private void int_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) )
+            {
+                e.Handled = true;
+            }
+            // det gør at kun tal kommer med. 
+
+        }
     }
 }
