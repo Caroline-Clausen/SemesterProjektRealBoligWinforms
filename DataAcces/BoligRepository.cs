@@ -45,13 +45,13 @@ namespace DataAccess
             return boliger;
         }
 
-        public List<Bolig> HentBoligerOmråde(string område)
+        public List<Bolig> HentBoligerIkkeSolgtOmråde(string område)
         {
             List<Bolig> boliger = new List<Bolig>();
             using (SqlConnection con = new SqlConnection(ConnString))
             {
                 con.Open();
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM boliger WHERE adresse <> 'slettet' and område=@område", con))
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM boliger WHERE status <> 'solgt' and område=@område", con))
                 {
                     cmd.Parameters.AddWithValue("@område", område);
 
@@ -69,7 +69,6 @@ namespace DataAccess
                                     Type = reader["type"].ToString(),
                                     Pris = Convert.ToDouble(reader["pris"]),
                                     AfstandTilIndkoeb = Convert.ToDouble(reader["afstandtilindkøb"]),
-                                    Status = reader["status"].ToString(),
                                     Område = reader["område"].ToString(),
                                 };
                                 boliger.Add(bolig);
@@ -175,5 +174,93 @@ namespace DataAccess
             }
         }
 
+        public List<Bolig> HentBoligIkkeSolgt()
+        {
+            List<Bolig> boliger = new List<Bolig>();
+            using (SqlConnection con = new SqlConnection(ConnString))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM boliger WHERE status <> 'solgt'", con))
+                {
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader != null)
+                        {
+                            while (reader.Read())
+                            {
+                                Bolig bolig = new Bolig
+                                {
+                                    BoligID = Convert.ToInt32(reader["boligID"]), // Primarnøgle tildelt fra database (autogenereret)
+                                    Adresse = reader["adresse"].ToString(),
+                                    Kvadratmeter = Convert.ToInt32(reader["kvadratmeter"]),
+                                    Type = reader["type"].ToString(),
+                                    Pris = Convert.ToDouble(reader["pris"]),
+                                    AfstandTilIndkoeb = Convert.ToDouble(reader["afstandtilindkøb"]),
+                                    Område = reader["område"].ToString(),
+                                };
+                                boliger.Add(bolig);
+                            }
+                        }
+                    }
+                }
+            }
+            return boliger;
+        }
+
+        public List<BoligMedSælger> HentBoligerMedSælger()
+        {
+            List<BoligMedSælger> boliger = new List<BoligMedSælger>();
+            using (SqlConnection con = new SqlConnection(ConnString))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(
+                    "SELECT boliger.*, sælgere.navn as sælgernavn, sælgere.mail as sælgermail, sælgere.telefonnummer as sælgertelefonnummer, " +
+                    "salg.pris as salgspris, salg.salgstidspunkt, ejendomsmæglere.navn as mæglernavn, ejendomsmæglere.mail as mæglermail, " +
+                    "ejendomsmæglere.telefonnummer as mæglertelefonnummer from boliger\r\n" +
+                    "left join sælgere on sælgere.sælgerID = boliger.sælgerID\r\n" +
+                    "left join salg on salg.boligID = boliger.boligID\r\n" +
+                    "left join ejendomsmæglere on ejendomsmæglere.ejendomsmæglerID = salg.ejendomsmæglerID", con))
+
+                //using (SqlCommand cmd = new SqlCommand("SELECT boliger.*, sælgere.navn as sælgernavn, sælgere.mail as sælgermail, sælgere.telefonnummer as sælgertelefonnummer, salg.pris as salgspris, salg.salgstidspunkt, ejendomsmæglere.navn as mæglernavn, ejendomsmæglere.mail as mæglermail, ejendomsmæglere.telefonnummer as mæglertelefonnummer from boliger";
+                //cmdString += "left join sælgere on sælgere.sælgerID = boliger.sælgerID";
+                //cmdString += "left join salg on salg.boligID = boliger.boligID";
+                //cmdString += "left join ejendomsmæglere on ejendomsmæglere.ejendomsmæglerID = salg.ejendomsmæglerID", con))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader != null)
+                        {
+                            while (reader.Read())
+                            {
+                                BoligMedSælger bolig = new BoligMedSælger
+                                {
+                                    BoligID = Convert.ToInt32(reader["boligID"]), // Primarnøgle tildelt fra database (autogenereret)
+                                    Adresse = reader["adresse"].ToString(),
+                                    Kvadratmeter = Convert.ToInt32(reader["kvadratmeter"]),
+                                    Type = reader["type"].ToString(),
+                                    Pris = Convert.ToDouble(reader["pris"]),
+                                    AfstandTilIndkoeb = Convert.ToDouble(reader["afstandtilindkøb"]),
+                                    Område = reader["område"].ToString(),
+                                    Status = reader["status"].ToString(),
+                                    SaelgerID = Convert.ToInt32(reader["sælgerID"]),
+                                    SælgerNavn = reader["navn"].ToString(),
+                                    SælgerMail = reader["mail"].ToString(),
+                                    SælgerTelefon = reader["telefonnummer"].ToString(),
+                                    //MæglerID = Convert.ToInt32(reader["ejendomsmæglerID"]),
+                                    //MæglerNavn = reader["mæglernavn"].ToString(),
+                                    //MæglerMail = reader["mæglermail"].ToString(),
+                                    //MæglerTelefon = reader["mæglertelefonnummer"].ToString(),
+                                };
+                                boliger.Add(bolig);
+                            }
+                        }
+                    }
+                }
+            }
+            return boliger;
+
+        }
     }
 }
+

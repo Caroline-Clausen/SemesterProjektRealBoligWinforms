@@ -106,7 +106,7 @@ namespace SemesterProjektRealBoligWinforms
             // 
             // salgsDatoDateTimePicker
             // 
-            salgsDatoDateTimePicker.Location = new Point(115, 93);
+            salgsDatoDateTimePicker.Location = new Point(115, 90);
             salgsDatoDateTimePicker.Name = "salgsDatoDateTimePicker";
             salgsDatoDateTimePicker.Size = new Size(224, 23);
             salgsDatoDateTimePicker.TabIndex = 22;
@@ -125,29 +125,29 @@ namespace SemesterProjektRealBoligWinforms
             // 
             adresseLable.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             adresseLable.AutoSize = true;
-            adresseLable.Location = new Point(2, 0);
+            adresseLable.Location = new Point(2, 7);
             adresseLable.Margin = new Padding(2, 0, 2, 0);
             adresseLable.Name = "adresseLable";
-            adresseLable.Size = new Size(108, 30);
+            adresseLable.Size = new Size(108, 15);
             adresseLable.TabIndex = 16;
-            adresseLable.Text = "Adresse (den man er trykket ind på)";
+            adresseLable.Text = "Adresse ";
             // 
             // koeberIDLable
             // 
             koeberIDLable.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             koeberIDLable.AutoSize = true;
-            koeberIDLable.Location = new Point(2, 60);
+            koeberIDLable.Location = new Point(2, 65);
             koeberIDLable.Margin = new Padding(2, 0, 2, 0);
             koeberIDLable.Name = "koeberIDLable";
-            koeberIDLable.Size = new Size(108, 30);
+            koeberIDLable.Size = new Size(108, 15);
             koeberIDLable.TabIndex = 2;
-            koeberIDLable.Text = "Køber (hvis ikke på liste, opret)";
+            koeberIDLable.Text = "Køber ";
             // 
             // mæglerLable
             // 
             mæglerLable.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             mæglerLable.AutoSize = true;
-            mæglerLable.Location = new Point(2, 157);
+            mæglerLable.Location = new Point(2, 155);
             mæglerLable.Margin = new Padding(2, 0, 2, 0);
             mæglerLable.Name = "mæglerLable";
             mæglerLable.Size = new Size(108, 15);
@@ -159,7 +159,7 @@ namespace SemesterProjektRealBoligWinforms
             mæglerComboBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             mæglerComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             mæglerComboBox.FormattingEnabled = true;
-            mæglerComboBox.Location = new Point(115, 153);
+            mæglerComboBox.Location = new Point(115, 151);
             mæglerComboBox.Name = "mæglerComboBox";
             mæglerComboBox.Size = new Size(224, 23);
             mæglerComboBox.Sorted = true;
@@ -169,7 +169,7 @@ namespace SemesterProjektRealBoligWinforms
             // 
             datoLable.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             datoLable.AutoSize = true;
-            datoLable.Location = new Point(2, 97);
+            datoLable.Location = new Point(2, 94);
             datoLable.Margin = new Padding(2, 0, 2, 0);
             datoLable.Name = "datoLable";
             datoLable.Size = new Size(108, 15);
@@ -180,7 +180,7 @@ namespace SemesterProjektRealBoligWinforms
             // 
             boligPrisLable.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             boligPrisLable.AutoSize = true;
-            boligPrisLable.Location = new Point(2, 126);
+            boligPrisLable.Location = new Point(2, 123);
             boligPrisLable.Margin = new Padding(2, 0, 2, 0);
             boligPrisLable.Name = "boligPrisLable";
             boligPrisLable.Size = new Size(108, 15);
@@ -191,17 +191,17 @@ namespace SemesterProjektRealBoligWinforms
             // 
             afstandLable.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             afstandLable.AutoSize = true;
-            afstandLable.Location = new Point(2, 30);
+            afstandLable.Location = new Point(2, 36);
             afstandLable.Margin = new Padding(2, 0, 2, 0);
             afstandLable.Name = "afstandLable";
-            afstandLable.Size = new Size(108, 30);
+            afstandLable.Size = new Size(108, 15);
             afstandLable.TabIndex = 14;
-            afstandLable.Text = "Sælges navn (vælg fra liste)";
+            afstandLable.Text = "Sælges navn ";
             // 
             // prisTextBox
             // 
             prisTextBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            prisTextBox.Location = new Point(115, 122);
+            prisTextBox.Location = new Point(115, 119);
             prisTextBox.Name = "prisTextBox";
             prisTextBox.Size = new Size(224, 23);
             prisTextBox.TabIndex = 19;
@@ -212,7 +212,7 @@ namespace SemesterProjektRealBoligWinforms
             // 
             krLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             krLabel.AutoSize = true;
-            krLabel.Location = new Point(345, 126);
+            krLabel.Location = new Point(345, 123);
             krLabel.Name = "krLabel";
             krLabel.Size = new Size(25, 15);
             krLabel.TabIndex = 22;
@@ -223,7 +223,7 @@ namespace SemesterProjektRealBoligWinforms
             saelgerComboBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             saelgerComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             saelgerComboBox.FormattingEnabled = true;
-            saelgerComboBox.Location = new Point(115, 33);
+            saelgerComboBox.Location = new Point(115, 32);
             saelgerComboBox.Name = "saelgerComboBox";
             saelgerComboBox.Size = new Size(224, 23);
             saelgerComboBox.Sorted = true;
@@ -234,7 +234,7 @@ namespace SemesterProjektRealBoligWinforms
             koeberComboBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             koeberComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             koeberComboBox.FormattingEnabled = true;
-            koeberComboBox.Location = new Point(115, 63);
+            koeberComboBox.Location = new Point(115, 61);
             koeberComboBox.Name = "koeberComboBox";
             koeberComboBox.Size = new Size(224, 23);
             koeberComboBox.Sorted = true;
