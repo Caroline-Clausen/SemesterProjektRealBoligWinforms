@@ -38,6 +38,7 @@
             EditHomeButton = new Button();
             sletBoligButton = new Button();
             ExportListButton = new Button();
+            homeSaleButton = new Button();
             ((System.ComponentModel.ISupportInitialize)HomesGridView).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -101,6 +102,7 @@
             flowLayoutPanel1.Controls.Add(EditHomeButton);
             flowLayoutPanel1.Controls.Add(sletBoligButton);
             flowLayoutPanel1.Controls.Add(ExportListButton);
+            flowLayoutPanel1.Controls.Add(homeSaleButton);
             flowLayoutPanel1.Location = new Point(238, 446);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(824, 46);
@@ -185,6 +187,19 @@
             ExportListButton.UseVisualStyleBackColor = true;
             ExportListButton.MouseClick += ExportListButton_MouseClick;
             // 
+            // homeSaleButton
+            // 
+            homeSaleButton.AutoSize = true;
+            homeSaleButton.Font = new Font("Segoe UI", 11F);
+            homeSaleButton.Location = new Point(415, 2);
+            homeSaleButton.Margin = new Padding(2);
+            homeSaleButton.Name = "homeSaleButton";
+            homeSaleButton.Size = new Size(115, 30);
+            homeSaleButton.TabIndex = 8;
+            homeSaleButton.Text = "Bolig Solgt";
+            homeSaleButton.UseVisualStyleBackColor = true;
+            homeSaleButton.Click += homeSaleButton_Click;
+            // 
             // RealtorForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -214,5 +229,6 @@
         private Button SortListButton;
         private Button ExportListButton;
         private Button sletBoligButton;
+        private Button homeSaleButton;
     }
 }
