@@ -222,6 +222,7 @@ namespace SemesterProjektRealBoligWinforms
             // 
             saelgerComboBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             saelgerComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            saelgerComboBox.Enabled = false;
             saelgerComboBox.FormattingEnabled = true;
             saelgerComboBox.Location = new Point(115, 32);
             saelgerComboBox.Name = "saelgerComboBox";

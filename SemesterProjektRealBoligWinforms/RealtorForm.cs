@@ -99,7 +99,8 @@ namespace SemesterProjektRealBoligWinforms
 
         private void EditHomeButton_Click(object? sender, EventArgs e)
         {
-            Bolig bolig = (Bolig)HomesGridView.SelectedRows[0].DataBoundItem;
+            BoligRepository boligRepository = new BoligRepository();
+            Bolig bolig = boligRepository.HentBolig(((BoligMedSælger)HomesGridView.SelectedRows[0].DataBoundItem).BoligID);
             BoligOplysninger boligOplysninger = new BoligOplysninger(bolig);
 
             this.Hide();
@@ -108,7 +109,6 @@ namespace SemesterProjektRealBoligWinforms
 
             if (boligOplysninger.DialogResult == DialogResult.OK)
             {
-                BoligRepository boligRepository = new BoligRepository();
                 boligRepository.OpdaterBolig(bolig);
             }
 
@@ -174,7 +174,8 @@ namespace SemesterProjektRealBoligWinforms
 
         private void homeSaleButton_Click(object sender, EventArgs e)
         {
-            Bolig bolig = (Bolig)HomesGridView.SelectedRows[0].DataBoundItem;
+            BoligRepository boligRepository = new BoligRepository();
+            Bolig bolig = boligRepository.HentBolig(((BoligMedSælger)HomesGridView.SelectedRows[0].DataBoundItem).BoligID);
             salgBolig salgBolig = new salgBolig(bolig);
             this.Hide();
             salgBolig.ShowDialog();

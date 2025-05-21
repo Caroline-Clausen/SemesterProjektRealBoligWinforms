@@ -45,6 +45,42 @@ namespace DataAccess
             return boliger;
         }
 
+        public Bolig HentBolig(int boligID)
+        {
+            using (SqlConnection con = new SqlConnection(ConnString))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM boliger WHERE boligID = @boligID", con))
+                {
+                    cmd.Parameters.AddWithValue("@boligID", boligID);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader != null)
+                        {
+                            while (reader.Read())
+                            {
+                                Bolig bolig = new Bolig
+                                {
+                                    BoligID = Convert.ToInt32(reader["boligID"]), // Primarnøgle tildelt fra database (autogenereret)
+                                    Adresse = reader["adresse"].ToString(),
+                                    Kvadratmeter = Convert.ToInt32(reader["kvadratmeter"]),
+                                    Type = reader["type"].ToString(),
+                                    Pris = Convert.ToDouble(reader["pris"]),
+                                    AfstandTilIndkoeb = Convert.ToDouble(reader["afstandtilindkøb"]),
+                                    Status = reader["status"].ToString(),
+                                    Område = reader["område"].ToString(),
+                                    SaelgerID = Convert.ToInt32(reader["sælgerID"]),
+                                };
+                                return bolig;
+                            }
+                        }
+                        return new Bolig();
+                    }
+                }
+            }
+        }
+
         public List<Bolig> HentBoligerIkkeSolgtOmråde(string område)
         {
             List<Bolig> boliger = new List<Bolig>();
