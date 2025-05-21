@@ -217,15 +217,11 @@ namespace DataAccess
                 using (SqlCommand cmd = new SqlCommand(
                     "SELECT boliger.*, sælgere.navn as sælgernavn, sælgere.mail as sælgermail, sælgere.telefonnummer as sælgertelefonnummer, " +
                     "salg.pris as salgspris, salg.salgstidspunkt, ejendomsmæglere.navn as mæglernavn, ejendomsmæglere.mail as mæglermail, " +
-                    "ejendomsmæglere.telefonnummer as mæglertelefonnummer from boliger\r\n" +
+                    "ejendomsmæglere.telefonnummer as mæglertelefonnummer, ejendomsmæglere.ejendomsmæglerID from boliger\r\n" +
                     "left join sælgere on sælgere.sælgerID = boliger.sælgerID\r\n" +
                     "left join salg on salg.boligID = boliger.boligID\r\n" +
                     "left join ejendomsmæglere on ejendomsmæglere.ejendomsmæglerID = salg.ejendomsmæglerID", con))
 
-                //using (SqlCommand cmd = new SqlCommand("SELECT boliger.*, sælgere.navn as sælgernavn, sælgere.mail as sælgermail, sælgere.telefonnummer as sælgertelefonnummer, salg.pris as salgspris, salg.salgstidspunkt, ejendomsmæglere.navn as mæglernavn, ejendomsmæglere.mail as mæglermail, ejendomsmæglere.telefonnummer as mæglertelefonnummer from boliger";
-                //cmdString += "left join sælgere on sælgere.sælgerID = boliger.sælgerID";
-                //cmdString += "left join salg on salg.boligID = boliger.boligID";
-                //cmdString += "left join ejendomsmæglere on ejendomsmæglere.ejendomsmæglerID = salg.ejendomsmæglerID", con))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -243,14 +239,13 @@ namespace DataAccess
                                     AfstandTilIndkoeb = Convert.ToDouble(reader["afstandtilindkøb"]),
                                     Område = reader["område"].ToString(),
                                     Status = reader["status"].ToString(),
-                                    SaelgerID = Convert.ToInt32(reader["sælgerID"]),
-                                    SælgerNavn = reader["navn"].ToString(),
-                                    SælgerMail = reader["mail"].ToString(),
-                                    SælgerTelefon = reader["telefonnummer"].ToString(),
-                                    //MæglerID = Convert.ToInt32(reader["ejendomsmæglerID"]),
-                                    //MæglerNavn = reader["mæglernavn"].ToString(),
-                                    //MæglerMail = reader["mæglermail"].ToString(),
-                                    //MæglerTelefon = reader["mæglertelefonnummer"].ToString(),
+                                    SælgerNavn = håndterDbNullString(reader["sælgernavn"]),
+                                    SælgerMail = håndterDbNullString(reader["sælgermail"]),
+                                    SælgerTelefon = håndterDbNullString(reader["sælgertelefonnummer"]),
+                                    MæglerID = håndterDbNullInt(reader["ejendomsmæglerID"]),
+                                    MæglerNavn = håndterDbNullString(reader["mæglernavn"]),
+                                    MæglerMail = håndterDbNullString(reader["mæglermail"]),
+                                    MæglerTelefon = håndterDbNullString(reader["mæglertelefonnummer"]),
                                 };
                                 boliger.Add(bolig);
                             }
