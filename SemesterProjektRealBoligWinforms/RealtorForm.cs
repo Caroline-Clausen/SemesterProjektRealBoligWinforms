@@ -19,8 +19,9 @@ namespace SemesterProjektRealBoligWinforms
     public partial class RealtorForm : Form
     {
         BoligSortValues SortValues = new BoligSortValues();
-        List<Bolig>? Data;
-        List<Bolig>? DataSorted;
+        List<BoligMedSælger>? Data;
+        List<BoligMedSælger>? DataSorted;
+        
 
         public RealtorForm()
         {
@@ -36,7 +37,7 @@ namespace SemesterProjektRealBoligWinforms
         {
             // Get all data
             BoligRepository boligRepository = new BoligRepository();
-            Data = boligRepository.HentBoliger();
+            Data = boligRepository.HentBoligerMedSælger();
             // Resort new data
             SortDataTable(sender, e);
         }
@@ -44,7 +45,7 @@ namespace SemesterProjektRealBoligWinforms
         private void SortDataTable(object? sender, EventArgs e)
         {
             // Sort data
-            IEnumerable<Bolig> sortQuery =
+            IEnumerable<BoligMedSælger> sortQuery =
                 from bolig in Data
                 where bolig.Adresse.Contains(SortValues.Address)
                 where bolig.Type.Contains(SortValues.Type)

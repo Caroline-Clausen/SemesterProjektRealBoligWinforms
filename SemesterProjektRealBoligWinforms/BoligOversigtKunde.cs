@@ -38,12 +38,12 @@ namespace SemesterProjektRealBoligWinforms
             string valgtOmråde = områdeComboBox.SelectedItem.ToString();
             if (valgtOmråde == " Alle")
             {
-                List<Bolig> boliger = boligRepository.HentBoliger();
+                List<Bolig> boliger = boligRepository.HentBoligIkkeSolgt();
                 boligBindingSource.DataSource = boliger;
             }
             else
             {
-                List<Bolig> boliger = boligRepository.HentBoligerOmråde(valgtOmråde);
+                List<Bolig> boliger = boligRepository.HentBoligerIkkeSolgtOmråde(valgtOmråde);
                 boligBindingSource.DataSource = boliger;
 
                 boligBindingSource.Filter = $"Område = '{valgtOmråde}'";

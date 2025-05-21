@@ -7,15 +7,13 @@ using System.Globalization;
 
 namespace DataAccess
 {
-    public static class DBConnection  // Needed so the connection can be forcefully closed
+    public class DBConnection : RepositoryBase 
     {
-        const String ConnectionString = "Data Source=uclprojects.database.windows.net;Integrated Security=false;User ID=serverlogin;Password=1234Login;Database=SemesterProjekt2025;";
-
-
+       
         public static Ejendomsmaegler? GetRealtor(String username)
         {
             // Start a connection to the database
-            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            using (SqlConnection conn = new SqlConnection(ConnString))
             {
                 conn.Open();
 
@@ -55,7 +53,7 @@ namespace DataAccess
         public static DataTable GetHomesTable()
         {
             // Create a new data adapter based on the specified query.
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM boliger;", ConnectionString);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM boliger;", ConnString);
 
             // Create a command builder to generate SQL update, insert, and
             // delete commands based on selectCommand.
