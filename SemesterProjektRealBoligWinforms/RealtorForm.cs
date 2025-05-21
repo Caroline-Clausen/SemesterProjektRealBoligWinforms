@@ -50,6 +50,7 @@ namespace SemesterProjektRealBoligWinforms
                 where bolig.Adresse.Contains(SortValues.Address)
                 where bolig.Type.Contains(SortValues.Type)
                 where bolig.Område.Contains(SortValues.Area)
+                where bolig.Status.Contains(SortValues.Status)
                 where bolig.Kvadratmeter >= SortValues.SizeMin
                 where bolig.Kvadratmeter <= SortValues.SizeMax
                 where bolig.Pris >= SortValues.PriceMin
@@ -59,6 +60,21 @@ namespace SemesterProjektRealBoligWinforms
                 select bolig;
 
             DataSorted = sortQuery.ToList();
+
+            // If we sort by sold homes, we also sort by time of sale
+            if (SortValues.Status == "solgt")
+            {
+                DataSorted.RemoveAll(bolig =>
+                {
+                    Salg? salg = SalgRepository.HentSalg(bolig.BoligID);
+                    if (salg == null)
+                        return true; // Leave in list, if we couldn't find sale record
+
+                    return SortValues.SoldFromDate > salg.Salgsdato ||
+                           SortValues.SoldToDate < salg.Salgsdato;
+                });
+            }
+
             HomesGridView.DataSource = DataSorted;
             HomesGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
@@ -176,11 +192,14 @@ namespace SemesterProjektRealBoligWinforms
         public String Address = "";
         public String Type = "";
         public String Area = "";
+        public String Status = "";
         public int SizeMin = int.MinValue;
         public int SizeMax = int.MaxValue;
         public int PriceMin = int.MinValue;
         public int PriceMax = int.MaxValue;
         public int ShoppingDistanceMin = int.MinValue;
         public int ShoppingDistanceMax = int.MaxValue;
+        public DateTime? SoldFromDate;
+        public DateTime? SoldToDate;
     }
 }
