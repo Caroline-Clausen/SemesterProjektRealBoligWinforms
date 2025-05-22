@@ -52,12 +52,16 @@ namespace SemesterProjektRealBoligWinforms
             {
                 SortValues.SoldFromDate = SalePeriodFromDateTimePicker.Value; ;
                 SortValues.SoldToDate = SalePeriodToDateTimePicker.Value;
-            } else
+            }
+            else
             {
                 SortValues.SoldFromDate = null;
                 SortValues.SoldToDate = null;
             }
-                Close();
+            SortValues.SoldForMin = GetIntFromTextBox(SalePriceMin);
+            SortValues.SoldForMax = GetIntFromTextBox(SalePriceMax);
+
+            Close();
         }
 
         private static int GetIntFromTextBox(TextBox box)
@@ -105,6 +109,10 @@ namespace SemesterProjektRealBoligWinforms
                 SalePeriodFromDateTimePicker.Value = (DateTime)SortValues.SoldFromDate;
             if (SortValues.SoldToDate != null)
                 SalePeriodToDateTimePicker.Value = (DateTime)SortValues.SoldToDate;
+            if (SortValues.SoldForMin != int.MinValue)
+                SalePriceMin.Text = SortValues.SoldForMin.ToString();
+            if (SortValues.SoldForMax != int.MaxValue)
+                SalePriceMax.Text = SortValues.SoldForMax.ToString();
 
             // Hide/show sales period filter options depending on relevancy
             StatusComboBox_SelectedIndexChanged(sender, e);
@@ -141,10 +149,12 @@ namespace SemesterProjektRealBoligWinforms
         {
             // We check if Status filter is set to sold.
             // Only then is it relevant to also search for a time and date.
-            bool showSalesPeriod = StatusComboBox.SelectedIndex == 1;
+            bool showSoldProperties = StatusComboBox.SelectedIndex == 1;
 
-            SalePeriodLabel.Visible = showSalesPeriod;
-            SaleTimePeriodValues.Visible = showSalesPeriod;
+            SalePeriodLabel.Visible = showSoldProperties;
+            SaleTimePeriodValues.Visible = showSoldProperties;
+            SaleTimeLabel.Visible = showSoldProperties;
+            SaleTimePeriodValues.Visible = showSoldProperties;
         }
     }
 }

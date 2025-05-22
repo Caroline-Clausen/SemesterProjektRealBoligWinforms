@@ -66,12 +66,20 @@ namespace SemesterProjektRealBoligWinforms
             {
                 DataSorted.RemoveAll(bolig =>
                 {
+                    // Get associated sale
                     Salg? salg = SalgRepository.HentSalg(bolig.BoligID);
                     if (salg == null)
-                        return true; // Leave in list, if we couldn't find sale record
+                        return false; // Leave in list, if we couldn't find sale record
 
-                    return SortValues.SoldFromDate > salg.Salgsdato ||
-                           SortValues.SoldToDate < salg.Salgsdato;
+                    if (SortValues.SoldFromDate > salg.Salgsdato ||
+                        SortValues.SoldToDate < salg.Salgsdato)
+                        return true;
+
+                    if (SortValues.SoldForMin > salg.Salgspris ||
+                        SortValues.SoldForMax < salg.Salgspris)
+                        return true;
+
+                    return false;
                 });
             }
 
@@ -202,5 +210,7 @@ namespace SemesterProjektRealBoligWinforms
         public int ShoppingDistanceMax = int.MaxValue;
         public DateTime? SoldFromDate;
         public DateTime? SoldToDate;
+        public int SoldForMin = int.MinValue;
+        public int SoldForMax = int.MaxValue;
     }
 }

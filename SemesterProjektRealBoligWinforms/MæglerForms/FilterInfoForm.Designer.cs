@@ -36,6 +36,12 @@
             label3 = new Label();
             label6 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
+            SalePriceValues = new TableLayoutPanel();
+            label17 = new Label();
+            label18 = new Label();
+            SalePriceMin = new TextBox();
+            SalePriceMax = new TextBox();
+            SaleTimeLabel = new Label();
             SaleTimePeriodValues = new TableLayoutPanel();
             label15 = new Label();
             label16 = new Label();
@@ -65,6 +71,7 @@
             StatusComboBox = new ComboBox();
             boligBindingSource = new BindingSource(components);
             tableLayoutPanel1.SuspendLayout();
+            SalePriceValues.SuspendLayout();
             SaleTimePeriodValues.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -132,6 +139,8 @@
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.Controls.Add(SalePriceValues, 1, 8);
+            tableLayoutPanel1.Controls.Add(SaleTimeLabel, 0, 8);
             tableLayoutPanel1.Controls.Add(SaleTimePeriodValues, 1, 7);
             tableLayoutPanel1.Controls.Add(SalePeriodLabel, 0, 7);
             tableLayoutPanel1.Controls.Add(label13, 0, 6);
@@ -146,13 +155,13 @@
             tableLayoutPanel1.Controls.Add(label2, 0, 1);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(AddressBox, 1, 0);
-            tableLayoutPanel1.Controls.Add(Godkend, 0, 8);
+            tableLayoutPanel1.Controls.Add(Godkend, 0, 9);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 1);
             tableLayoutPanel1.Controls.Add(StatusComboBox, 1, 6);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 9;
+            tableLayoutPanel1.RowCount = 10;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
@@ -162,8 +171,77 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel1.Size = new Size(1095, 387);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel1.Size = new Size(1095, 444);
             tableLayoutPanel1.TabIndex = 13;
+            // 
+            // SalePriceValues
+            // 
+            SalePriceValues.ColumnCount = 4;
+            SalePriceValues.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
+            SalePriceValues.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
+            SalePriceValues.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
+            SalePriceValues.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
+            SalePriceValues.Controls.Add(label17, 0, 0);
+            SalePriceValues.Controls.Add(label18, 2, 0);
+            SalePriceValues.Controls.Add(SalePriceMin, 1, 0);
+            SalePriceValues.Controls.Add(SalePriceMax, 3, 0);
+            SalePriceValues.Dock = DockStyle.Top;
+            SalePriceValues.Location = new Point(164, 320);
+            SalePriceValues.Margin = new Padding(0);
+            SalePriceValues.Name = "SalePriceValues";
+            SalePriceValues.RowCount = 1;
+            SalePriceValues.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            SalePriceValues.Size = new Size(931, 28);
+            SalePriceValues.TabIndex = 21;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Dock = DockStyle.Right;
+            label17.Location = new Point(48, 0);
+            label17.Name = "label17";
+            label17.Size = new Size(42, 28);
+            label17.TabIndex = 0;
+            label17.Text = "Min";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Dock = DockStyle.Right;
+            label18.Location = new Point(510, 0);
+            label18.Name = "label18";
+            label18.Size = new Size(45, 28);
+            label18.TabIndex = 1;
+            label18.Text = "Max";
+            // 
+            // SalePriceMin
+            // 
+            SalePriceMin.Dock = DockStyle.Top;
+            SalePriceMin.Location = new Point(93, 0);
+            SalePriceMin.Margin = new Padding(0);
+            SalePriceMin.Name = "SalePriceMin";
+            SalePriceMin.Size = new Size(372, 31);
+            SalePriceMin.TabIndex = 2;
+            // 
+            // SalePriceMax
+            // 
+            SalePriceMax.Dock = DockStyle.Top;
+            SalePriceMax.Location = new Point(558, 0);
+            SalePriceMax.Margin = new Padding(0);
+            SalePriceMax.Name = "SalePriceMax";
+            SalePriceMax.Size = new Size(373, 31);
+            SalePriceMax.TabIndex = 3;
+            // 
+            // SaleTimeLabel
+            // 
+            SaleTimeLabel.AutoSize = true;
+            SaleTimeLabel.Dock = DockStyle.Right;
+            SaleTimeLabel.Location = new Point(74, 320);
+            SaleTimeLabel.Name = "SaleTimeLabel";
+            SaleTimeLabel.Size = new Size(87, 40);
+            SaleTimeLabel.TabIndex = 20;
+            SaleTimeLabel.Text = "Salgs Pris";
             // 
             // SaleTimePeriodValues
             // 
@@ -396,9 +474,9 @@
             // 
             tableLayoutPanel1.SetColumnSpan(Godkend, 2);
             Godkend.Dock = DockStyle.Fill;
-            Godkend.Location = new Point(3, 323);
+            Godkend.Location = new Point(3, 363);
             Godkend.Name = "Godkend";
-            Godkend.Size = new Size(1089, 61);
+            Godkend.Size = new Size(1089, 78);
             Godkend.TabIndex = 12;
             Godkend.Text = "Godkend";
             Godkend.UseVisualStyleBackColor = true;
@@ -482,13 +560,15 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1095, 387);
+            ClientSize = new Size(1095, 444);
             Controls.Add(tableLayoutPanel1);
             Name = "FilterInfoForm";
             Text = "Filter";
             Load += SortValuesForm_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            SalePriceValues.ResumeLayout(false);
+            SalePriceValues.PerformLayout();
             SaleTimePeriodValues.ResumeLayout(false);
             SaleTimePeriodValues.PerformLayout();
             tableLayoutPanel4.ResumeLayout(false);
@@ -538,5 +618,11 @@
         private Label label16;
         private DateTimePicker SalePeriodFromDateTimePicker;
         private DateTimePicker SalePeriodToDateTimePicker;
+        private TableLayoutPanel SalePriceValues;
+        private Label label17;
+        private Label label18;
+        private TextBox SalePriceMin;
+        private TextBox SalePriceMax;
+        private Label SaleTimeLabel;
     }
 }
