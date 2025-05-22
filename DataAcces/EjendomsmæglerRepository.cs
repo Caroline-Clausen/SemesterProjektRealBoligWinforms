@@ -30,9 +30,9 @@ namespace DataAccess
                                 Ejendomsmaegler ejendomsmægler = new Ejendomsmaegler
                                 {
                                     EjendomsmaeglerID = Convert.ToInt32(reader["ejendomsmæglerID"]),
-                                    PersonNavn = reader["navn"].ToString(),
-                                    PersonTelefon = reader["telefonnummer"].ToString(),
-                                    PersonEmail = reader["mail"].ToString(),
+                                    Navn = reader["navn"].ToString(),
+                                    Telefon = reader["telefonnummer"].ToString(),
+                                    Email = reader["mail"].ToString(),
                                     EjendomsmaeglerBrugernavn = reader["brugernavn"].ToString(),
                                     EjendomsmaeglerPassword = reader["password"].ToString()
                                 };
@@ -54,9 +54,9 @@ namespace DataAccess
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("INSERT INTO ejendomsmæglere (navn, telefonnummer, mail, brugernavn, password) VALUES (@navn, @telefonnummer, @mail, @brugernavn, @password)", con))
                 {
-                    cmd.Parameters.AddWithValue("@navn", ejendomsmægler.PersonNavn);
-                    cmd.Parameters.AddWithValue("@telefonnummer", ejendomsmægler.PersonTelefon);
-                    cmd.Parameters.AddWithValue("@mail", ejendomsmægler.PersonEmail);
+                    cmd.Parameters.AddWithValue("@navn", ejendomsmægler.Navn);
+                    cmd.Parameters.AddWithValue("@telefonnummer", ejendomsmægler.Telefon);
+                    cmd.Parameters.AddWithValue("@mail", ejendomsmægler.Email);
                     cmd.Parameters.AddWithValue("@brugernavn", ejendomsmægler.EjendomsmaeglerBrugernavn);
                     cmd.Parameters.AddWithValue("@password", ejendomsmægler.EjendomsmaeglerPassword);
                     cmd.ExecuteNonQuery();

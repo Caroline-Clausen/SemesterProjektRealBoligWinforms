@@ -19,9 +19,9 @@ namespace SemesterProjektRealBoligWinforms
         {
             InitializeComponent();
             MæglerLokal = ejendomsmaegler;
-            navnMæglerTekstbox.Text = ejendomsmaegler.PersonNavn;
-            emailMæglerTekstboks.Text = ejendomsmaegler.PersonEmail;
-            telefonMæglerTekstboks.Text = ejendomsmaegler.PersonTelefon;
+            navnMæglerTekstbox.Text = ejendomsmaegler.Navn;
+            emailMæglerTekstboks.Text = ejendomsmaegler.Email;
+            telefonMæglerTekstboks.Text = ejendomsmaegler.Telefon;
             brugernavnMæglerTekstboks.Text = ejendomsmaegler.EjendomsmaeglerBrugernavn;
             parswordMæglerTekstboks.Text = ejendomsmaegler.EjendomsmaeglerPassword;
         }
@@ -31,9 +31,9 @@ namespace SemesterProjektRealBoligWinforms
             // tilføjelse af ejendomsmægler til liste
             MæglerLokal.EjendomsmaeglerBrugernavn = brugernavnMæglerTekstboks.Text;
             MæglerLokal.EjendomsmaeglerPassword = parswordMæglerTekstboks.Text;
-            MæglerLokal.PersonNavn = navnMæglerTekstbox.Text;
-            MæglerLokal.PersonEmail = emailMæglerTekstboks.Text;
-            MæglerLokal.PersonTelefon = telefonMæglerTekstboks.Text;
+            MæglerLokal.Navn = navnMæglerTekstbox.Text;
+            MæglerLokal.Email = emailMæglerTekstboks.Text;
+            MæglerLokal.Telefon = telefonMæglerTekstboks.Text;
 
             //gem MæglerLokal i database
 

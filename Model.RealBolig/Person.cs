@@ -8,9 +8,9 @@ namespace Projekt1Semester
 {
     public class Person
     {
-        public string PersonNavn { get; set; } //Personens navn 
-        public string PersonEmail { get; set; } //Personens email
-        public string PersonTelefon { get; set; } //Personens telefonnummer
+        public string? Navn { get; set; } //Personens navn 
+        public string? Email { get; set; } //Personens email
+        public string? Telefon { get; set; } //Personens telefonnummer
                 
     }
 }

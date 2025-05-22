@@ -16,7 +16,5 @@ namespace Projekt1Semester
         public int KoeberID { get; set; } //KøberID
         public DateTime Salgsdato { get; set; } //Salgsdato
         public double Salgspris { get; set; } //Salgspris
-        
-
     }
 }

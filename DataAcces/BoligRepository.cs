@@ -277,16 +277,16 @@ namespace DataAccess
                                     Status = reader["status"].ToString(),
                                     SaelgerID = Convert.ToInt32(reader["sælgerID"].ToString()),
                                     Sælger = new Saelger { 
-                                        PersonNavn = håndterDbNullString(reader["sælgernavn"].ToString()),
-                                        PersonEmail = håndterDbNullString(reader["sælgermail"].ToString()),
-                                        PersonTelefon = håndterDbNullString(reader["sælgertelefonnummer"].ToString()),
+                                        Navn = håndterDbNullString(reader["sælgernavn"].ToString()),
+                                        Email = håndterDbNullString(reader["sælgermail"].ToString()),
+                                        Telefon = håndterDbNullString(reader["sælgertelefonnummer"].ToString()),
 
                                     },
                                     Mægler = new Ejendomsmaegler
                                     {
-                                        PersonNavn = håndterDbNullString(reader["mæglernavn"]),
-                                        PersonEmail = håndterDbNullString(reader["mæglermail"]),
-                                        PersonTelefon = håndterDbNullString(reader["mæglertelefonnummer"])
+                                        Navn = håndterDbNullString(reader["mæglernavn"]),
+                                        Email = håndterDbNullString(reader["mæglermail"]),
+                                        Telefon = håndterDbNullString(reader["mæglertelefonnummer"])
                                     }
                                 };
                                 boliger.Add(bolig);

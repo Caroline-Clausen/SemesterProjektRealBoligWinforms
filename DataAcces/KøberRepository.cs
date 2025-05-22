@@ -28,9 +28,9 @@ namespace DataAccess
                                 Koeber bolig = new Koeber
                                 {
                                     KoeberID = Convert.ToInt32(reader["køberID"]), // Primarnøgle tildelt fra database (autogenereret)
-                                    PersonNavn = reader["navn"].ToString(),
-                                    PersonTelefon = reader["telefonnummer"].ToString(),
-                                    PersonEmail = reader["mail"].ToString(),
+                                    Navn = reader["navn"].ToString(),
+                                    Telefon = reader["telefonnummer"].ToString(),
+                                    Email = reader["mail"].ToString(),
                                 };
                                 købere.Add(bolig);
                             }
