@@ -18,7 +18,7 @@ namespace SemesterProjektRealBoligWinforms
             InitializeComponent();
             //adresseLable.Text = bolig.Adresse;
         }
+        //Funktion er ikke implementeret endnu
 
-       
     }
 }
