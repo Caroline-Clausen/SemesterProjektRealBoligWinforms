@@ -8,8 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\DataAcces\DataAccess.csproj" />
+  <ItemGroup>    <ProjectReference Include="..\BussinessLayer\BusinessLayer.csproj" />    <ProjectReference Include="..\DataAcces\DataLayer.csproj" />
+
   </ItemGroup>
 
 </Project>

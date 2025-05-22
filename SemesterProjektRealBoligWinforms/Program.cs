@@ -1,4 +1,3 @@
-using BusinessLayer;
 using Projekt1Semester;
 using System.Windows.Forms;
 namespace SemesterProjektRealBoligWinforms

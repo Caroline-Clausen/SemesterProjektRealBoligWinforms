@@ -1,5 +1,4 @@
-﻿using BusinessLayer;
-using DataAccess;
+﻿using DataAccess;
 using Projekt1Semester;
 
 namespace SemesterProjektRealBoligWinforms
