@@ -10,10 +10,8 @@ namespace Projekt1Semester
     {
         public int AdministratorID { get; set; } //Primarnøgle tildelt fra database (autogenereret)
 
-
-
         // login funktionen til administrator
-        public string AdministratorBrugernavn { get; set; } //Brugernavn
-        public string AdministratorPassword { get; set; } //Password
+        public string? AdministratorBrugernavn { get; set; } //Brugernavn
+        public string? AdministratorPassword { get; set; } //Password
     }
 }

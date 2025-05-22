@@ -9,6 +9,5 @@ namespace Projekt1Semester
     public class Koeber : Person
     {
         public int KoeberID { get; set; } //Primarnøgle tildelt fra database (autogenereret)
-
     }
 }
