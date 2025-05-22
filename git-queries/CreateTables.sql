@@ -52,15 +52,7 @@ CREATE TABLE salg (
 	sælgerID INT FOREIGN KEY REFERENCES sælgere(sælgerID)
 );
 
-INSERT INTO boliger (adresse, kvadratmeter, type, pris, afstandTilIndkøb, status, sælgerID, område)
-VALUES
-    ('123 Hovedgade', 150, 'Hus', 2500000, 500, 'til salg', 1, 'København'),
-    ('456 Søndergade', 200, 'Lejlighed', 3000000, 300, 'solgt', 1, 'Aarhus'),
-    ('789 Nordvej', 180, 'Villa', 4000000, 700, 'til salg', 1, 'Odense'),
-    ('321 Østergade', 120, 'Ejerlejlighed', 2000000, 200, 'solgt', 1, 'Aalborg'),
-    ('654 Vestervej', 220, 'Rækkehus', 3500000, 400, 'til salg', 1, 'Esbjerg');
-
-INSERT INTO købere (navn, telefonnummer, mail)
+INSERT INTO sælgere (navn, telefonnummer, mail)
 VALUES
     ('Mathias Kiær', 12345678, 'mathias.kiaer@example.com'),
     ('Lars Jensen', 23456789, 'lars.jensen@example.com'),
@@ -68,7 +60,15 @@ VALUES
     ('Peter Nielsen', 45678901, 'peter.nielsen@example.com'),
     ('Sofie Pedersen', 56789012, 'sofie.pedersen@example.com');
 
-INSERT INTO sælgere (navn, telefonnummer, mail)
+INSERT INTO boliger (adresse, kvadratmeter, type, pris, afstandTilIndkøb, status, sælgerID, område)
+VALUES
+    ('123 Hovedgade', 150, 'Hus', 2500000, 500, 'til salg', 1, 'København'),
+    ('456 Søndergade', 200, 'Lejlighed', 3000000, 300, 'til salg', 1, 'Aarhus'),
+    ('789 Nordvej', 180, 'Villa', 4000000, 700, 'til salg', 1, 'Odense'),
+    ('321 Østergade', 120, 'Ejerlejlighed', 2000000, 200, 'til salg', 1, 'Aalborg'),
+    ('654 Vestervej', 220, 'Rækkehus', 3500000, 400, 'til salg', 1, 'Esbjerg');
+
+INSERT INTO købere (navn, telefonnummer, mail)
 VALUES
     ('Mathias Kiær', 12345678, 'mathias.kiaer@example.com'),
     ('Lars Jensen', 23456789, 'lars.jensen@example.com'),
