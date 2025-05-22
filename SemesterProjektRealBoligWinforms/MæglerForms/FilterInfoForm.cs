@@ -121,6 +121,8 @@ namespace SemesterProjektRealBoligWinforms
             }
             if (SortValues.SoldFromDate != null)
                 SalePeriodFromDateTimePicker.Value = (DateTime)SortValues.SoldFromDate;
+            else
+                SalePeriodFromDateTimePicker.Value = DateTime.UnixEpoch; 
             if (SortValues.SoldToDate != null)
                 SalePeriodToDateTimePicker.Value = (DateTime)SortValues.SoldToDate;
             if (SortValues.SoldForMin != int.MinValue)
