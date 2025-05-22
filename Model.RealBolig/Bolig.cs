@@ -23,38 +23,9 @@ namespace Projekt1Semester
         {
             BoligID = 0;
             Status = "til salg";
+            Adresse = "";
+            Type = "";
+            Område = "";
         }
-
-        // hvis vi synes det er nødvendigt at have flere felter til bolig, kan vi tilføje dem her
-        //public double BoligSolgtPris { get; set; } //salgspris på boligen
-        //public double BoligNyPris { get; set; } //ny pris på boligen
-        //public int BoligGrundAreal { get; set; }
-        //public int BoligAntalEtager { get; set; }
-        //public int BoligAntalKældre { get; set; }
-        //public int BoligEtageLejlighed { get; set; }
-
-
-        //_____________________________________________________
-
-        // en metode til ændring af boligpris
-        //public void ÆndreBoligPris(double nyPris)
-        //{
-        //    BoligNyPris = nyPris;
-        //}
-        //// en metode til at se hvor meget boligen er faldet i pris i %
-        //public double BeregnBoligFaldIProcent()
-        //{
-        //    if (BoligNyPris == 0)
-        //    {
-        //        return 0;
-        //    }
-        //    else
-        //    {
-        //        double fald = ((BoligStartPris - BoligNyPris) / BoligStartPris) * 100;
-        //        return fald;
-        //    }
-        //}
-
     }
-
 }
