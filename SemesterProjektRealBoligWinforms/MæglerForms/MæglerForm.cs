@@ -21,7 +21,6 @@ namespace SemesterProjektRealBoligWinforms
         BoligSortValues SortValues = new BoligSortValues();
         List<BoligUdvidet>? Data;
         List<BoligUdvidet>? DataSorted;
-        
 
         public RealtorForm()
         {
