@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             HomesGridView = new DataGridView();
+            boligUdvidetBindingSource = new BindingSource(components);
             tableLayoutPanel1 = new TableLayoutPanel();
             label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
@@ -39,7 +41,19 @@
             sletBoligButton = new Button();
             ExportListButton = new Button();
             homeSaleButton = new Button();
+            boligIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            adresseDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            kvadratmeterDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            typeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            prisDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            afstandTilIndkoebDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            statusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            saelgerIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            områdeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            SalgsDato = new DataGridViewTextBoxColumn();
+            SalgsPris = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)HomesGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)boligUdvidetBindingSource).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -50,8 +64,12 @@
             HomesGridView.AllowUserToDeleteRows = false;
             HomesGridView.AllowUserToResizeColumns = false;
             HomesGridView.AllowUserToResizeRows = false;
+            HomesGridView.AutoGenerateColumns = false;
+            HomesGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             HomesGridView.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             HomesGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            HomesGridView.Columns.AddRange(new DataGridViewColumn[] { boligIDDataGridViewTextBoxColumn, adresseDataGridViewTextBoxColumn, kvadratmeterDataGridViewTextBoxColumn, typeDataGridViewTextBoxColumn, prisDataGridViewTextBoxColumn, afstandTilIndkoebDataGridViewTextBoxColumn, statusDataGridViewTextBoxColumn, saelgerIDDataGridViewTextBoxColumn, områdeDataGridViewTextBoxColumn, SalgsDato, SalgsPris });
+            HomesGridView.DataSource = boligUdvidetBindingSource;
             HomesGridView.Dock = DockStyle.Fill;
             HomesGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
             HomesGridView.Location = new Point(3, 81);
@@ -61,6 +79,10 @@
             HomesGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             HomesGridView.Size = new Size(1294, 359);
             HomesGridView.TabIndex = 0;
+            // 
+            // boligUdvidetBindingSource
+            // 
+            boligUdvidetBindingSource.DataSource = typeof(Projekt1Semester.BoligUdvidet);
             // 
             // tableLayoutPanel1
             // 
@@ -103,9 +125,9 @@
             flowLayoutPanel1.Controls.Add(sletBoligButton);
             flowLayoutPanel1.Controls.Add(ExportListButton);
             flowLayoutPanel1.Controls.Add(homeSaleButton);
-            flowLayoutPanel1.Location = new Point(238, 446);
+            flowLayoutPanel1.Location = new Point(172, 446);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(824, 46);
+            flowLayoutPanel1.Size = new Size(956, 46);
             flowLayoutPanel1.TabIndex = 2;
             // 
             // UpdateDataTableButton
@@ -191,14 +213,111 @@
             // 
             homeSaleButton.AutoSize = true;
             homeSaleButton.Font = new Font("Segoe UI", 11F);
-            homeSaleButton.Location = new Point(415, 2);
+            homeSaleButton.Location = new Point(826, 2);
             homeSaleButton.Margin = new Padding(2);
             homeSaleButton.Name = "homeSaleButton";
-            homeSaleButton.Size = new Size(115, 30);
+            homeSaleButton.Size = new Size(128, 40);
             homeSaleButton.TabIndex = 8;
             homeSaleButton.Text = "Bolig Solgt";
             homeSaleButton.UseVisualStyleBackColor = true;
             homeSaleButton.Click += homeSaleButton_Click;
+            // 
+            // boligIDDataGridViewTextBoxColumn
+            // 
+            boligIDDataGridViewTextBoxColumn.DataPropertyName = "BoligID";
+            boligIDDataGridViewTextBoxColumn.HeaderText = "BoligID";
+            boligIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            boligIDDataGridViewTextBoxColumn.Name = "boligIDDataGridViewTextBoxColumn";
+            boligIDDataGridViewTextBoxColumn.ReadOnly = true;
+            boligIDDataGridViewTextBoxColumn.Width = 106;
+            // 
+            // adresseDataGridViewTextBoxColumn
+            // 
+            adresseDataGridViewTextBoxColumn.DataPropertyName = "Adresse";
+            adresseDataGridViewTextBoxColumn.HeaderText = "Adresse";
+            adresseDataGridViewTextBoxColumn.MinimumWidth = 8;
+            adresseDataGridViewTextBoxColumn.Name = "adresseDataGridViewTextBoxColumn";
+            adresseDataGridViewTextBoxColumn.ReadOnly = true;
+            adresseDataGridViewTextBoxColumn.Width = 111;
+            // 
+            // kvadratmeterDataGridViewTextBoxColumn
+            // 
+            kvadratmeterDataGridViewTextBoxColumn.DataPropertyName = "Kvadratmeter";
+            kvadratmeterDataGridViewTextBoxColumn.HeaderText = "Kvadratmeter";
+            kvadratmeterDataGridViewTextBoxColumn.MinimumWidth = 8;
+            kvadratmeterDataGridViewTextBoxColumn.Name = "kvadratmeterDataGridViewTextBoxColumn";
+            kvadratmeterDataGridViewTextBoxColumn.ReadOnly = true;
+            kvadratmeterDataGridViewTextBoxColumn.Width = 153;
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+            typeDataGridViewTextBoxColumn.HeaderText = "Type";
+            typeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            typeDataGridViewTextBoxColumn.ReadOnly = true;
+            typeDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // prisDataGridViewTextBoxColumn
+            // 
+            prisDataGridViewTextBoxColumn.DataPropertyName = "Pris";
+            prisDataGridViewTextBoxColumn.HeaderText = "Pris";
+            prisDataGridViewTextBoxColumn.MinimumWidth = 8;
+            prisDataGridViewTextBoxColumn.Name = "prisDataGridViewTextBoxColumn";
+            prisDataGridViewTextBoxColumn.ReadOnly = true;
+            prisDataGridViewTextBoxColumn.Width = 76;
+            // 
+            // afstandTilIndkoebDataGridViewTextBoxColumn
+            // 
+            afstandTilIndkoebDataGridViewTextBoxColumn.DataPropertyName = "AfstandTilIndkoeb";
+            afstandTilIndkoebDataGridViewTextBoxColumn.HeaderText = "AfstandTilIndkoeb";
+            afstandTilIndkoebDataGridViewTextBoxColumn.MinimumWidth = 8;
+            afstandTilIndkoebDataGridViewTextBoxColumn.Name = "afstandTilIndkoebDataGridViewTextBoxColumn";
+            afstandTilIndkoebDataGridViewTextBoxColumn.ReadOnly = true;
+            afstandTilIndkoebDataGridViewTextBoxColumn.Width = 193;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            statusDataGridViewTextBoxColumn.MinimumWidth = 8;
+            statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            statusDataGridViewTextBoxColumn.ReadOnly = true;
+            statusDataGridViewTextBoxColumn.Width = 96;
+            // 
+            // saelgerIDDataGridViewTextBoxColumn
+            // 
+            saelgerIDDataGridViewTextBoxColumn.DataPropertyName = "SaelgerID";
+            saelgerIDDataGridViewTextBoxColumn.HeaderText = "SaelgerID";
+            saelgerIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            saelgerIDDataGridViewTextBoxColumn.Name = "saelgerIDDataGridViewTextBoxColumn";
+            saelgerIDDataGridViewTextBoxColumn.ReadOnly = true;
+            saelgerIDDataGridViewTextBoxColumn.Width = 124;
+            // 
+            // områdeDataGridViewTextBoxColumn
+            // 
+            områdeDataGridViewTextBoxColumn.DataPropertyName = "Område";
+            områdeDataGridViewTextBoxColumn.HeaderText = "Område";
+            områdeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            områdeDataGridViewTextBoxColumn.Name = "områdeDataGridViewTextBoxColumn";
+            områdeDataGridViewTextBoxColumn.ReadOnly = true;
+            områdeDataGridViewTextBoxColumn.Width = 113;
+            // 
+            // SalgsDato
+            // 
+            SalgsDato.HeaderText = "Salgs Dato";
+            SalgsDato.MinimumWidth = 8;
+            SalgsDato.Name = "SalgsDato";
+            SalgsDato.ReadOnly = true;
+            SalgsDato.Width = 134;
+            // 
+            // SalgsPris
+            // 
+            SalgsPris.HeaderText = "Salgs Pris";
+            SalgsPris.MinimumWidth = 8;
+            SalgsPris.Name = "SalgsPris";
+            SalgsPris.ReadOnly = true;
+            SalgsPris.Width = 123;
             // 
             // RealtorForm
             // 
@@ -210,6 +329,7 @@
             Text = "RealtorForm";
             Load += RealtorForm_Load;
             ((System.ComponentModel.ISupportInitialize)HomesGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)boligUdvidetBindingSource).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);
@@ -230,5 +350,17 @@
         private Button ExportListButton;
         private Button sletBoligButton;
         private Button homeSaleButton;
+        private BindingSource boligUdvidetBindingSource;
+        private DataGridViewTextBoxColumn boligIDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn adresseDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn kvadratmeterDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn prisDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn afstandTilIndkoebDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn saelgerIDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn områdeDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn SalgsDato;
+        private DataGridViewTextBoxColumn SalgsPris;
     }
 }
