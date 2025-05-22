@@ -58,10 +58,24 @@ namespace SemesterProjektRealBoligWinforms
                 SortValues.SoldFromDate = null;
                 SortValues.SoldToDate = null;
             }
-            SortValues.SoldForMin = GetIntFromTextBox(SalePriceMin);
-            SortValues.SoldForMax = GetIntFromTextBox(SalePriceMax);
+            int soldForMin, soldForMax;
+            if (int.TryParse(SalePriceMin.Text, out soldForMin))
+            {
+                SortValues.SoldForMin = soldForMin;
+            } else
+            {
+                SalePriceMin.Text = "";
+            }
+            if (int.TryParse(SalePriceMax.Text, out soldForMax))
+            {
+                SortValues.SoldForMax = soldForMin;
+            } else
+            {
+                SalePriceMax.Text = "";
+            }
 
-            Close();
+
+                Close();
         }
 
         private static int GetIntFromTextBox(TextBox box)
