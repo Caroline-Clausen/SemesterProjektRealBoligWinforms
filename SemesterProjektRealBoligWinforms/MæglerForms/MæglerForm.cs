@@ -151,7 +151,8 @@ namespace SemesterProjektRealBoligWinforms
                         var options = new JsonSerializerOptions
                         {
                             WriteIndented = true,
-                            Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All)
+                            Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All),
+                            IncludeFields = true,
                         };
                         string jsonString = JsonSerializer.Serialize(DataSorted, options);
 
