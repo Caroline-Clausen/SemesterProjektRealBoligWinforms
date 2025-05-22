@@ -7,8 +7,8 @@ public class Saelger : Person
 {
     public int SaelgerID { get; set; } //Primarnøgle tildelt fra database (autogenereret)
 
-    public Saelger()
-    {
-        SaelgerID = 0;
-    }
+    //public Saelger()
+    //{
+    //    SaelgerID = 0;
+    //}
 }
