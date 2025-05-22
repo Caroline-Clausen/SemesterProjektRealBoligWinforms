@@ -40,9 +40,13 @@ namespace SemesterProjektRealBoligWinforms
                 SortValues.ShoppingDistanceMin = GetIntFromTextBox(ShoppingDistanceMinBox);
             if (ShoppingDistanceMaxBox.Text != "")
                 SortValues.ShoppingDistanceMax = GetIntFromTextBox(ShoppingDistanceMaxBox);
-            String? statusStr = StatusComboBox.GetItemText(StatusComboBox.SelectedItem);
+            String? statusStr = StatusComboBox.GetItemText(StatusComboBox.SelectedItem)
             if (statusStr != null && statusStr != "")
+            {
                 SortValues.Status = statusStr;
+                if (statusStr == "alle")
+                    statusStr = "";
+            }
             if (statusStr == "solgt")
             {
                 SortValues.SoldFromDate = SalePeriodFromDateTimePicker.Value; ;
