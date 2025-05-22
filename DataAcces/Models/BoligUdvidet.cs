@@ -8,7 +8,7 @@ namespace Projekt1Semester
 {
     public class BoligUdvidet : Bolig
     {
-        public required Saelger Sælger;
-        public required Ejendomsmaegler Mægler;
+        public required Saelger Sælger { get; set; }
+        public required Ejendomsmaegler Mægler { get; set; }
     }
 }
