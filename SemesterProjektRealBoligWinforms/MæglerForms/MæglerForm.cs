@@ -44,20 +44,6 @@ namespace SemesterProjektRealBoligWinforms
             {
                 return;
             }
-
-            for (int i = 0; i < DataSorted.Count; i++)
-            {
-                BoligUdvidet bolig = DataSorted[i];
-                if (bolig.Status != "solgt")
-                    continue;
-
-                Salg? salg = SalgRepository.HentSalg(bolig.BoligID);
-                if (salg == null)
-                    continue;
-
-                HomesGridView.Rows[i].Cells[9].Value = salg.Salgsdato.ToString();
-                HomesGridView.Rows[i].Cells[10].Value = salg.Salgspris.ToString();
-            }
         }
 
         private void SortDataTable(object? sender, EventArgs e)
@@ -103,6 +89,21 @@ namespace SemesterProjektRealBoligWinforms
 
             HomesGridView.DataSource = DataSorted;
             HomesGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+            // Add additional data to sold homes
+            for (int i = 0; i < DataSorted.Count; i++)
+            {
+                BoligUdvidet bolig = DataSorted[i];
+                if (bolig.Status != "solgt")
+                    continue;
+
+                Salg? salg = SalgRepository.HentSalg(bolig.BoligID);
+                if (salg == null)
+                    continue;
+
+                HomesGridView.Rows[i].Cells[9].Value = salg.Salgsdato.ToString();
+                HomesGridView.Rows[i].Cells[10].Value = salg.Salgspris.ToString();
+            }
         }
 
         private void RegisterHomeButton_Click(object? sender, EventArgs e)
