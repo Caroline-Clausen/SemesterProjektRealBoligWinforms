@@ -43,9 +43,10 @@ namespace SemesterProjektRealBoligWinforms
             String? statusStr = StatusComboBox.GetItemText(StatusComboBox.SelectedItem);
             if (statusStr != null && statusStr != "")
             {
-                SortValues.Status = statusStr;
                 if (statusStr == "alle")
-                    statusStr = "";
+                    SortValues.Status = "";
+                else
+                    SortValues.Status = statusStr;
             }
             if (statusStr == "solgt")
             {
