@@ -48,7 +48,9 @@ namespace DataAccess
             {
 
                 con.Open();
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO salg (ejendomsmæglerID, køberID, boligID, pris, salgstidspunkt, sælgerID) VALUES (@ejendomsmæglerID, @køberID, @boligID, @pris, @salgstidspunkt, @sælgerID)", con))
+                using (SqlCommand cmd = new SqlCommand(
+                    "INSERT INTO salg (ejendomsmæglerID, køberID, boligID, pris, salgstidspunkt, sælgerID)" +
+                    "VALUES (@ejendomsmæglerID, @køberID, @boligID, @pris, @salgstidspunkt, @sælgerID)", con))
                 {
                     cmd.Parameters.AddWithValue("@boligID", salg.BoligID);
                     cmd.Parameters.AddWithValue("@køberID", salg.KoeberID);
@@ -60,7 +62,6 @@ namespace DataAccess
 
                 }
             }
-
         }
     }
 
