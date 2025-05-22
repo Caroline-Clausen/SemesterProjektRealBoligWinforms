@@ -62,7 +62,7 @@ namespace SemesterProjektRealBoligWinforms
             SælgerRepository sælgerRepository = new SælgerRepository();
             List<Saelger> sælgere = sælgerRepository.HentSælgere();
             saelgerComboBox.Items.AddRange(sælgere.ToArray());
-            saelgerComboBox.DisplayMember = "PersonNavn";
+            saelgerComboBox.DisplayMember = "Navn";
         }
 
         private void HentEjendomsmaeglere()
@@ -71,7 +71,7 @@ namespace SemesterProjektRealBoligWinforms
             EjendomsmæglerRepository ejendomsmæglerRepository = new EjendomsmæglerRepository();
             List<Ejendomsmaegler> ejendomsmæglere = ejendomsmæglerRepository.HentEjendomsmaeglere();
             mæglerComboBox.Items.AddRange(ejendomsmæglere.ToArray());
-            mæglerComboBox.DisplayMember = "PersonNavn";
+            mæglerComboBox.DisplayMember = "Navn";
         }
 
         private void HentKøber()
@@ -80,7 +80,7 @@ namespace SemesterProjektRealBoligWinforms
             KøberRepository køberRepository = new KøberRepository();
             List<Koeber> købere = køberRepository.Hentkøbere();
             koeberComboBox.Items.AddRange(købere.ToArray());
-            koeberComboBox.DisplayMember = "PersonNavn";
+            koeberComboBox.DisplayMember = "Navn";
         }
 
         private void prisTextBox_KeyPress(object sender, KeyPressEventArgs e)
