@@ -82,7 +82,7 @@ namespace SemesterProjektRealBoligWinforms
             Ejendomsmaegler? account;
             try
             {
-                account = Authenticator.LoginRealtor(username, password);
+                account = LoginRealtor(username, password);
             } catch (Exception ex)
             {
                 // Exception doesn't occur if the password or username was incorect
@@ -102,6 +102,26 @@ namespace SemesterProjektRealBoligWinforms
             this.Hide();
             new RealtorForm().ShowDialog();
             this.Show();
+        }
+
+        public static Ejendomsmaegler? LoginRealtor(string username, string password)
+        {
+            // Try to get realtor from database with matching username
+            Ejendomsmaegler? realtor = DBConnection.GetRealtor(username);
+
+            // Ensure we could got a realtor
+            if (realtor == null)
+            {
+                return null;
+            }
+
+            // Check passowrd is correct
+            if (realtor.EjendomsmaeglerPassword == password)
+            {
+                return realtor;
+            }
+
+            return null;
         }
     }
 }
