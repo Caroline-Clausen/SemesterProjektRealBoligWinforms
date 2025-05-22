@@ -46,7 +46,7 @@ namespace SemesterProjektRealBoligWinforms
             SælgerRepository sælgerRepository = new SælgerRepository();
             List<Saelger> sælgere = sælgerRepository.HentSælgere();
             SælgerComboBox.Items.AddRange(sælgere.ToArray());
-            SælgerComboBox.DisplayMember = "PersonNavn";
+            SælgerComboBox.DisplayMember = "Navn";
         }
 
         private void GemButton_Click(object sender, EventArgs e)
