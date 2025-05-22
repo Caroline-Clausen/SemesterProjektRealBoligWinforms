@@ -244,9 +244,9 @@ namespace DataAccess
             return boliger;
         }
 
-        public List<BoligMedSælger> HentBoligerMedSælger()
+        public List<BoligUdvidet> HentBoligerMedSælger()
         {
-            List<BoligMedSælger> boliger = new List<BoligMedSælger>();
+            List<BoligUdvidet> boliger = new List<BoligUdvidet>();
             using (SqlConnection con = new SqlConnection(ConnString))
             {
                 con.Open();
@@ -265,7 +265,7 @@ namespace DataAccess
                         {
                             while (reader.Read())
                             {
-                                BoligMedSælger bolig = new BoligMedSælger
+                                BoligUdvidet bolig = new BoligUdvidet
                                 {
                                     BoligID = Convert.ToInt32(reader["boligID"]), // Primarnøgle tildelt fra database (autogenereret)
                                     Adresse = reader["adresse"].ToString(),
@@ -275,13 +275,19 @@ namespace DataAccess
                                     AfstandTilIndkoeb = Convert.ToDouble(reader["afstandtilindkøb"]),
                                     Område = reader["område"].ToString(),
                                     Status = reader["status"].ToString(),
-                                    SælgerNavn = håndterDbNullString(reader["sælgernavn"]),
-                                    SælgerMail = håndterDbNullString(reader["sælgermail"]),
-                                    SælgerTelefon = håndterDbNullString(reader["sælgertelefonnummer"]),
-                                    MæglerID = håndterDbNullInt(reader["ejendomsmæglerID"]),
-                                    MæglerNavn = håndterDbNullString(reader["mæglernavn"]),
-                                    MæglerMail = håndterDbNullString(reader["mæglermail"]),
-                                    MæglerTelefon = håndterDbNullString(reader["mæglertelefonnummer"]),
+                                    SaelgerID = Convert.ToInt32(reader["sælgerID"].ToString()),
+                                    Sælger = new Saelger { 
+                                        PersonNavn = håndterDbNullString(reader["sælgernavn"].ToString()),
+                                        PersonEmail = håndterDbNullString(reader["sælgermail"].ToString()),
+                                        PersonTelefon = håndterDbNullString(reader["sælgertelefonnummer"].ToString()),
+
+                                    },
+                                    Mægler = new Ejendomsmaegler
+                                    {
+                                        PersonNavn = håndterDbNullString(reader["mæglernavn"]),
+                                        PersonEmail = håndterDbNullString(reader["mæglermail"]),
+                                        PersonTelefon = håndterDbNullString(reader["mæglertelefonnummer"])
+                                    }
                                 };
                                 boliger.Add(bolig);
                             }

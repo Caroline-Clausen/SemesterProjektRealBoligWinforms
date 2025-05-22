@@ -19,8 +19,8 @@ namespace SemesterProjektRealBoligWinforms
     public partial class RealtorForm : Form
     {
         BoligSortValues SortValues = new BoligSortValues();
-        List<BoligMedSælger>? Data;
-        List<BoligMedSælger>? DataSorted;
+        List<BoligUdvidet>? Data;
+        List<BoligUdvidet>? DataSorted;
         
 
         public RealtorForm()
@@ -45,7 +45,7 @@ namespace SemesterProjektRealBoligWinforms
         private void SortDataTable(object? sender, EventArgs e)
         {
             // Sort data
-            IEnumerable<BoligMedSælger> sortQuery =
+            IEnumerable<BoligUdvidet> sortQuery =
                 from bolig in Data
                 where bolig.Adresse.Contains(SortValues.Address)
                 where bolig.Type.Contains(SortValues.Type)
@@ -100,7 +100,7 @@ namespace SemesterProjektRealBoligWinforms
         private void EditHomeButton_Click(object? sender, EventArgs e)
         {
             BoligRepository boligRepository = new BoligRepository();
-            Bolig bolig = boligRepository.HentBolig(((BoligMedSælger)HomesGridView.SelectedRows[0].DataBoundItem).BoligID);
+            Bolig bolig = boligRepository.HentBolig(((BoligUdvidet)HomesGridView.SelectedRows[0].DataBoundItem).BoligID);
             BoligOplysninger boligOplysninger = new BoligOplysninger(bolig);
 
             this.Hide();
@@ -175,7 +175,7 @@ namespace SemesterProjektRealBoligWinforms
         private void homeSaleButton_Click(object sender, EventArgs e)
         {
             BoligRepository boligRepository = new BoligRepository();
-            Bolig bolig = boligRepository.HentBolig(((BoligMedSælger)HomesGridView.SelectedRows[0].DataBoundItem).BoligID);
+            Bolig bolig = boligRepository.HentBolig(((BoligUdvidet)HomesGridView.SelectedRows[0].DataBoundItem).BoligID);
             salgBolig salgBolig = new salgBolig(bolig);
             this.Hide();
             salgBolig.ShowDialog();
