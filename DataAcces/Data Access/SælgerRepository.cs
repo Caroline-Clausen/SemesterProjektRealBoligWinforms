@@ -24,14 +24,14 @@ namespace DataAccess
                         {
                             while (reader.Read())
                             {
-                                Saelger bolig = new Saelger
+                                Saelger sælger = new Saelger 
                                 {
                                     SaelgerID = Convert.ToInt32(reader["sælgerID"]), // Primarnøgle tildelt fra database (autogenereret)
                                     Navn = reader["navn"].ToString(),
                                     Telefon = reader["telefonnummer"].ToString(),
                                     Email = reader["mail"].ToString(),
                                 };
-                                sælgere.Add(bolig);
+                                sælgere.Add(sælger); 
                             }
                         }
                     }
