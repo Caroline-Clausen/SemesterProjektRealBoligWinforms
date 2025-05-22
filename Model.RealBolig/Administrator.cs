@@ -15,22 +15,5 @@ namespace Projekt1Semester
         // login funktionen til administrator
         public string AdministratorBrugernavn { get; set; } //Brugernavn
         public string AdministratorPassword { get; set; } //Password
-       
-       
-        
-        // en metode hvor Administrator får mulighed for at ændre sit password
-        public void ÆndreAdminPassword(string nyPassword)
-        {
-            AdministratorPassword = nyPassword;
-        }
-       
-
-        // en metode hvor Administrator får mulighed for at ændre sit brugernavn
-        public void ÆndreAdminBrugernavn(string nyBrugernavn)
-        {
-            AdministratorBrugernavn = nyBrugernavn;
-        }
-        
-
     }
 }
