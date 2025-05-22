@@ -280,7 +280,6 @@ namespace DataAccess
                                         Navn = håndterDbNullString(reader["sælgernavn"].ToString()),
                                         Email = håndterDbNullString(reader["sælgermail"].ToString()),
                                         Telefon = håndterDbNullString(reader["sælgertelefonnummer"].ToString()),
-
                                     },
                                     Mægler = new Ejendomsmaegler
                                     {
