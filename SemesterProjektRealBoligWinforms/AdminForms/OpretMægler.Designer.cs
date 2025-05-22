@@ -32,9 +32,11 @@
             ejendomsmaeglerBindingSource = new BindingSource(components);
             vistMæglerDataGridView = new DataGridView();
             ejendomsmaeglerIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            personNavnDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            personEmailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            personTelefonDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            EjendomsmaeglerBrugernavn = new DataGridViewTextBoxColumn();
+            EjendomsmaeglerPassword = new DataGridViewTextBoxColumn();
+            Navn = new DataGridViewTextBoxColumn();
+            Email = new DataGridViewTextBoxColumn();
+            Telefon = new DataGridViewTextBoxColumn();
             opretMæglerKnap = new Button();
             fjernMæglerLable = new Label();
             fjernMæglerKnap = new Button();
@@ -58,44 +60,72 @@
             vistMæglerDataGridView.AllowUserToDeleteRows = false;
             vistMæglerDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             vistMæglerDataGridView.AutoGenerateColumns = false;
+            vistMæglerDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             vistMæglerDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            vistMæglerDataGridView.Columns.AddRange(new DataGridViewColumn[] { ejendomsmaeglerIDDataGridViewTextBoxColumn, personNavnDataGridViewTextBoxColumn, personEmailDataGridViewTextBoxColumn, personTelefonDataGridViewTextBoxColumn });
+            vistMæglerDataGridView.Columns.AddRange(new DataGridViewColumn[] { ejendomsmaeglerIDDataGridViewTextBoxColumn, EjendomsmaeglerBrugernavn, EjendomsmaeglerPassword, Navn, Email, Telefon });
             vistMæglerDataGridView.DataSource = ejendomsmaeglerBindingSource;
-            vistMæglerDataGridView.Location = new Point(316, 46);
+            vistMæglerDataGridView.Location = new Point(320, 44);
             vistMæglerDataGridView.MultiSelect = false;
             vistMæglerDataGridView.Name = "vistMæglerDataGridView";
             vistMæglerDataGridView.ReadOnly = true;
+            vistMæglerDataGridView.RowHeadersWidth = 50;
             vistMæglerDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            vistMæglerDataGridView.Size = new Size(454, 342);
+            vistMæglerDataGridView.Size = new Size(511, 345);
             vistMæglerDataGridView.TabIndex = 7;
             // 
             // ejendomsmaeglerIDDataGridViewTextBoxColumn
             // 
             ejendomsmaeglerIDDataGridViewTextBoxColumn.DataPropertyName = "EjendomsmaeglerID";
-            ejendomsmaeglerIDDataGridViewTextBoxColumn.HeaderText = "EjendomsmaeglerID";
+            ejendomsmaeglerIDDataGridViewTextBoxColumn.HeaderText = "Mægler ID";
+            ejendomsmaeglerIDDataGridViewTextBoxColumn.MinimumWidth = 10;
             ejendomsmaeglerIDDataGridViewTextBoxColumn.Name = "ejendomsmaeglerIDDataGridViewTextBoxColumn";
             ejendomsmaeglerIDDataGridViewTextBoxColumn.ReadOnly = true;
+            ejendomsmaeglerIDDataGridViewTextBoxColumn.Width = 87;
             // 
-            // personNavnDataGridViewTextBoxColumn
+            // EjendomsmaeglerBrugernavn
             // 
-            personNavnDataGridViewTextBoxColumn.DataPropertyName = "PersonNavn";
-            personNavnDataGridViewTextBoxColumn.HeaderText = "PersonNavn";
-            personNavnDataGridViewTextBoxColumn.Name = "personNavnDataGridViewTextBoxColumn";
-            personNavnDataGridViewTextBoxColumn.ReadOnly = true;
+            EjendomsmaeglerBrugernavn.DataPropertyName = "EjendomsmaeglerBrugernavn";
+            EjendomsmaeglerBrugernavn.HeaderText = "Brugernavn";
+            EjendomsmaeglerBrugernavn.MinimumWidth = 10;
+            EjendomsmaeglerBrugernavn.Name = "EjendomsmaeglerBrugernavn";
+            EjendomsmaeglerBrugernavn.ReadOnly = true;
+            EjendomsmaeglerBrugernavn.Width = 93;
             // 
-            // personEmailDataGridViewTextBoxColumn
+            // EjendomsmaeglerPassword
             // 
-            personEmailDataGridViewTextBoxColumn.DataPropertyName = "PersonEmail";
-            personEmailDataGridViewTextBoxColumn.HeaderText = "PersonEmail";
-            personEmailDataGridViewTextBoxColumn.Name = "personEmailDataGridViewTextBoxColumn";
-            personEmailDataGridViewTextBoxColumn.ReadOnly = true;
+            EjendomsmaeglerPassword.DataPropertyName = "EjendomsmaeglerPassword";
+            EjendomsmaeglerPassword.HeaderText = "Password";
+            EjendomsmaeglerPassword.MinimumWidth = 10;
+            EjendomsmaeglerPassword.Name = "EjendomsmaeglerPassword";
+            EjendomsmaeglerPassword.ReadOnly = true;
+            EjendomsmaeglerPassword.Width = 82;
             // 
-            // personTelefonDataGridViewTextBoxColumn
+            // Navn
             // 
-            personTelefonDataGridViewTextBoxColumn.DataPropertyName = "PersonTelefon";
-            personTelefonDataGridViewTextBoxColumn.HeaderText = "PersonTelefon";
-            personTelefonDataGridViewTextBoxColumn.Name = "personTelefonDataGridViewTextBoxColumn";
-            personTelefonDataGridViewTextBoxColumn.ReadOnly = true;
+            Navn.DataPropertyName = "Navn";
+            Navn.HeaderText = "Navn";
+            Navn.MinimumWidth = 10;
+            Navn.Name = "Navn";
+            Navn.ReadOnly = true;
+            Navn.Width = 60;
+            // 
+            // Email
+            // 
+            Email.DataPropertyName = "Email";
+            Email.HeaderText = "Email";
+            Email.MinimumWidth = 10;
+            Email.Name = "Email";
+            Email.ReadOnly = true;
+            Email.Width = 61;
+            // 
+            // Telefon
+            // 
+            Telefon.DataPropertyName = "Telefon";
+            Telefon.HeaderText = "Telefon";
+            Telefon.MinimumWidth = 10;
+            Telefon.Name = "Telefon";
+            Telefon.ReadOnly = true;
+            Telefon.Width = 71;
             // 
             // opretMæglerKnap
             // 
@@ -148,7 +178,7 @@
             // afslutOpretMæglerKnap
             // 
             afslutOpretMæglerKnap.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            afslutOpretMæglerKnap.Location = new Point(663, 406);
+            afslutOpretMæglerKnap.Location = new Point(720, 409);
             afslutOpretMæglerKnap.Name = "afslutOpretMæglerKnap";
             afslutOpretMæglerKnap.Size = new Size(107, 29);
             afslutOpretMæglerKnap.TabIndex = 17;
@@ -168,7 +198,7 @@
             // opdaterMæglerListeKnap
             // 
             opdaterMæglerListeKnap.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            opdaterMæglerListeKnap.Location = new Point(316, 406);
+            opdaterMæglerListeKnap.Location = new Point(373, 409);
             opdaterMæglerListeKnap.Name = "opdaterMæglerListeKnap";
             opdaterMæglerListeKnap.Size = new Size(107, 29);
             opdaterMæglerListeKnap.TabIndex = 19;
@@ -189,7 +219,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(782, 447);
+            ClientSize = new Size(839, 450);
             Controls.Add(opretMæglerLable);
             Controls.Add(opdaterMæglerListeKnap);
             Controls.Add(listeMæglerLable);
@@ -200,7 +230,7 @@
             Controls.Add(fjernMæglerLable);
             Controls.Add(opretMæglerKnap);
             Controls.Add(vistMæglerDataGridView);
-            MinimumSize = new Size(792, 486);
+            MinimumSize = new Size(855, 489);
             Name = "OpretMægler";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Opret mægler";
@@ -214,7 +244,6 @@
         #endregion
         private BindingSource ejendomsmaeglerBindingSource;
         private DataGridView vistMæglerDataGridView;
-        private DataGridViewTextBoxColumn ejendomsmaeglerIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn personNavnDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn personEmailDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn personTelefonDataGridViewTextBoxColumn;
@@ -227,5 +256,11 @@
         private Label listeMæglerLable;
         private Button opdaterMæglerListeKnap;
         private Label opretMæglerLable;
+        private DataGridViewTextBoxColumn ejendomsmaeglerIDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn EjendomsmaeglerBrugernavn;
+        private DataGridViewTextBoxColumn EjendomsmaeglerPassword;
+        private DataGridViewTextBoxColumn Navn;
+        private DataGridViewTextBoxColumn Email;
+        private DataGridViewTextBoxColumn Telefon;
     }
 }
