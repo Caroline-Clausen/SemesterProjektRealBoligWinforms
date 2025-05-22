@@ -61,7 +61,7 @@ namespace SemesterProjektRealBoligWinforms
 
             DataSorted = sortQuery.ToList();
 
-            // If we sort by sold homes, we also sort by time of salealtoer
+            // If we sort by sold homes, we also sort by time of sale
             if (SortValues.Status == "solgt")
             {
                 DataSorted.RemoveAll(bolig =>
